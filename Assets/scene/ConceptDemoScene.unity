@@ -1575,6 +1575,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2469,7 +2470,7 @@ GameObject:
   - 114: {fileID: 1852377970}
   m_Layer: 0
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2485,8 +2486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96168845002aff642b3519cdc1bacc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 10
-  Speed: 1
+  speed: .300000012
+  aggroRadius: 3.5
 --- !u!61 &1852377971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2510,7 +2511,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2562,7 +2563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1852377969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.100000001, y: 0, z: 0}
+  m_LocalPosition: {x: -5.63999987, y: 4.59000015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2693,11 +2694,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 499218, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.0500000007
+      value: -5.80999994
       objectReference: {fileID: 0}
     - target: {fileID: 499218, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.63999999
+      value: 8.39999962
       objectReference: {fileID: 0}
     - target: {fileID: 499218, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_LocalPosition.z

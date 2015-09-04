@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SmallObjects
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

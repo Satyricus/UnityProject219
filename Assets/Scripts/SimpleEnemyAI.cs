@@ -8,30 +8,62 @@ using System.Collections;
 
 public class SimpleEnemyAI : MonoBehaviour
 {
-
-
-    private GameObject Player;
-    private Rigidbody2D Body;
-    public float Range;
-    public float Speed;
-
 	
-	void Start () {
-	Player = GameObject.FindGameObjectWithTag("Player");
-	Body = GetComponent<Rigidbody2D>();
+    GameObject player;
+    //Rigidbody2D body;
+    float range;
+	Transform target;
+
+    public float speed;
+	public float aggroRadius;
+
+	void Start () 
+	{
+
+		player = GameObject.FindGameObjectWithTag("Player");
+		//body = GetComponent<Rigidbody2D>();
 
 	}
 	
 	
 	void Update ()
 	{
+		/*
+	    float distance = Vector2.Distance(transform.position, player.transform.position);
 
-	    float distance = Vector2.Distance(Body.position, Player.transform.position);
+		// TODO: if (playerHealth >= 0)
 
-	    if (distance <= Range)
+		//transform.position += transform.forward * speed * Time.deltaTime;
+
+
+	    if (distance >= 15f)
 	    {
-	        transform.Translate(Vector2.MoveTowards(Body.position, Player.transform.position, distance) * Speed * Time.deltaTime );
+			//body.MovePosition (player.transform.position * Time.deltaTime * speed);
+	        transform.Translate(Vector2.MoveTowards(transform.position, player.transform.position, distance) * speed * Time.deltaTime );
 	    }
+		*/
+	}
+
+	// Called once per frame.
+	void FixedUpdate() {
+
+		target = player.transform;
+
+		// Temp, for debugging.
+		Debug.DrawLine (transform.position, target.position, Color.yellow);
+
+		range = Vector3.Distance (transform.position, target.position);
+
+		if (range <= .5f) {	// Stop moving and attack.
+			transform.position = transform.position;
+			Attack ();	// TODO: implement attack.
+		} else if (range < aggroRadius) {	// If player is in (aggro) range, move towards player.
+			Vector3 targetDirection = target.position - transform.position;
+			transform.position += targetDirection * speed * Time.deltaTime;
+		}
+	}
+
+	void Attack() {
 
 	}
 }
