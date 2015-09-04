@@ -10,9 +10,10 @@ public class SimpleEnemyAI : MonoBehaviour
 {
 	
     GameObject player;
-    //Rigidbody2D body;
-    float range;
+    float rangeToTarget;
 	Transform target;
+	Animator anim;
+	Vector3 spawnLocation;
 
     public float speed;
 	public float aggroRadius;
@@ -21,45 +22,51 @@ public class SimpleEnemyAI : MonoBehaviour
 	{
 
 		player = GameObject.FindGameObjectWithTag("Player");
+		anim = GetComponent<Animator> ();
+		spawnLocation = transform.position;
 		//body = GetComponent<Rigidbody2D>();
+		anim.SetBool ("isWalking", false); // Shouldnt be needed, but moves otherwise.
 
 	}
 	
 	
 	void Update ()
 	{
-		/*
-	    float distance = Vector2.Distance(transform.position, player.transform.position);
 
-		// TODO: if (playerHealth >= 0)
-
-		//transform.position += transform.forward * speed * Time.deltaTime;
-
-
-	    if (distance >= 15f)
-	    {
-			//body.MovePosition (player.transform.position * Time.deltaTime * speed);
-	        transform.Translate(Vector2.MoveTowards(transform.position, player.transform.position, distance) * speed * Time.deltaTime );
-	    }
-		*/
 	}
 
 	// Called once per frame.
 	void FixedUpdate() {
-
+		// TODO: if (playerHealth <= 0)
 		target = player.transform;
 
 		// Temp, for debugging.
 		Debug.DrawLine (transform.position, target.position, Color.yellow);
 
-		range = Vector3.Distance (transform.position, target.position);
+		rangeToTarget = Vector3.Distance (transform.position, target.position);
 
-		if (range <= .5f) {	// Stop moving and attack.
+		if (rangeToTarget <= .5f) {	// Close, stop moving and attack.
 			transform.position = transform.position;
+			anim.SetBool ("isWalking", false);
 			Attack ();	// TODO: implement attack.
-		} else if (range < aggroRadius) {	// If player is in (aggro) range, move towards player.
+		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
 			Vector3 targetDirection = target.position - transform.position;
 			transform.position += targetDirection * speed * Time.deltaTime;
+			// Update animator.
+			anim.SetBool ("isWalking", true);
+			anim.SetFloat("ValueX", targetDirection.x);
+			anim.SetFloat("ValueY", targetDirection.y);
+		} else if (rangeToTarget > aggroRadius && transform.position != spawnLocation) {	// Player is out of range, return to spawn location.
+			Vector3 targetDirection = spawnLocation - transform.position;
+			transform.position += targetDirection * speed * Time.deltaTime;
+			// Update animator.
+			anim.SetBool ("isWalking", true); // Might not need.
+			anim.SetFloat("ValueX", targetDirection.x);
+			anim.SetFloat("ValueY", targetDirection.y);
+		} else {	// Stand on spawn location.
+			print ("Here");
+			transform.position = transform.position;
+			anim.SetBool ("isWalking", false);
 		}
 	}
 
