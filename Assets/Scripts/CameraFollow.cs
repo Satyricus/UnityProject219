@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+* This script is responsible for following the target parameter.
+*
+*/
 public class CameraFollow : MonoBehaviour {
 
 	public Transform target;	// position of target

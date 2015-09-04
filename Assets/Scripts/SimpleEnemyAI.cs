@@ -2,8 +2,10 @@
 using System.Collections;
 
 /*
-* This script is responsible for super simple AI, just placeholder AI.
+* This script is responsible for enemy AI. 
 *
+* As of now it will be "guarding" it's spawn location, get too close to it's spawn location and it will follow you.
+* Run away from it and once you've put some distance, the enemy will retreat back to spawn location. 
 */
 
 public class SimpleEnemyAI : MonoBehaviour

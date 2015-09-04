@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+* This script is responsible for the movement of the player through the RigidBody2D component.
+*
+* further reading on RigidBody2D: http://docs.unity3d.com/ScriptReference/Rigidbody2D.html
+*/
 public class PlayerMovement : MonoBehaviour {
 
 	public int speed = 1;
