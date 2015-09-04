@@ -16,10 +16,22 @@ Platform assembly: C:\Users\hussam\Documents\Project 219\Runnable build_Data\Man
 Loading C:\Users\hussam\Documents\Project 219\Runnable build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\hussam\Documents\Project 219\Runnable build_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\hussam\Documents\Project 219\Runnable build_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.063 seconds
+- Completed reload, in  0.066 seconds
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\hussam\Documents\Project 219\Runnable build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\hussam\Documents\Project 219\Runnable build_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.170233 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 406.
+Total: 0.216268 ms (FindLiveObjects: 0.029217 ms CreateObjectMapping: 0.030723 ms MarkObjects: 0.152110 ms  DeleteObjects: 0.003614 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.363560 ms
+
+Unloading 71 unused Assets to reduce memory usage. Loaded Objects now: 164.
+Total: 0.287956 ms (FindLiveObjects: 0.022891 ms CreateObjectMapping: 0.019277 ms MarkObjects: 0.149701 ms  DeleteObjects: 0.095483 ms)
+

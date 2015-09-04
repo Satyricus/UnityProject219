@@ -20,6 +20,11 @@ public class SimpleEnemyAI : MonoBehaviour
     public float speed;
 	public float aggroRadius;
 
+    public int attackDamage;
+
+    private GameObject _playerManager;
+    private PlayerManager playerManager;
+
 	void Start () 
 	{
 
@@ -29,7 +34,10 @@ public class SimpleEnemyAI : MonoBehaviour
 		//body = GetComponent<Rigidbody2D>();
 		anim.SetBool ("isWalking", false); // Shouldnt be needed, but moves otherwise.
 
-	}
+        _playerManager = GameObject.Find("_PlayerManager");
+        playerManager = _playerManager.GetComponentInChildren<PlayerManager>();
+
+    }
 	
 	
 	void Update ()
@@ -50,20 +58,20 @@ public class SimpleEnemyAI : MonoBehaviour
 
 		if (threshold <= 0.05f && rangeToTarget > aggroRadius) {	// Stand on spawn location.
 
-			print ("#4");
+			//print ("#4");
 			transform.position = transform.position;
 			anim.SetBool ("isWalking", false);
 
 		} else if (rangeToTarget <= .5f) {	// Close to target, stop moving and attack.
 
-			print ("#1");
+			//print ("#1");
 			transform.position = transform.position;
 			anim.SetBool ("isWalking", false);
 			Attack ();	// TODO: implement attack.
 
 		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
 
-			print ("#2");
+			//print ("#2");
 			Vector3 targetDirection = target.position - transform.position;
 			transform.position += targetDirection.normalized * speed * Time.deltaTime;
 			// Update animator.
@@ -73,7 +81,7 @@ public class SimpleEnemyAI : MonoBehaviour
 
 		} else if (rangeToTarget > aggroRadius) {	// Player is out of range, return to spawn location.
 
-			print ("#3");
+			//print ("#3");
 			Vector3 targetDirection = spawnLocation - transform.position;
 			transform.position += targetDirection.normalized * speed * Time.deltaTime;
 			// Update animator.
@@ -84,7 +92,14 @@ public class SimpleEnemyAI : MonoBehaviour
 		}
 	}
 
-	void Attack() {
-
+    // Decreases the players health.
+	void Attack()
+	{
+	    playerManager.playerHealth -= attackDamage; // Forgive the shitty code, will fix later.
 	}
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        
+    }
 }

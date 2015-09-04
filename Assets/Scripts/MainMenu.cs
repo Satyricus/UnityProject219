@@ -18,12 +18,12 @@ public class MainMenu : MonoBehaviour {
 
     public void loadLevelTwo()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     }
 
     public void LoadLevelThree()
     {
-        Application.LoadLevel(2);
+        Application.LoadLevel(3);
     }
 
 
