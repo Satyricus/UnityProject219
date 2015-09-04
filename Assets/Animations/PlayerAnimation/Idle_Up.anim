@@ -18,11 +18,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300012, guid: 26bd4d52ffc176849bbdd5e46f4b31ea, type: 3}
-    - time: .0500000007
-      value: {fileID: 21300012, guid: 26bd4d52ffc176849bbdd5e46f4b31ea, type: 3}
-    - time: .100000001
-      value: {fileID: 21300016, guid: 26bd4d52ffc176849bbdd5e46f4b31ea, type: 3}
+      value: {fileID: 21300002, guid: 26bd4d52ffc176849bbdd5e46f4b31ea, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
