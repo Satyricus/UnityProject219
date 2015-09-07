@@ -5,7 +5,7 @@ using System.Collections;
 /*
 * This script is responsible for keeping track of the players health, status (petrified, poisoned ... Etc), stats (level, strength ...) and abilities. 
 */
-public class PlayerManager : MonoBehaviour
+public class Health : MonoBehaviour
 {
 
     public int playerHealth;
@@ -27,7 +27,10 @@ public class PlayerManager : MonoBehaviour
     Boolean isDead()
     {
         if (playerHealth <= 0)
+        {
+            playerHealth = 0;
             return true;
+        }
 
         return false;
     }

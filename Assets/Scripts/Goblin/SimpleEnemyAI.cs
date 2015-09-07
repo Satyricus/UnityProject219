@@ -8,7 +8,7 @@ using System.Collections;
 * Run away from it and once you've put some distance, the enemy will retreat back to spawn location. 
 */
 
-public class SimpleEnemyAI : MonoBehaviour
+class SimpleEnemyAI : MonoBehaviour
 {
 	
     GameObject player;
@@ -24,8 +24,7 @@ public class SimpleEnemyAI : MonoBehaviour
 
     public int attackDamage;
 
-    private GameObject _playerManager;
-    private PlayerManager playerManager;
+    private Health health;
 
 	void Start () 
 	{
@@ -36,8 +35,7 @@ public class SimpleEnemyAI : MonoBehaviour
 		//body = GetComponent<Rigidbody2D>();
 		anim.SetBool ("isWalking", false); // Shouldnt be needed, but moves otherwise.
 
-        _playerManager = GameObject.Find("_PlayerManager");
-        playerManager = _playerManager.GetComponentInChildren<PlayerManager>();
+        health = player.GetComponentInChildren<Health>();
 
     }
 	
@@ -53,27 +51,27 @@ public class SimpleEnemyAI : MonoBehaviour
 		target = player.transform;
 
 		// Temp, for debugging.
-		Debug.DrawLine (transform.position, target.position, Color.yellow);
+		//Debug.DrawLine (transform.position, target.position, Color.yellow);
 
 		rangeToTarget = Vector3.Distance (transform.position, target.position);	// Distance from enemy to target.
 		threshold = Vector3.Distance (transform.position, spawnLocation);		// Are we close to spawn location.
 
 		if (threshold <= 0.05f && rangeToTarget > aggroRadius) {	// Stand on spawn location.
 
-			//print ("#4");
+			//print ("Far away, will not attack.");
 			transform.position = transform.position;
 			anim.SetBool ("isWalking", false);
 
 		} else if (rangeToTarget <= .5f) {	// Close to target, stop moving and attack.
 
-			//print ("#1");
+			//print ("Target is close, doesn't need to move.");
 			transform.position = transform.position;
 			anim.SetBool ("isWalking", false);
-			Attack ();	// TODO: implement attack.
+			Attack ();	
 
 		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
 
-			//print ("#2");
+			//print ("Move towards player.");
 			Vector3 targetDirection = target.position - transform.position;
 			transform.position += targetDirection.normalized * speed * Time.deltaTime;
 			// Update animator.
@@ -83,7 +81,7 @@ public class SimpleEnemyAI : MonoBehaviour
 
 		} else if (rangeToTarget > aggroRadius) {	// Player is out of range, return to spawn location.
 
-			//print ("#3");
+			//print ("");
 			Vector3 targetDirection = spawnLocation - transform.position;
 			transform.position += targetDirection.normalized * speed * Time.deltaTime;
 			// Update animator.
@@ -97,7 +95,7 @@ public class SimpleEnemyAI : MonoBehaviour
     // Decreases the players health.
 	void Attack()
 	{
-	    playerManager.playerHealth -= attackDamage; // Forgive the shitty code, will fix later.
+	    health.playerHealth -= attackDamage;
 	}
 
     void OnCollisionStay2D(Collision2D col)

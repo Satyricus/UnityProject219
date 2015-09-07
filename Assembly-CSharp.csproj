@@ -47,11 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Goblin\AttackLeft.cs" />
+     <Compile Include="Assets\Scripts\Goblin\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\GuiManager.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
