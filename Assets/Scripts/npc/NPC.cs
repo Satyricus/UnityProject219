@@ -28,14 +28,13 @@
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        print("entering " + hasTalked);
         counter = 0;
     }
 
-    void OnTriggerLeave2D(Collider2D coll)
+    void OnTriggerExit2D(Collider2D coll)
     {
-        hasTalked = true;
-        print("leaving " + hasTalked);
+		if(counter != 0)
+       		hasTalked = true;
     }
 
     void OnTriggerStay2D(Collider2D coll)
@@ -44,17 +43,17 @@
         {
             if (hasTalked)
             {
-                print("talked");
-                UItext.text = "We have already talked";
+               UItext.text = "We have already talked";
             }
             else if(counter < dialog.Length)
             {
-                UItext.text = dialog[counter++];
+                UItext.text = dialog[counter];
             }
-            if (counter == dialog.Length+1)
+            if (counter >= dialog.Length+1)
             {
                 UItext.text = "";
             }
+			counter++;
 
         }
         
