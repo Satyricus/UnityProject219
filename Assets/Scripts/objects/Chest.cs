@@ -9,8 +9,8 @@ public class Chest : MonoBehaviour
     private GameObject player;
     private BoxCollider2D playerCollider;
     private BoxCollider2D collider2D;
-    private Boolean isOpened;
-    public  String interactButton;
+    private bool isOpen;
+    public  string interactButton;
     public Sprite unopened;
     public Sprite opened;
     private SpriteRenderer renderer;
@@ -19,48 +19,35 @@ public class Chest : MonoBehaviour
 	void Start () {
         player = GameObject.FindWithTag("Player");
 	    collider2D = GetComponent<BoxCollider2D>();
-	    isOpened = false;
+	    isOpen = false;
 	    renderer = GetComponent<SpriteRenderer>();
 	    renderer.sprite = unopened;
 	}
-	
-
 
 	// Update is called once per frame
 	void Update () {
 
     }
-
-    void OnCollisionStay2D()
-    {
-        //print("Collision :)");
-    }
+    
     // Triggers the 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (isOpened)
+        if (isOpen)   // If chest has been opened.
             return;
-        if (other.gameObject.CompareTag("Player"))
+        // If player in range and interact button is pushed.
+        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(interactButton))
         {
-            if (Input.GetKeyDown(interactButton))
-            {
-                open();
-
-            }
+            Open();
         }
-
     }
 
-    void open()
+    /*
+        Execute when chest is opened by player.
+    */
+    void Open()
     {
         print("it's open");
-        isOpened = true;
+        isOpen = true;
         renderer.sprite = opened;
     }
-
-    /*void OnTriggerEnter2D(Collider2D other)
-        {
-            print("Hello");     
-        }*/
-
-    }
+}
