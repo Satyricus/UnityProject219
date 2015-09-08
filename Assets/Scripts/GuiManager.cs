@@ -11,15 +11,15 @@ using UnityEngine.UI;
 public class GuiManager : MonoBehaviour
 {
 
-    private GameObject Player_PlaceHolder;
+    private GameObject Player;
     private Health health;
     private Text healthText;
 
 	// Use this for initialization
 	void Start ()
 	{
-        Player_PlaceHolder = GameObject.Find("Player_PlaceHolder");
-	    health = Player_PlaceHolder.GetComponentInChildren<Health>();
+        Player = GameObject.Find("Player");
+	    health = Player.GetComponentInChildren<Health>();
         healthText = GetComponentInChildren<Text>();
 	    healthText.text = ""; 
 	}
