@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 8af0cd0b4db709e4e86b96e5f72bf381
-timeCreated: 1442317949
+guid: 7a870525e913939438bc225e8b1984af
+timeCreated: 1442320225
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WaterBank
-    21300002: WaterFlow
-    21300004: WaterBank2
-    21300006: StreamCorner
+    21300000: TreeTrunk
+    21300002: BushVertical
+    21300004: BushHorizontal
+    21300006: TreePink
+    21300008: TreePink2
+    21300010: PineTree
+    21300012: TreeNoLeaves
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,43 +56,73 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: WaterBank
+    - name: TreeTrunk
       rect:
         serializedVersion: 2
-        x: 3
-        y: 35
-        width: 92
-        height: 92
+        x: 359
+        y: 300
+        width: 50
+        height: 41
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WaterFlow
+    - name: BushVertical
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 31
+        x: 300
+        y: 221
+        width: 40
+        height: 117
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WaterBank2
+    - name: BushHorizontal
       rect:
         serializedVersion: 2
-        x: 29
-        y: 36
-        width: 39
-        height: 90
+        x: 287
+        y: 351
+        width: 129
+        height: 53
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StreamCorner
+    - name: TreePink
       rect:
         serializedVersion: 2
-        x: 31
-        y: 67
-        width: 65
-        height: 59
+        x: 196
+        y: 288
+        width: 89
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TreePink2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 288
+        width: 107
+        height: 128
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PineTree
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 264
+        width: 63
+        height: 147
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TreeNoLeaves
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 130
+        width: 76
+        height: 91
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 2692a56572ee28d468070421484f4b8c
-timeCreated: 1442317334
+guid: 978fb2e670dd3f345bcc110409144e5d
+timeCreated: 1442307766
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Island
-    21300002: Stream
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -32,14 +30,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,27 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: Island
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 130
-        width: 62
-        height: 62
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Stream
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 42
-        width: 83
-        height: 81
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

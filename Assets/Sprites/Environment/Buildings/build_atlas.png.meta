@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: 898d6aac971b47b41bb6102bcf431d7f
+timeCreated: 1442323232
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: StoneWall
+    21300002: StoneRoof
+    21300004: Chimney
+    21300006: DarkBrickRoof
+    21300008: BrickWall
+    21300010: DoorMetal
+    21300012: WindowLight
+    21300014: WindowDark
+    21300016: DoorWood
+    21300018: WallFullBrick
+    21300020: FenceWooden
+    21300022: WallBrick
+    21300024: WallPlainGrey
+    21300026: RoofGreyEnd
+    21300028: RoofWallGrey
+    21300030: WallBrickGrey
+    21300032: HouseGreyStairs
+    21300034: WallBrickGreyNoTop
+    21300036: ChimneyWhite
+    21300038: WindowStone
+    21300040: StoneOrnament
+    21300042: WallWhiteFacny
+    21300044: DoorWhite
+    21300046: DoorArchWhite
+    21300048: RoofLightGrey
+    21300050: WindowWhiteFancy
+    21300052: WhiteWindowRound
+    21300054: StepsWhiteFancy
+    21300056: StoneOrnametnFancy
+    21300058: FenceMetal
+    21300060: GateMetal
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: StoneWall
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 907
+        width: 94
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StoneRoof
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chimney
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 874
+        width: 25
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DarkBrickRoof
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 546
+        width: 95
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BrickWall
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 687
+        width: 93
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DoorMetal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 976
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WindowLight
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 970
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WindowDark
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 970
+        width: 31
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DoorWood
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 688
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallFullBrick
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 639
+        width: 93
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 2, z: 0, w: 0}
+    - name: FenceWooden
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 646
+        width: 73
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallBrick
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 545
+        width: 94
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallPlainGrey
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 769
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RoofGreyEnd
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 736
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RoofWallGrey
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 736
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallBrickGrey
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 927
+        width: 64
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HouseGreyStairs
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 919
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 1, y: 1, z: 0, w: 0}
+    - name: WallBrickGreyNoTop
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 866
+        width: 91
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChimneyWhite
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 616
+        width: 24
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 1, y: 0, z: 0, w: 0}
+    - name: WindowStone
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 682
+        width: 33
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 1, y: 0, z: 0, w: 0}
+    - name: StoneOrnament
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 864
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallWhiteFacny
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 641
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 1}
+    - name: DoorWhite
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 624
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DoorArchWhite
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 592
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RoofLightGrey
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 545
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WindowWhiteFancy
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 678
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WhiteWindowRound
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 678
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StepsWhiteFancy
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 695
+        width: 77
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StoneOrnametnFancy
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 639
+        width: 34
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FenceMetal
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 448
+        width: 74
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GateMetal
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 416
+        width: 96
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
