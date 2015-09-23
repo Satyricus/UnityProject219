@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: 7b622602f8317c74a9571572bb5825e1
+timeCreated: 1443048902
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ADOM-OGA-UI-Deploy (1)_0
+    21300002: ADOM-OGA-UI-Deploy (1)_1
+    21300004: ADOM-OGA-UI-Deploy (1)_2
+    21300006: ADOM-OGA-UI-Deploy (1)_3
+    21300008: ADOM-OGA-UI-Deploy (1)_4
+    21300010: ADOM-OGA-UI-Deploy (1)_5
+    21300012: ADOM-OGA-UI-Deploy (1)_6
+    21300014: ADOM-OGA-UI-Deploy (1)_7
+    21300016: ADOM-OGA-UI-Deploy (1)_8
+    21300018: ADOM-OGA-UI-Deploy (1)_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ADOM-OGA-UI-Deploy (1)_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 299
+        width: 331
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_1
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 264
+        width: 224
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 292
+        width: 204
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 268
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_4
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 259
+        width: 203
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 70
+        width: 298
+        height: 179
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 58, y: 28, z: 53, w: 37}
+    - name: ADOM-OGA-UI-Deploy (1)_6
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 189
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_7
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 15
+        width: 313
+        height: 245
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_8
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 17
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ADOM-OGA-UI-Deploy (1)_9
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 15
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
