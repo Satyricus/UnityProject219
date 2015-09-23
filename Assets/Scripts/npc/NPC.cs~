@@ -9,8 +9,6 @@
     public string[] dialogOne;  
 	public string[] dialogTwo; // Something the character says after the important part. "We've already talked", "Didn't I tell you to kill x of y... " etc. 
     public string inputKey;
-	private string[] currentDialog;
-
 
 	private GameObject GameGui;
 	private GameObject Dialog;
@@ -29,57 +27,64 @@
     void Start ()
     {
 		GameGui = GameObject.Find ("GameGui");
-		Dialog = GameObject.Find ("Dialog");
-		UItext = Dialog.GetComponentInChildren<Text> ();
+		Dialog = GameGui.GameObject.Find ("Dialog");
+		UItext = Dialog.GetComponent<Text> ();
 		Player = GameObject.FindGameObjectWithTag ("Player");
 		PMovement = Player.GetComponent<PlayerMovement> ();
 
 		Dialog.SetActive (false);
-		currentDialog = dialogOne;
 
         hasTalked = false;
 		current = 0;
-		lastLine = dialogOne.Length;
-	    }
+		lastLine = dialogOne.Length - 1;
+
+        UItext.text = dialogOne[current];
+    }
 	
     // Update is called once per frame
     void Update () {
-		print (current);
-		if (current == lastLine + 1) {
-			Dialog.SetActive(false);
-			HasTalked();
-			PMovement.UnlockPlayer();
-		}
 
-    } 
+		if (current == lastLine) {
+			HasTalked();
+		}
+    }
 
 	void HasTalked() {
 		hasTalked = true;
-		currentDialog = dialogTwo;
-		lastLine = currentDialog.Length;
+		dialogOne = dialogTwo;
+		lastLine = dialogOne.Length;
 		current = 0;
 	}
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        current = 0;
+    }
 
 	void Talk() {
-		PMovement.LockPlayer ();
-			
-			if(current < currentDialog.Length)
-			{
+		if (Input.GetKeyDown((inputKey)))
+		{
+            print("Pressed Input Key");
 			Dialog.SetActive(true);
-			UItext.text = currentDialog[current];
-
+			if(current < dialogOne.Length)
+			{
+				UItext.text = dialogOne[current];
 			}
-
+			/*if (current >= lastLine+1;)
+			{
+				UItext.text = "";
+			}*/
 			current++;
 			
+		}
 	}
 
-    void OnTriggerStay2D(Collider2D coll) {
-		if (Input.GetKeyDown((inputKey))) {
+    void OnTriggerStay2D(Collider2D coll)
+    {
+		while(current < lastLine)
 			Talk ();
-	}
 
-		//Dialog.SetActive (false);        
+		Dialog.SetActive (false);
+        
     }
 }
