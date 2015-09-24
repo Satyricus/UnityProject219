@@ -1,1 +1,3 @@
-UI text box: Credits to http://dycha.net/ found on http://opengameart.org/content/fantasy-ui-elements-by-ravenmore . License CC by. 
+UI text box: license CC by: Credits to http://dycha.net/ found on http://opengameart.org/content/fantasy-ui-elements-by-ravenmore . License CC by. 
+
+(attacks and abilities) Magic pack - license: CC by: Credits goes to Daniel Eddeland. Also thanks to OpenGameArt.ord link: http://opengameart.org/content/extended-lpc-magic-pack

@@ -19,9 +19,9 @@ class SimpleEnemyAI : MonoBehaviour
 
 	float threshold = 0.5f;
 
+	[Range (0,10)]
     public float speed;
 	public float aggroRadius;
-
     public int attackDamage;
 
     private Health health;
@@ -97,9 +97,5 @@ class SimpleEnemyAI : MonoBehaviour
 	{
 	    health.playerHealth -= attackDamage;
 	}
-
-    void OnCollisionStay2D(Collision2D col)
-    {
-        
-    }
+	
 }

@@ -45,14 +45,22 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GamePause.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Misc\Directions.cs" />
+     <Compile Include="Assets\Scripts\Misc\GamePause.cs" />
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
      <Compile Include="Assets\Scripts\Misc\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\Misc\RangedAttack.cs" />
+     <Compile Include="Assets\Scripts\Player\FireBall.cs" />
      <Compile Include="Assets\Scripts\Player\Health.cs" />
+     <Compile Include="Assets\Scripts\Player\Inventory.cs" />
+     <Compile Include="Assets\Scripts\Player\Levels.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Player\RangeAttack.cs" />
+     <Compile Include="Assets\Scripts\Player\Stats.cs" />
      <Compile Include="Assets\Scripts\npc\NPC.cs" />
      <Compile Include="Assets\Scripts\objects\Chest.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
@@ -61,6 +69,7 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+     <None Include="Assets\Structure and information\Order in layer.txt" />
      <None Include="Assets\Licenses\Credits.txt" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Imported\untitled.tiled2unity.xml" />

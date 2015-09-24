@@ -6,9 +6,8 @@ using UnityEditor.Events;
 public class Chest : MonoBehaviour
 {
 
-    private GameObject player;
+//    private GameObject player; // Will be used ones we transfer something from chest to player. 
     private BoxCollider2D playerCollider;
-    private BoxCollider2D collider2D;
     private bool isOpen;
     public  string interactButton;
     public Sprite unopened;
@@ -17,17 +16,12 @@ public class Chest : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindWithTag("Player");
-	    collider2D = GetComponent<BoxCollider2D>();
+//        player = GameObject.FindWithTag("Player");
 	    isOpen = false;
 	    renderer = GetComponent<SpriteRenderer>();
 	    renderer.sprite = unopened;
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-    }
     
     // Triggers the 
     void OnTriggerStay2D(Collider2D other)
