@@ -9,6 +9,12 @@ public class EnemyHealth : MonoBehaviour {
 	[SerializeField]
 	private int health;
 
+	Animator anim;
+
+
+	void Start() {
+		anim = GetComponent<Animator>();
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,7 +23,12 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	private void Dead() {
+		health = 0;
+		anim.SetBool("isDead", true);
+	}
 
+	public void destroy() {
+		Destroy(gameObject);
 	}
 
 	public void TakeDamage(int attackDamage) {

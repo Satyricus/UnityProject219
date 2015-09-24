@@ -11,6 +11,7 @@ GameObject:
   - 61: {fileID: 6199346}
   - 50: {fileID: 5089044}
   - 212: {fileID: 21260722}
+  - 114: {fileID: 11470376}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -59,6 +60,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .310000002, y: .310000002}
+--- !u!114 &11470376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127ce69bfe76d394a86682a2190787a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 100
 --- !u!212 &21260722
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -112,6 +125,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.y
       value: .310000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
