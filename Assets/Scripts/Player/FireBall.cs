@@ -16,11 +16,15 @@ public class FireBall : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other) {
-		if (other.CompareTag("Enemy")) {
-			print ("Hit!");
-			var EnemyHealth = other.GetComponent<EnemyHealth>();
-			EnemyHealth.TakeDamage(attackDamage);
-		}
+	void OnTriggerEnter2D(Collider2D coll) {
+		if (coll.CompareTag("Enemy"))
+			DoDamage(coll);
+	}
+
+	private void DoDamage(Collider2D coll) {
+		var enemyHealth = coll.GetComponent<EnemyHealth>();
+		enemyHealth.TakeDamage(attackDamage);
+
+		GameObject.Destroy(gameObject);
 	}
 }
