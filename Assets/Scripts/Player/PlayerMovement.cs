@@ -13,21 +13,21 @@ public class PlayerMovement : MonoBehaviour {
 
 	Rigidbody2D rbody;	// Player rigidbody
 	Animator anim;		// Player amimator
-    private bool isLocked;
+
+	GamePause pause;
 
 	// Use this for initialization
 	void Start () {
+		pause = GetComponentInParent<GamePause> ();
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-	    isLocked = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	    if (isLocked)
-	        return;
-
+		if (pause.GetPausStatus ())
+			return;
 
 		Vector2 movement_vector = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));	// getAxisRaw = bool
 		if (movement_vector != Vector2.zero) {	// Player is moving
@@ -40,14 +40,4 @@ public class PlayerMovement : MonoBehaviour {
 
 		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime * speed);	// Move player's rigidbody
 	}
-
-    public void LockPlayer()
-    {
-        isLocked = true;
-    }
-
-    public void UnlockPlayer()
-    {
-        isLocked = false;
-    }
 }

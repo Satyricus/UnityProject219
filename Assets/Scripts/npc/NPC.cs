@@ -9,7 +9,7 @@
     public string[] dialogOne;  
 	public string[] dialogTwo; // Something the character says after the important part. "We've already talked", "Didn't I tell you to kill x of y... " etc. 
     public string inputKey;
-	private string[] currentDialog;
+	private string[] currentDialog; 
 
 
 	private GameObject GameGui;
@@ -22,17 +22,21 @@
 	private bool isTalking;
 
 	private GameObject Player;
-	private PlayerMovement PMovement; // PlayerMovement
 
+	GameObject MovableChars;
+	GamePause pause;
 
     // Use this for initialization
     void Start ()
     {
+		MovableChars = GameObject.Find ("MovableCharacters");
+		pause = MovableChars.GetComponent<GamePause> ();
+
+
 		GameGui = GameObject.Find ("GameGui");
 		Dialog = GameObject.Find ("Dialog");
 		UItext = Dialog.GetComponentInChildren<Text> ();
 		Player = GameObject.FindGameObjectWithTag ("Player");
-		PMovement = Player.GetComponent<PlayerMovement> ();
 
 		Dialog.SetActive (false);
 		currentDialog = dialogOne;
@@ -47,7 +51,6 @@
 		if (current == lastLine + 1) {
 			Dialog.SetActive(false);
 			HasTalked();
-			PMovement.UnlockPlayer();
 		}
 
     } 
@@ -57,21 +60,18 @@
 		currentDialog = dialogTwo;
 		lastLine = currentDialog.Length;
 		current = 0;
+		pause.UnlockCharacters();
 	}
 
 
 	void Talk() {
-		PMovement.LockPlayer ();
-			
-			if(current < currentDialog.Length)
-			{
+		pause.LockCharacters();			
+		if(current < currentDialog.Length)
+		{
 			Dialog.SetActive(true);
 			UItext.text = currentDialog[current];
-
-			}
-
-			current++;
-			
+		}
+		current++;
 	}
 
     void OnTriggerStay2D(Collider2D coll) {

@@ -28,7 +28,7 @@ class SimpleEnemyAI : MonoBehaviour
 
 	void Start () 
 	{
-		pause = GetComponentInParent<GamePause> ();
+
 		player = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator> ();
 		spawnLocation = transform.position;
@@ -40,13 +40,13 @@ class SimpleEnemyAI : MonoBehaviour
     }
 	
 	
+	void Update ()
+	{
 
+	}
 
 	// Called once per frame.
 	void FixedUpdate() {
-		if (pause.GetPausStatus ())
-			return;
-
 		// TODO: if (playerHealth <= 0)
 		target = player.transform;
 
