@@ -17,6 +17,8 @@ class SimpleEnemyAI : MonoBehaviour
 	Animator anim;
 	Vector3 spawnLocation;
 
+	public bool isLocked;
+
 	float threshold = 0.5f;
 
 	[Range (0,10)]
@@ -37,6 +39,8 @@ class SimpleEnemyAI : MonoBehaviour
 
         health = player.GetComponentInChildren<Health>();
 
+		isLocked = false;
+
     }
 	
 	
@@ -44,7 +48,7 @@ class SimpleEnemyAI : MonoBehaviour
 
 	// Called once per frame.
 	void FixedUpdate() {
-		if (pause.GetPausStatus ())
+		if (pause.GetPausStatus ()|| isLocked)
 			return;
 
 		// TODO: if (playerHealth <= 0)
@@ -90,6 +94,14 @@ class SimpleEnemyAI : MonoBehaviour
 			anim.SetFloat("ValueY", targetDirection.y);
 
 		}
+	}
+
+	public void LockGoblin() {
+		isLocked = true;	
+	}
+
+	public void UnlockGoblin() {
+		isLocked = false;
 	}
 
     // Decreases the players health.

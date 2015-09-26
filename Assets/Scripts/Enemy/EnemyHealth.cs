@@ -8,12 +8,13 @@ public class EnemyHealth : MonoBehaviour {
 
 	[SerializeField]
 	private int health;
-
+	SimpleEnemyAI ai;
 	Animator anim;
 
 
 	void Start() {
 		anim = GetComponent<Animator>();
+		ai = GetComponent<SimpleEnemyAI>();
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,8 @@ public class EnemyHealth : MonoBehaviour {
 
 	private void Dead() {
 		health = 0;
+		ai.LockGoblin();
+		anim.SetBool("isWalking", false);
 		anim.SetBool("isDead", true);
 	}
 
