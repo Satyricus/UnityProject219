@@ -1,0 +1,8 @@
+Credits of this entire pack.
+
+Author: daneeklu
+
+Website: http://opengameart.org/content/lpc-farming-tilesets-magic-animations-and-ui-elements
+
+Some of the assets are based on the base assets foir LPC competition:
+http://lpc.opengameart.org/static/lpc-style-guide/assets.html
