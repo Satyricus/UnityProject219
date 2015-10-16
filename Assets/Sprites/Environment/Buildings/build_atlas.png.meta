@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 898d6aac971b47b41bb6102bcf431d7f
-timeCreated: 1442323232
+timeCreated: 1445000097
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -35,6 +35,24 @@ TextureImporter:
     21300056: StoneOrnametnFancy
     21300058: FenceMetal
     21300060: GateMetal
+    21300062: StepsDarkStone
+    21300064: Monument
+    21300066: MonumentLion
+    21300068: SignInn
+    21300070: SignStore
+    21300072: SignWeapons
+    21300074: fenceBoxed
+    21300076: FenceWooden2
+    21300078: Bucket
+    21300080: bucket2
+    21300082: fenceWood2
+    21300084: fenceVert
+    21300086: build_atlas_0
+    21300088: CartHay
+    21300090: CartEmpty
+    21300092: FlowerBed
+    21300094: BushPot
+    21300096: fenceMetalVert
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -387,6 +405,186 @@ TextureImporter:
         y: 416
         width: 96
         height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StepsDarkStone
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 864
+        width: 91
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Monument
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 965
+        width: 33
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonumentLion
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 677
+        width: 49
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignInn
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 355
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignStore
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 355
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SignWeapons
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 355
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fenceBoxed
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 517
+        width: 74
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FenceWooden2
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 645
+        width: 74
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bucket
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 579
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bucket2
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 547
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fenceWood2
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 485
+        width: 130
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fenceVert
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 608
+        width: 10
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: build_atlas_0
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 608
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CartHay
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 292
+        width: 84
+        height: 58
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: CartEmpty
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 297
+        width: 72
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: FlowerBed
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 905
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BushPot
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 800
+        width: 26
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fenceMetalVert
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 448
+        width: 11
+        height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
