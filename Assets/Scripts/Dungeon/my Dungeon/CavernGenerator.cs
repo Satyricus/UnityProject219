@@ -23,7 +23,7 @@ public class CavernGenerator : MonoBehaviour {
 	private int height;
 
 	[SerializeField]
-	private string seed;
+	private string Randomiser;
 
 
 	Tile[,] tiles;
@@ -31,7 +31,7 @@ public class CavernGenerator : MonoBehaviour {
 	private List<Space> spaces = new List<Space>();
 	
 	[Range(0,100)]
-	public int randomFillPercent;
+	public int fillPercent;
 	
 	int[,] map;
 	
@@ -40,7 +40,6 @@ public class CavernGenerator : MonoBehaviour {
 		GenerateMap();
 	
 		RunThroughGraph();
-		ShowSpaces();
 	}
 	
 	void Update() {
@@ -56,12 +55,6 @@ public class CavernGenerator : MonoBehaviour {
 		bool adj = !(GetAdjacentWallCount(x,y) == 0);
 		Tile tile = new Tile(x, y, walled, adj);
 		tiles[x,y] = tile;
-	}
-
-	void ShowSpaces() {
-		foreach(Space space in spaces) {
-			space.showSpace();
-		}
 	}
 
 	/**
@@ -153,9 +146,9 @@ public class CavernGenerator : MonoBehaviour {
 	
 	
 	void RandomFillMap() {
-		seed = UnityEngine.Random.Range (-10000000,10000000).ToString();
+		Randomiser = UnityEngine.Random.Range (-10000000,10000000).ToString();
 		
-		System.Random pseudoRandom = new System.Random(seed.GetHashCode());
+		System.Random pseudoRandom = new System.Random(Randomiser.GetHashCode());
 		
 		for (int x = 0; x < width; x ++) {
 			for (int y = 0; y < height; y ++) {
@@ -163,7 +156,7 @@ public class CavernGenerator : MonoBehaviour {
 					map[x,y] = 1;
 				}
 				else {
-					map[x,y] = (pseudoRandom.Next(0,100) < randomFillPercent)? 1: 0;
+					map[x,y] = (pseudoRandom.Next(0,100) < fillPercent)? 1: 0;
 				}
 			}
 		}
@@ -205,14 +198,28 @@ public class CavernGenerator : MonoBehaviour {
 	
 	void OnDrawGizmos() {
 		if (map != null) {
+
+			// Draw Entire Map
 			for (int x = 0; x < width; x ++) {
 				for (int y = 0; y < height; y ++) {
 					Gizmos.color = (map[x,y] == 1)?Color.black:Color.white;
-					Vector3 pos = new Vector3(-width/2 + x + .5f, -height/2 + y+.5f,0);
-					Gizmos.DrawCube(pos,Vector3.one);
+					Vector3 tmpest = new Vector3(-width/2 + x + .5f, -height/2 + y+.5f,0);
+					Gizmos.DrawCube(tmpest,Vector3.one);
 				}
 			}
+
+			// Draw Outer Tiles. 
+			Space tmp = spaces[0];
+
+			foreach (Tile tile in tmp.GetOuterTiles()) {
+				float x = tile.GetX();
+				float y = tile.GetY();
+
+				Gizmos.color = (tile.IsWall())? Color.black : Color.white;
+				Vector3 tmpest = new Vector3 (-width/2 +  x + .5f + 100, -height/2 +  y +.5f + 100,0);
+				Gizmos.DrawCube(tmpest, Vector3.one);
 		}
 	}
 	
+}
 }

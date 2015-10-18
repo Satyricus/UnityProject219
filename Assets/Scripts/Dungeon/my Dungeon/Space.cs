@@ -11,7 +11,7 @@ using System.Collections.Generic;
  * 
  * 
  */
-public class Space : MonoBehaviour{
+public class Space {
 
 	public enum Size {
 		notWorthIt, verySmall, small, normal, large,VeryLarge
@@ -35,12 +35,8 @@ public class Space : MonoBehaviour{
 		outerTiles.Add(tile);
 	}
 
-	public void showSpace() {
-		print("Amount of tiles: " + tiles.Count);
-		print("amount of outerTiles: " + tiles.Count);
-
+	public List<Tile> GetOuterTiles() {
+		return this.outerTiles;
 	}
-
-
 
 }

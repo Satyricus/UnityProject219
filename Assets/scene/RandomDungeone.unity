@@ -114,8 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 60
   height: 80
-  seed: hussam
-  randomFillPercent: 50
+  Randomiser: 
+  fillPercent: 44
 --- !u!4 &1615000520
 Transform:
   m_ObjectHideFlags: 0
