@@ -30,8 +30,8 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (pause.GetPausStatus ())
-			return;
+		//if (pause.GetPausStatus ())
+			//return;
 
 		Vector2 movement_vector = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));	// getAxisRaw = bool
 
