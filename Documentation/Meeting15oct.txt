@@ -1,0 +1,9 @@
+- Når vi går rundt så skal vi ha random generated dungions
+- Lage chests
+- Utvide spiller, gir han stamina, strength, magic,mana , eventuelt levels ?
+- Goblin: Spawn-point plassere randoms, så litt rundt av seg selv
+- Forbedre/rydde/bygge opp på nytt player og goblin. 
+- Generell kode slik at kode kan gjennbrukes
+- Knockback på angrep
+- Lage health
+- Lage easy enemies

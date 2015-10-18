@@ -13,8 +13,6 @@ using System;
  * 
  * TODO: create a passage between spaces. 
  * 
- * 
- * 
  */
 public class CavernGenerator : MonoBehaviour {
 
