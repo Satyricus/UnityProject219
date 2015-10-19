@@ -3,4 +3,4 @@ The orders in Layer goes as such:
 1: Things over grass, yet under player. Such as a road, or flowers. 
 2: Reserved in case we need it. 
 3: Player, enemies, trees, NPC's etc. 
-4: Things over player such as treetops, roofs and top of houses, etc. 
+4: Things over player such as treetops, roofs etc..
