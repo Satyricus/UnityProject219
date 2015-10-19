@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: 2692a56572ee28d468070421484f4b8c
-timeCreated: 1442317334
+timeCreated: 1445173195
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Island
     21300002: Stream
+    21300004: water_0
+    21300006: water_1
+    21300008: water_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,25 +54,35 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Island
+    - name: water_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 130
-        width: 62
-        height: 62
+        x: 0
+        y: 128
+        width: 96
+        height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Stream
+    - name: water_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 42
-        width: 83
-        height: 81
+        x: 9
+        y: 43
+        width: 81
+        height: 79
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: water_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
