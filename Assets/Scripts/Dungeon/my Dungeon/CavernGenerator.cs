@@ -16,6 +16,13 @@ using System;
  */
 public class CavernGenerator : MonoBehaviour {
 
+	// The next two variables are placeholder.  In the finished version we want to chose floor tile from multiple objects.
+	[SerializeField]
+	GameObject ground;
+
+	[SerializeField]
+	GameObject wall;
+
 	[SerializeField]
 	private int width;
 
@@ -40,6 +47,8 @@ public class CavernGenerator : MonoBehaviour {
 		GenerateMap();
 	
 		RunThroughGraph();
+
+		DrawMap ();
 	}
 	
 	void Update() {
@@ -194,8 +203,23 @@ public class CavernGenerator : MonoBehaviour {
 		
 		return wallCount;
 	}
-	
-	
+
+	void DrawMap() {
+		for (int x = 0; x < width; x ++) {
+			for (int y = 0; y < height; y ++) {
+				// Is the tile ground? Wall?
+				GameObject tile =(map[x,y] == 0)? ground : wall;
+				Vector3 position = new Vector3(x*0.32f, y*0.32f,0);
+
+				// I've used this a couple of times and I still don't get Quaternion Identity. 
+				// Instansiates a gameObject. Need to find a way to hide it in the hirearchy as child to another game object. 
+				Instantiate(tile,position, Quaternion.identity);
+
+			}
+		}
+	}
+
+	/*
 	void OnDrawGizmos() {
 		if (map != null) {
 
@@ -221,5 +245,5 @@ public class CavernGenerator : MonoBehaviour {
 		}
 	}
 	
-}
+}*/
 }
