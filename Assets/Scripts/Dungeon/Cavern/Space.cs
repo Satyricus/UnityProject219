@@ -39,4 +39,11 @@ public class Space {
 		return this.outerTiles;
 	}
 
+	public List<Tile> GetTiles() {
+		return this.tiles;
+	}
+
+	public int NumberOfTiles() {
+		return this.tiles.Count;
+	}
 }

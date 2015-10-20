@@ -46,10 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Melee.cs" />
-     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\CavernGenerator.cs" />
-     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\MapCreator.cs" />
-     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\Space.cs" />
-     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\Tile.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\Cavern\CavernGenerator.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\Cavern\MapCreator.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\Cavern\Space.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\Cavern\Tile.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
@@ -77,6 +77,7 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+     <None Include="Assets\Sprites\Environment\Dungeons\LPC_cavern_ruins\credits.txt" />
      <None Include="Assets\Sprites\Environment\Dungeons\credits.txt" />
      <None Include="Assets\Structure and information\Order in layer.txt" />
      <None Include="Assets\Licenses\Credits.txt" />
