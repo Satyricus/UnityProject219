@@ -7,7 +7,6 @@ using System.Collections.Generic;
  * This class is responsible for the rooms or spaces in a cavern. 
  * 
  * I want to run a DFS/BFS in the map to distinguish between the spaces. 
- * Then we want to create a corridor between each space such that You can traverse between them.
  * 
  * 
  */
@@ -20,14 +19,22 @@ public class Space {
 	private Size size;
 	private List<Tile> tiles = new List<Tile>();
 	private List<Tile> outerTiles = new List<Tile>();
+	private Tile southernTile;
 	private bool isConnected;
 
 	public Space() {
 		isConnected = false;
+		southernTile = null;
 	}
 
 	public void addTile(Tile tile) {
 		tiles.Add(tile);
+
+		if (southernTile == null)
+			southernTile = tile;
+
+		if (southernTile.GetY () > tile.GetY ())
+			southernTile = tile;
 	}
 
 	public void addOuterTile(Tile tile) {
@@ -45,5 +52,9 @@ public class Space {
 
 	public int NumberOfTiles() {
 		return this.tiles.Count;
+	}
+
+	public Tile GetSouthernTile() {
+		return this.southernTile;
 	}
 }

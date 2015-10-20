@@ -5,16 +5,20 @@ using System;
 
 /**
  *
- * This class is responsible for cavern generation,
+ * This class is responsible for cavern generation and cavern management. Things like spawn a map, spawning player and enemies, spawning camera etc are all handled in this class. 
+ * 
+ * 
  * 
  * TODO (Priority low) : set properties for the spaces (Small, Which is the starting space etc... ) 
  * 
  * TODO (Future): create a passage between spaces. 
  * 
+ * 
  */
 public class CavernGenerator : MonoBehaviour {
 
 	public int level = 0; // Used for level scaling and such. Has a getter. 
+
 
 	// The next two variables are placeholder.  In the finished version we want to chose floor tile from multiple objects.
 	[SerializeField]
@@ -28,6 +32,9 @@ public class CavernGenerator : MonoBehaviour {
 
 	[SerializeField]
 	private GameObject[] trashMobs; // Regular non boss enemies. 
+
+	[Range(1,100)]
+	public int trashMobsNumber;
 
 	/*[SerializeField]
 	private GameObject[] bossEnemies;*/ // For use later. 
@@ -44,6 +51,8 @@ public class CavernGenerator : MonoBehaviour {
 	private Tile spawnTile;
 	private Space largestSpace;
 
+	CameraFollow cam;
+
 
 	Tile[,] tiles;
 	
@@ -57,6 +66,8 @@ public class CavernGenerator : MonoBehaviour {
 	void Start() {
 		tiles = new Tile[width,height];
 		GenerateMap();
+
+		cam = GetComponent<CameraFollow> ();
 	
 		RunThroughGraph();
 
@@ -228,15 +239,19 @@ public class CavernGenerator : MonoBehaviour {
 			if (largestSpace.NumberOfTiles() < space.NumberOfTiles())
 				largestSpace = space;
 		}
-		int lastIndex = largestSpace.GetTiles ().Count;
-		List<Tile> tmp = largestSpace.GetTiles();
-		spawnTile = tmp [lastIndex-1];
+		// Spawns player in the most southern tile in the space. 
+		spawnTile = largestSpace.GetSouthernTile ();
 
 	}
 
+
 	void SpawnPlayer() {
 		Vector3 position = new Vector3 (spawnTile.GetX() * 0.32f , spawnTile.GetY() * 0.32f , 0);
-		Instantiate (player, position, Quaternion.identity);
+		 Instantiate (player, position, Quaternion.identity);
+	}
+
+	void SpawnTrashMobs() {
+
 	}
 
 

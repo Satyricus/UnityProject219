@@ -95,7 +95,7 @@ GameObject:
   - 4: {fileID: 1615000520}
   - 114: {fileID: 1615000519}
   m_Layer: 0
-  m_Name: CavernGenerator
+  m_Name: CavernGen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   level: 0
   ground: {fileID: 114530, guid: d893a4bb6198c324b99dcb93d84536a9, type: 2}
   wall: {fileID: 159734, guid: 63b324c907f73e34a966ec882a8d2513, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 142768, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
   trashMobs: []
   width: 60
   height: 80
@@ -145,6 +145,7 @@ GameObject:
   - 92: {fileID: 1646794381}
   - 124: {fileID: 1646794380}
   - 81: {fileID: 1646794379}
+  - 114: {fileID: 1646794384}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -219,3 +220,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1646794384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1646794378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0a40be79a616646af41e0eb1b63a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: .0299999993
