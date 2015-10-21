@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Melee.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\CavernGenerator.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\MapCreator.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\Space.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\my Dungeon\Tile.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
@@ -64,11 +68,13 @@
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player\RangeAttack.cs" />
      <Compile Include="Assets\Scripts\Player\Stats.cs" />
+     <Compile Include="Assets\Scripts\Player\Teleport.cs" />
      <Compile Include="Assets\Scripts\npc\NPC.cs" />
      <Compile Include="Assets\Scripts\objects\Chest.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+     <Compile Include="Assets\teleportAnimation.cs" />
      <None Include="Assets\Sprites\Environment\Animals\credits.txt" />
      <None Include="Assets\Sprites\Environment\Buildings\credits.txt" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />

@@ -3351,6 +3351,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 176192, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
   m_IsPrefabParent: 0
@@ -9212,6 +9216,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300004, guid: 898d6aac971b47b41bb6102bcf431d7f,
         type: 3}
+    - target: {fileID: 155640, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
   m_IsPrefabParent: 0
@@ -9288,6 +9296,10 @@ Prefab:
     - target: {fileID: 440196, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 155640, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
@@ -11262,7 +11274,7 @@ GameObject:
   - 61: {fileID: 295524380}
   m_Layer: 0
   m_Name: CartEmpty
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14067,6 +14079,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 176192, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
   m_IsPrefabParent: 0
@@ -14924,6 +14940,10 @@ Prefab:
     - target: {fileID: 21282816, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
       propertyPath: m_SortingOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 155640, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
@@ -19449,7 +19469,7 @@ GameObject:
   - 61: {fileID: 492417389}
   m_Layer: 0
   m_Name: BushPot (2)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19598,6 +19618,10 @@ Prefab:
     - target: {fileID: 448180, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 164878, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
@@ -22510,6 +22534,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300014, guid: 898d6aac971b47b41bb6102bcf431d7f,
         type: 3}
+    - target: {fileID: 155640, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
   m_IsPrefabParent: 0
@@ -29147,7 +29175,7 @@ GameObject:
   - 61: {fileID: 717027407}
   m_Layer: 0
   m_Name: BushPot (1)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30908,7 +30936,7 @@ GameObject:
   - 4: {fileID: 771463015}
   m_Layer: 0
   m_Name: MetalFence
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35046,6 +35074,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 2.86999989
       objectReference: {fileID: 0}
+    - target: {fileID: 101458, guid: 39ee2c538b72ee14b8a8c1eecd597c4a, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ee2c538b72ee14b8a8c1eecd597c4a, type: 2}
   m_IsPrefabParent: 0
@@ -35964,6 +35996,10 @@ Prefab:
     - target: {fileID: 21285898, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
       propertyPath: m_SortingOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 176192, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
@@ -39287,6 +39323,10 @@ Prefab:
       propertyPath: m_Name
       value: Store
       objectReference: {fileID: 0}
+    - target: {fileID: 166310, guid: 2afa373c55b9ff0438d083087bc104f1, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2afa373c55b9ff0438d083087bc104f1, type: 2}
   m_IsPrefabParent: 0
@@ -41640,6 +41680,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 164878, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
   m_IsPrefabParent: 0
@@ -43756,7 +43800,7 @@ GameObject:
   - 4: {fileID: 1096800496}
   m_Layer: 0
   m_Name: SouthRockArea
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44784,7 +44828,7 @@ GameObject:
   - 4: {fileID: 1110995085}
   m_Layer: 0
   m_Name: Mountain
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47131,7 +47175,7 @@ GameObject:
   - 4: {fileID: 1162027467}
   m_Layer: 0
   m_Name: WorldHub
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49602,6 +49646,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 176192, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
   m_IsPrefabParent: 0
@@ -50335,6 +50383,10 @@ Prefab:
     - target: {fileID: 21285898, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
       propertyPath: m_SortingOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 176192, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
@@ -52942,7 +52994,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1286835691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.11999989, y: 7.61000013, z: -10.0100002}
+  m_LocalPosition: {x: -1.64999998, y: 4.4000001, z: -10.0100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61083,7 +61135,7 @@ GameObject:
   - 61: {fileID: 1511982265}
   m_Layer: 0
   m_Name: BushPot
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65075,6 +65127,10 @@ Prefab:
       propertyPath: m_Name
       value: Market
       objectReference: {fileID: 0}
+    - target: {fileID: 107114, guid: 854ce56516ab49c458cfc0f11948d51b, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 854ce56516ab49c458cfc0f11948d51b, type: 2}
   m_IsPrefabParent: 0
@@ -65565,6 +65621,10 @@ Prefab:
     - target: {fileID: 417462, guid: caa89c6df60adb74b85936e02f916ea0, type: 2}
       propertyPath: m_LocalScale.x
       value: .990535378
+      objectReference: {fileID: 0}
+    - target: {fileID: 122704, guid: caa89c6df60adb74b85936e02f916ea0, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: caa89c6df60adb74b85936e02f916ea0, type: 2}
@@ -67403,6 +67463,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.46757078
       objectReference: {fileID: 0}
+    - target: {fileID: 137002, guid: 13d34a8140a8387408235547212503ea, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13d34a8140a8387408235547212503ea, type: 2}
   m_IsPrefabParent: 0
@@ -68524,6 +68588,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2092494535}
   m_RootOrder: 0
+--- !u!1 &1692077026 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 142768, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
+  m_PrefabInternal: {fileID: 1974019816}
+--- !u!114 &1692077033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692077026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c4736dd35046843a7e0150987a55d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tlpSpellCoolDown: 2
+  prefab: {fileID: 5042502, guid: 787306c5bf834384180d22b3bfbe8f08, type: 2}
+  tlpDistance: 100
+  inputKey: 2
+  step: 2
 --- !u!1001 &1692266146
 Prefab:
   m_ObjectHideFlags: 0
@@ -74066,7 +74150,7 @@ GameObject:
   - 212: {fileID: 1799279905}
   m_Layer: 0
   m_Name: FlowerBed
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76729,7 +76813,7 @@ GameObject:
   - 4: {fileID: 1877650508}
   m_Layer: 0
   m_Name: Farm
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77180,6 +77264,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300014, guid: 898d6aac971b47b41bb6102bcf431d7f,
         type: 3}
+    - target: {fileID: 155640, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b9cfcd83a40e04d9242911cc2b3dd5, type: 2}
   m_IsPrefabParent: 0
@@ -79741,6 +79829,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 176192, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182185fe4efbca14093c4448eeb9399c, type: 2}
   m_IsPrefabParent: 0
@@ -80543,11 +80635,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -478.850006
+      value: -477.622009
       objectReference: {fileID: 0}
     - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -179.759995
+      value: -183.729996
       objectReference: {fileID: 0}
     - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_LocalPosition.z
@@ -80573,18 +80665,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
   m_IsPrefabParent: 0
@@ -80600,7 +80680,7 @@ GameObject:
   - 61: {fileID: 1977469745}
   m_Layer: 0
   m_Name: MonumentLion
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81295,7 +81375,7 @@ GameObject:
   - 4: {fileID: 1991840451}
   m_Layer: 0
   m_Name: Bushes
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82705,6 +82785,10 @@ Prefab:
     - target: {fileID: 164878, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
       propertyPath: m_Name
       value: WhiteHouse1
+      objectReference: {fileID: 0}
+    - target: {fileID: 164878, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76cb7f3d201d3324c900efa89498243a, type: 2}

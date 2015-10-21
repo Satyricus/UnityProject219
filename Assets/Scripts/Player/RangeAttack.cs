@@ -8,6 +8,9 @@ public class RangeAttack : MonoBehaviour {
 	public string attackKey;
 	public Rigidbody2D prefab;
 
+	private float fireBallStart = 0f;
+	public float fireBallCooldown = 0.5f;	// 0.5 seconds
+
 	private GameObject Player;
 	private PlayerMovement PMovement;
 
@@ -19,8 +22,10 @@ public class RangeAttack : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(attackKey))
-			SpawnAttack();
+		if (Input.GetKeyDown (attackKey) && Time.time > fireBallStart + fireBallCooldown) {
+			fireBallStart = Time.time;
+			SpawnAttack ();
+		}
 	}
 	
 	void SpawnAttack() {

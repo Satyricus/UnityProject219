@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -483.799988, y: -179.80954, z: 0}
+  m_LocalPosition: {x: -477.850006, y: -183.839996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447796}
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc65092a414544e4c809fee74347a1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 300
-  attackKey: k
+  force: 250
+  attackKey: 1
   prefab: {fileID: 5089044, guid: 8605a8dd9006b154e9a13eadd9410285, type: 2}
 --- !u!114 &11494358
 MonoBehaviour:
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300012, guid: 26bd4d52ffc176849bbdd5e46f4b31ea, type: 3}
+  m_Sprite: {fileID: 21300104, guid: 617e0ff414b3210408982bc32a1a282d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -182,6 +182,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackKey
+      value: f
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -48,8 +48,9 @@ class SimpleEnemyAI : MonoBehaviour
 
 	// Called once per frame.
 	void FixedUpdate() {
-		if (pause.GetPausStatus ()|| isLocked)
-			return;
+		// TODO: Fix paused status
+		//if (pause.GetPausStatus ()|| isLocked)
+		//	return;
 
 		// TODO: if (playerHealth <= 0)
 		target = player.transform;

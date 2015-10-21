@@ -6,6 +6,8 @@ public class FireBall : MonoBehaviour {
 	public int attackDamage;
 	private BoxCollider2D collider;
 	private Rigidbody2D FireballRB;
+	private Animator anim;
+	private PlayerMovement PMovement;
 
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
 	private GameObject Player;
@@ -17,14 +19,19 @@ public class FireBall : MonoBehaviour {
 		Player = GameObject.Find ("Player");
 		PlayerRB = Player.GetComponent<Rigidbody2D> ();
 		FireballRB = GetComponent<Rigidbody2D> ();
+		PMovement = Player.GetComponent<PlayerMovement>();
 
 		destroyDistance = 5.0F;
 	}
 
-
+//	void FixedUpdate() {
+//		anim.SetFloat("inputX", PMovement.GetDirection().x);
+//		anim.SetFloat("inputY", PMovement.GetDirection().y);
+//	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (ExceedMaxDistance ())
 			Destroy (gameObject);
 	}
@@ -38,8 +45,12 @@ public class FireBall : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
-		if (coll.CompareTag("Enemy"))
-			DoDamage(coll);
+		if (coll.CompareTag ("Enemy")) {
+			DoDamage (coll);
+		}
+		if (coll.CompareTag ("Environment")) {
+			GameObject.Destroy(gameObject);
+		}
 	}
 
 	private void DoDamage(Collider2D coll) {
