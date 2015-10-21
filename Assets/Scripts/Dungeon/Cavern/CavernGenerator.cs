@@ -5,16 +5,39 @@ using System;
 
 /**
  *
- * This class is responsible for cavern generation,
+ * This class is responsible for cavern generation and cavern management. Things like spawn a map, spawning player and enemies, spawning camera etc are all handled in this class. 
  * 
- * TODO (Highest priority): Check the properties of spaces. 
  * 
- * TODO: set properties for the spaces (Small, Which is the starting space etc... )
  * 
- * TODO: create a passage between spaces. 
+ * TODO (Priority low) : set properties for the spaces (Small, Which is the starting space etc... ) 
+ * 
+ * TODO (Future): create a passage between spaces. 
+ * 
  * 
  */
 public class CavernGenerator : MonoBehaviour {
+
+	public int level = 0; // Used for level scaling and such. Has a getter. 
+
+
+	// The next two variables are placeholder.  In the finished version we want to chose floor tile from multiple objects.
+	[SerializeField]
+	private GameObject ground;
+
+	[SerializeField]
+	private GameObject wall;
+
+	[SerializeField]
+	private GameObject player;
+
+	[SerializeField]
+	private GameObject[] trashMobs; // Regular non boss enemies. 
+
+	[Range(1,100)]
+	public int trashMobsNumber;
+
+	/*[SerializeField]
+	private GameObject[] bossEnemies;*/ // For use later. 
 
 	[SerializeField]
 	private int width;
@@ -24,6 +47,11 @@ public class CavernGenerator : MonoBehaviour {
 
 	[SerializeField]
 	private string Randomiser;
+
+	private Tile spawnTile;
+	private Space largestSpace;
+
+	CameraFollow cam;
 
 
 	Tile[,] tiles;
@@ -38,16 +66,16 @@ public class CavernGenerator : MonoBehaviour {
 	void Start() {
 		tiles = new Tile[width,height];
 		GenerateMap();
+
+		cam = GetComponent<CameraFollow> ();
 	
 		RunThroughGraph();
-	}
-	
-	void Update() {
-		if (Input.GetMouseButtonDown(0)) {
-			spaces = new List<Space>();
-			GenerateMap();
-			RunThroughGraph();
-		}
+
+		DrawMap ();
+
+		DecideLargestSpace ();
+
+		SpawnPlayer ();
 	}
 
 	void CreateTile(int x, int y) {
@@ -75,7 +103,6 @@ public class CavernGenerator : MonoBehaviour {
 				} 
 			}
 		}
-		print(spaces.Count);
 	}
 	
 	/**
@@ -176,7 +203,10 @@ public class CavernGenerator : MonoBehaviour {
 			}
 		}
 	}
-	
+
+	/*
+	 *  Returns the number of walls to a tile. 
+	 */
 	int GetAdjacentWallCount(int x, int y) {
 		int wallCount = 0;
 		for (int neighbourX = x - 1; neighbourX <= x + 1; neighbourX ++) {
@@ -194,32 +224,54 @@ public class CavernGenerator : MonoBehaviour {
 		
 		return wallCount;
 	}
-	
-	
-	void OnDrawGizmos() {
-		if (map != null) {
 
-			// Draw Entire Map
-			for (int x = 0; x < width; x ++) {
-				for (int y = 0; y < height; y ++) {
-					Gizmos.color = (map[x,y] == 1)?Color.black:Color.white;
-					Vector3 tmpest = new Vector3(-width/2 + x + .5f, -height/2 + y+.5f,0);
-					Gizmos.DrawCube(tmpest,Vector3.one);
-				}
+
+
+	/**
+	 * Will decide the largest space in map and choose spawning point for player (most southern point in the largest space).
+	 */
+	void DecideLargestSpace() {
+
+		foreach (Space space in spaces) {
+			if (largestSpace == null)
+				largestSpace = space;
+
+			if (largestSpace.NumberOfTiles() < space.NumberOfTiles())
+				largestSpace = space;
+		}
+		// Spawns player in the most southern tile in the space. 
+		spawnTile = largestSpace.GetSouthernTile ();
+
+	}
+
+
+	void SpawnPlayer() {
+		Vector3 position = new Vector3 (spawnTile.GetX() * 0.32f , spawnTile.GetY() * 0.32f , 0);
+		 Instantiate (player, position, Quaternion.identity);
+	}
+
+	void SpawnTrashMobs() {
+
+	}
+
+
+	/**
+	 * Draw the map. 
+	 * Our tile sprites are 32-bit so 32 pixels far. 
+	 */
+	void DrawMap() {
+		for (int x = 0; x < width; x ++) {
+			for (int y = 0; y < height; y ++) {
+				// Is the tile ground? Wall?
+				GameObject tile =(map[x,y] == 0)? ground : wall;
+				Vector3 position = new Vector3(x*0.32f, y*0.32f,0);
+
+				// I've used this a couple of times and I still don't get Quaternion Identity. 
+				// Instansiates a gameObject. Need to find a way to hide it in the hirearchy as child to another game object. 
+				Instantiate(tile,position, Quaternion.identity);
+
 			}
-
-			// Draw Outer Tiles. 
-			Space tmp = spaces[0];
-
-			foreach (Tile tile in tmp.GetOuterTiles()) {
-				float x = tile.GetX();
-				float y = tile.GetY();
-
-				Gizmos.color = (tile.IsWall())? Color.black : Color.white;
-				Vector3 tmpest = new Vector3 (-width/2 +  x + .5f + 100, -height/2 +  y +.5f + 100,0);
-				Gizmos.DrawCube(tmpest, Vector3.one);
 		}
 	}
 	
-}
 }

@@ -68588,26 +68588,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2092494535}
   m_RootOrder: 0
---- !u!1 &1692077026 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 142768, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
-  m_PrefabInternal: {fileID: 1974019816}
---- !u!114 &1692077033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692077026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c4736dd35046843a7e0150987a55d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tlpSpellCoolDown: 2
-  prefab: {fileID: 5042502, guid: 787306c5bf834384180d22b3bfbe8f08, type: 2}
-  tlpDistance: 100
-  inputKey: 2
-  step: 2
 --- !u!1001 &1692266146
 Prefab:
   m_ObjectHideFlags: 0

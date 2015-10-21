@@ -62,6 +62,7 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
+     <None Include="Assets\Sprites\Environment\Dungeons\LPC_cavern_ruins\credits.txt" />
      <None Include="Assets\Sprites\Environment\Dungeons\credits.txt" />
      <None Include="Assets\Structure and information\Order in layer.txt" />
      <None Include="Assets\Licenses\Credits.txt" />
