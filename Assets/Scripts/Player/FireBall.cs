@@ -54,8 +54,8 @@ public class FireBall : MonoBehaviour {
 	}
 
 	private void DoDamage(Collider2D coll) {
-		var enemyHealth = coll.GetComponent<EnemyHealth>();
-		enemyHealth.TakeDamage(attackDamage);
+		var enemyStats = coll.GetComponent<EnemyStats>();
+		enemyStats.TakeDamage(attackDamage);
 
 		GameObject.Destroy(gameObject);
 	}

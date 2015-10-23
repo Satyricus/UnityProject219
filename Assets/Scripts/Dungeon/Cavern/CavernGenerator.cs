@@ -28,9 +28,6 @@ public class CavernGenerator : MonoBehaviour {
 	private GameObject wall;
 
 	[SerializeField]
-	private GameObject player;
-
-	[SerializeField]
 	private GameObject[] trashMobs; // Regular non boss enemies. 
 
 	[Range(1,100)]
@@ -62,8 +59,11 @@ public class CavernGenerator : MonoBehaviour {
 	public int fillPercent;
 	
 	int[,] map;
+
+	GameObject player;
 	
 	void Start() {
+		player = GameObject.Find("Player");
 		tiles = new Tile[width,height];
 		GenerateMap();
 
@@ -247,7 +247,7 @@ public class CavernGenerator : MonoBehaviour {
 
 	void SpawnPlayer() {
 		Vector3 position = new Vector3 (spawnTile.GetX() * 0.32f , spawnTile.GetY() * 0.32f , 0);
-		 Instantiate (player, position, Quaternion.identity);
+		player.transform.position = position;
 	}
 
 	void SpawnTrashMobs() {

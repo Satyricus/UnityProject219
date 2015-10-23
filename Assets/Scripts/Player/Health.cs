@@ -35,6 +35,10 @@ public class Health : MonoBehaviour
         return false;
     }
 
+	public void TakeDamage(int damage) {
+		playerHealth -= damage;
+	}
+
     // Used once player is dead, can call a gameover scene. 
     void gameOver()
     {
