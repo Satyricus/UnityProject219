@@ -7,6 +7,7 @@ public class Tile {
 	private float y;
 	private bool isWall;
 	private bool isAdjacentToWall;
+	private bool isBusy;
 
 	// Used for traversing the map. 
 	private bool isDiscovered;
@@ -17,6 +18,7 @@ public class Tile {
 		this.isWall = isWall;
 		this.isAdjacentToWall = isAdjToWall;
 		this.isDiscovered = false;
+		this.isBusy = false;
 	}
 
 	public float GetX() {
@@ -44,5 +46,14 @@ public class Tile {
 	public bool IsAdjacentToWall() {
 		return this.isAdjacentToWall;
 	}
+
+	public bool GetBusyStatus() {
+		return this.isBusy;
+	}
+	
+	public void SetIsBusy() {
+		this.isBusy = true;
+	}
+
 
 }

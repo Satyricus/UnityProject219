@@ -48,7 +48,6 @@ public class EnemyStats : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage) {
-		print ("yooo!");
 		health -= damage;
 	}
 

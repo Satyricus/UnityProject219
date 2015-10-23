@@ -201,9 +201,10 @@ MonoBehaviour:
   wall: {fileID: 159734, guid: 63b324c907f73e34a966ec882a8d2513, type: 2}
   trashMobs:
   - {fileID: 190304, guid: cd7496c2b475a7144b2c6287e20d5412, type: 2}
+  - {fileID: 134468, guid: 0023d4897712fcd478341a106e27a15b, type: 2}
   trashMobsNumber: 1
-  width: 200
-  height: 200
+  width: 60
+  height: 80
   Randomiser: hussam
   fillPercent: 44
 --- !u!4 &1615000520

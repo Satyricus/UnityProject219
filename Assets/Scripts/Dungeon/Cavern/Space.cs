@@ -6,24 +6,23 @@ using System.Collections.Generic;
  * 
  * This class is responsible for the rooms or spaces in a cavern. 
  * 
+ * 
  * I want to run a DFS/BFS in the map to distinguish between the spaces. 
+ * 
  * 
  * 
  */
 public class Space {
 
-	public enum Size {
-		notWorthIt, verySmall, small, normal, large,VeryLarge
-	};
 
-	private Size size;
 	private List<Tile> tiles = new List<Tile>();
 	private List<Tile> outerTiles = new List<Tile>();
 	private Tile southernTile;
-	private bool isConnected;
+
+
+	private int numberOfMobs;
 
 	public Space() {
-		isConnected = false;
 		southernTile = null;
 	}
 
@@ -57,4 +56,13 @@ public class Space {
 	public Tile GetSouthernTile() {
 		return this.southernTile;
 	}
+
+	public int GetNumberOfMobs() {
+		return this.numberOfMobs;
+	}
+
+	public void setNumberOfMobs(int number) {
+		this.numberOfMobs += number;
+	}
+
 }

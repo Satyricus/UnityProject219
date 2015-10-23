@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -8,17 +8,12 @@ using System;
  * This class is responsible for cavern generation and cavern management. Things like spawn a map, spawning player and enemies, spawning camera etc are all handled in this class. 
  * 
  * 
- * 
- * TODO (Priority low) : set properties for the spaces (Small, Which is the starting space etc... ) 
- * 
  * TODO (Future): create a passage between spaces. 
  * 
  * 
  */
 public class CavernGenerator : MonoBehaviour {
-
-
-
+	
 	// The next two variables are placeholder.  In the finished version we want to chose floor tile from multiple objects.
 	[SerializeField]
 	private GameObject ground;
@@ -30,7 +25,9 @@ public class CavernGenerator : MonoBehaviour {
 	private GameObject[] trashMobs; // Regular non boss enemies. 
 
 	[Range(1,100)]
-	public int trashMobsNumber;
+	public int trashMobFillPercent;
+
+	public int NumberOfTrashMobs;
 
 	/*[SerializeField]
 	private GameObject[] bossEnemies;*/ // For use later. 
@@ -75,6 +72,8 @@ public class CavernGenerator : MonoBehaviour {
 		DecideLargestSpace ();
 
 		SpawnPlayer ();
+
+		SpawnTrashMobs();
 	}
 
 	void CreateTile(int x, int y) {
@@ -247,10 +246,29 @@ public class CavernGenerator : MonoBehaviour {
 	void SpawnPlayer() {
 		Vector3 position = new Vector3 (spawnTile.GetX() * 0.32f , spawnTile.GetY() * 0.32f , 0);
 		player.transform.position = position;
+		spawnTile.SetIsBusy();
 	}
 
 	void SpawnTrashMobs() {
+		List<Tile> spawnList = largestSpace.GetTiles();
 
+		for(int i = 0; i < trashMobFillPercent; i++) {
+			int largestIndex = largestSpace.GetTiles().Count;
+			int spawnPoint = UnityEngine.Random.Range(0, largestIndex);
+
+			Tile tile = spawnList[spawnPoint];
+			if (!tile.GetBusyStatus()) {
+
+				int spawnCreature = UnityEngine.Random.Range(0, trashMobs.Length);
+				GameObject mob = trashMobs[spawnCreature];
+				Instantiate(mob, new Vector3(tile.GetX()*0.32f, tile.GetY()*0.32f, 0), Quaternion.identity);
+
+				NumberOfTrashMobs++;
+			}
+
+			
+		}
+		
 	}
 
 
