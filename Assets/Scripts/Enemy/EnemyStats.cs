@@ -33,8 +33,8 @@ public class EnemyStats : MonoBehaviour {
 
 	public void Die() {
 		health = 0;
-		anim.SetBool ("isWalking", false);
 		anim.SetBool ("isDead", true);
+		anim.SetBool ("isWalking", false);
 	}
 
 	// Called on last frame as an event. 

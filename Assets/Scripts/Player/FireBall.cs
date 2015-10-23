@@ -24,10 +24,6 @@ public class FireBall : MonoBehaviour {
 		destroyDistance = 5.0F;
 	}
 
-//	void FixedUpdate() {
-//		anim.SetFloat("inputX", PMovement.GetDirection().x);
-//		anim.SetFloat("inputY", PMovement.GetDirection().y);
-//	}
 	
 	// Update is called once per frame
 	void Update () {

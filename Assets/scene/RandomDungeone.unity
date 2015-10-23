@@ -197,15 +197,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bc50eabd9cbd64a9aba6a58361ecb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
   ground: {fileID: 114530, guid: d893a4bb6198c324b99dcb93d84536a9, type: 2}
   wall: {fileID: 159734, guid: 63b324c907f73e34a966ec882a8d2513, type: 2}
   trashMobs:
   - {fileID: 190304, guid: cd7496c2b475a7144b2c6287e20d5412, type: 2}
-  trashMobsNumber: 0
-  width: 60
-  height: 80
-  Randomiser: 
+  trashMobsNumber: 1
+  width: 200
+  height: 200
+  Randomiser: hussam
   fillPercent: 44
 --- !u!4 &1615000520
 Transform:

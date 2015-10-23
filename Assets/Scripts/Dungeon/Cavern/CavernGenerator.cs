@@ -17,7 +17,6 @@ using System;
  */
 public class CavernGenerator : MonoBehaviour {
 
-	public int level = 0; // Used for level scaling and such. Has a getter. 
 
 
 	// The next two variables are placeholder.  In the finished version we want to chose floor tile from multiple objects.
