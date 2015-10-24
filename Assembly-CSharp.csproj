@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Enemy\SimpleAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Misc\ChestGenerator.cs" />
      <Compile Include="Assets\Scripts\Misc\Directions.cs" />
      <Compile Include="Assets\Scripts\Misc\GamePause.cs" />
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\Scripts\Player\teleportAnimation.cs" />
      <Compile Include="Assets\Scripts\npc\NPC.cs" />
      <Compile Include="Assets\Scripts\objects\Chest.cs" />
+     <Compile Include="Assets\Scripts\objects\Item.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />

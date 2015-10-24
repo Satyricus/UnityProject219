@@ -13,6 +13,7 @@ public class Chest : MonoBehaviour
     public Sprite unopened;
     public Sprite opened;
     private SpriteRenderer renderer;
+	private Item containedItem;
 
 	// Use this for initialization
 	void Start () {

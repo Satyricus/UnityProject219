@@ -24,8 +24,12 @@ public class CavernGenerator : MonoBehaviour {
 	[SerializeField]
 	private GameObject[] trashMobs; // Regular non boss enemies. 
 
-	[Range(1,100)]
-	public int trashMobFillPercent;
+	[SerializeField]
+	private GameObject[] interestingObjects; // Stuff that makes the cavern more beautiful. 
+
+	public GameObject chest;
+
+
 
 	public int NumberOfTrashMobs;
 
@@ -53,7 +57,16 @@ public class CavernGenerator : MonoBehaviour {
 	
 	[Range(0,100)]
 	public int fillPercent;
-	
+
+	[Range(1,100)]
+	public int trashMobFillPercent;
+
+	[Range(1,100)]
+	public int interestingObjectsFillPercent;
+
+	[Range(1,100)]
+	public int chestFillPercent;
+
 	int[,] map;
 
 	GameObject player;
@@ -74,6 +87,10 @@ public class CavernGenerator : MonoBehaviour {
 		SpawnPlayer ();
 
 		SpawnTrashMobs();
+
+		//SpawnInterestingStuff(); 
+
+		//SpawnChests();
 	}
 
 	void CreateTile(int x, int y) {
@@ -257,7 +274,8 @@ public class CavernGenerator : MonoBehaviour {
 			int spawnPoint = UnityEngine.Random.Range(0, largestIndex);
 
 			Tile tile = spawnList[spawnPoint];
-			if (!tile.GetBusyStatus()) {
+			if (!tile.GetBusyStatus() && !tile.IsWall()) {
+				tile.SetIsBusy();
 
 				int spawnCreature = UnityEngine.Random.Range(0, trashMobs.Length);
 				GameObject mob = trashMobs[spawnCreature];
@@ -269,6 +287,49 @@ public class CavernGenerator : MonoBehaviour {
 			
 		}
 		
+	}
+
+	/*
+	 * Spawns interesting miscalaneous stuff (flowers, leaveless trees, pond, grass...).
+	 */
+	void SpawnInterestingStuff() {
+		List<Tile> spawnList = largestSpace.GetTiles();
+		
+		for(int i = 0; i < interestingObjectsFillPercent; i++) {
+			int largestIndex = largestSpace.GetTiles().Count;
+			int spawnPoint = UnityEngine.Random.Range(0, largestIndex);
+			
+			Tile tile = spawnList[spawnPoint];
+			if (!tile.GetBusyStatus() && !tile.IsWall()) {
+				tile.SetIsBusy();
+
+				
+				int index = UnityEngine.Random.Range(0, interestingObjects.Length);
+				GameObject thing = interestingObjects[index];
+				Instantiate(thing, new Vector3(tile.GetX()*0.32f, tile.GetY()*0.32f, 0), Quaternion.identity);
+			}
+		}
+	}
+
+	void SpawnChests() {
+
+		List<Tile> spawnList = largestSpace.GetTiles();
+		
+		for(int i = 0; i < chestFillPercent; i++) {
+
+			int largestIndex = largestSpace.GetTiles().Count;
+			int spawnPoint = UnityEngine.Random.Range(0, largestIndex);
+			
+			Tile tile = spawnList[spawnPoint];
+			if (!tile.GetBusyStatus() && !tile.IsWall()) {
+				tile.SetIsBusy();
+
+				Chest chest = ChestGenerator.Generate();
+
+				Instantiate(chest, new Vector3(tile.GetX()*0.32f, tile.GetY()*0.32f, 0), Quaternion.identity);
+			}
+		}
+
 	}
 
 
