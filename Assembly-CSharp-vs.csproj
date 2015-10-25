@@ -52,6 +52,9 @@
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Tile.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Enemy\MoveToPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SimpleAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Misc\Directions.cs" />
@@ -59,6 +62,7 @@
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
      <Compile Include="Assets\Scripts\Misc\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Misc\RangedAttack.cs" />
+     <Compile Include="Assets\Scripts\Misc\Scaler.cs" />
      <Compile Include="Assets\Scripts\Player\FireBall.cs" />
      <Compile Include="Assets\Scripts\Player\Health.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory.cs" />
