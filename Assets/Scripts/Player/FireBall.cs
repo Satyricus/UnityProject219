@@ -24,6 +24,7 @@ public class FireBall : MonoBehaviour {
 		destroyDistance = 5.0F;
 	}
 
+
 	
 	// Update is called once per frame
 	void Update () {

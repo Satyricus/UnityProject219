@@ -94,6 +94,7 @@ MonoBehaviour:
   attackDamage: 30
   health: 1
   damageIncrease: 0
+  debug: 0
 --- !u!114 &11490008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   aggroRadius: 3.5
+  debug: 0
+  attackRange: .25
 --- !u!212 &21260804
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -160,6 +163,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300020, guid: fb02077005ed68c488d8c885ff77277a,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: attackRange
+      value: .25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 134468}

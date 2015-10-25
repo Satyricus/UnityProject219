@@ -5,7 +5,7 @@ public class teleportAnimation : MonoBehaviour {
 
 	// time animation with appear.
 	private float tlpAnimStart = Time.time;
-	public float tlpAnimLastTime = 1f; // 1 second
+	public float tlpAnimDuration = 1f; // 1 second
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class teleportAnimation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > tlpAnimStart + tlpAnimLastTime) {
+		if (Time.time > tlpAnimStart + tlpAnimDuration) {
 			Destroy (gameObject);
 		}
 	}

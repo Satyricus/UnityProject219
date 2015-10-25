@@ -72,6 +72,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 20
+  user: Flower
+  attackWithTag: Player
 --- !u!212 &21260722
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -145,6 +147,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: user
+      value: Flower
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: attackWithTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

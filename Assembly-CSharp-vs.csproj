@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{8B96426C-E952-C468-1A16-40029FEC6360}</ProjectGuid>
+	<ProjectGuid>{EB9BCD86-EF61-5557-1182-98639FBA87FE}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,12 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\IceShield.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\CavernGenerator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\MapCreator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Space.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Tile.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Enemy\FireballAI.cs" />
+     <Compile Include="Assets\Scripts\Enemy\MoveToPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\RangeAttackAI.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SimpleAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Misc\Directions.cs" />
@@ -59,8 +65,10 @@
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
      <Compile Include="Assets\Scripts\Misc\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Misc\RangedAttack.cs" />
+     <Compile Include="Assets\Scripts\Misc\Scaler.cs" />
      <Compile Include="Assets\Scripts\Player\FireBall.cs" />
      <Compile Include="Assets\Scripts\Player\Health.cs" />
+     <Compile Include="Assets\Scripts\Player\IceShieldAnimation.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory.cs" />
      <Compile Include="Assets\Scripts\Player\Levels.cs" />
      <Compile Include="Assets\Scripts\Player\Melee.cs" />
@@ -72,6 +80,7 @@
      <Compile Include="Assets\Scripts\Player\teleportAnimation.cs" />
      <Compile Include="Assets\Scripts\npc\NPC.cs" />
      <Compile Include="Assets\Scripts\objects\Chest.cs" />
+     <Compile Include="Assets\Scripts\objects\Item.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
