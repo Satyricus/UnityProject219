@@ -38,7 +38,7 @@ public class SimpleAttack : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.CompareTag("Player")) {
-			print ("Collision");
+			//print ("Collision");
 			Attack();
 			pHealth.TakeDamage (DoDamage ());
 

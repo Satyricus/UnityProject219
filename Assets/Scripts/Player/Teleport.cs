@@ -8,7 +8,7 @@ public class Teleport : MonoBehaviour {
 	private Rigidbody2D rbody;
 
 	// Cooldown timer.
-	private float tlpStart = 0f;
+	private float tlpStart = -100f;		// Initial start value, so player can use spell instantly.
 	public float tlpSpellCoolDown = 2f; // 2 seconds
 
 	public Rigidbody2D prefab;
