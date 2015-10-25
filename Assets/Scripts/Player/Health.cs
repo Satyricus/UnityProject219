@@ -9,6 +9,9 @@ public class Health : MonoBehaviour
 {
 
     public int playerHealth;
+	public float shieldReduction;
+
+	private bool iceShieldOn = false;	// is ice shield active.
 
     void start()
     {
@@ -36,7 +39,13 @@ public class Health : MonoBehaviour
     }
 
 	public void TakeDamage(int damage) {
-		playerHealth -= damage;
+		int incDmg = damage;
+		if (iceShieldOn) {			// Take 25% damage when ice shield is on.
+			incDmg = (int) Mathf.Round ((float)(damage * shieldReduction));
+			playerHealth -= incDmg;
+		} else {
+			playerHealth -= incDmg;
+		}
 	}
 
     // Used once player is dead, can call a gameover scene. 
@@ -44,4 +53,8 @@ public class Health : MonoBehaviour
     {
         Application.LoadLevel(1);
     }
+
+	public void setShieldOn(bool isShieldOn) {
+		iceShieldOn = isShieldOn;
+	}
 }

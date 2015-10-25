@@ -46,7 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\RangeAttackAI.cs" />
+     <Compile Include="Assets\IceShield.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\CavernGenerator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\MapCreator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Space.cs" />
@@ -54,11 +54,12 @@
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Enemy\FireballAI.cs" />
      <Compile Include="Assets\Scripts\Enemy\MoveToPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\RangeAttackAI.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\Misc\ChestGenerator.cs" />
      <Compile Include="Assets\Scripts\Misc\Directions.cs" />
      <Compile Include="Assets\Scripts\Misc\GamePause.cs" />
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\Misc\Scaler.cs" />
      <Compile Include="Assets\Scripts\Player\FireBall.cs" />
      <Compile Include="Assets\Scripts\Player\Health.cs" />
+     <Compile Include="Assets\Scripts\Player\IceShieldAnimation.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory.cs" />
      <Compile Include="Assets\Scripts\Player\Levels.cs" />
      <Compile Include="Assets\Scripts\Player\Melee.cs" />

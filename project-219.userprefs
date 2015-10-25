@@ -1,13 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Teleport.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\IceShield.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\PlayerMovement.cs" Line="51" Column="80" />
-      <File FileName="Assets\Scripts\Player\MeleeAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\RangeAttack.cs" Line="32" Column="109" />
-      <File FileName="Assets\Scripts\Player\FireBall.cs" Line="10" Column="35" />
-      <File FileName="Assets\Scripts\Enemy\SimpleEnemyAI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Teleport.cs" Line="12" Column="50" />
+      <File FileName="Assets\Scripts\Player\Teleport.cs" Line="17" Column="22" />
+      <File FileName="Assets\Scripts\Player\teleportAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyStats.cs" Line="21" Column="3" />
+      <File FileName="Assets\Scripts\Player\IceShieldAnimation.cs" Line="30" Column="25" />
+      <File FileName="Assets\IceShield.cs" Line="26" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
