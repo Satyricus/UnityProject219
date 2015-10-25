@@ -32,7 +32,7 @@ public class MoveToPlayer : MonoBehaviour {
 		target = player.transform;
 		
 		// Temp, for debugging.
-		Debug.DrawLine (transform.position, target.position, Color.yellow);
+		//Debug.DrawLine (transform.position, target.position, Color.yellow);
 		
 		rangeToTarget = Vector3.Distance (transform.position, target.position);	// Distance from enemy to target.
 		threshold = Vector3.Distance (transform.position, spawnLocation);		// Are we close to spawn location.

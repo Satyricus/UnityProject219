@@ -16,7 +16,7 @@ public class Scaler : MonoBehaviour {
 		return this.scale;
 	}
 
-	private void increaseLevel() {
+	public void increaseLevel() {
 		scale++;
 	}
 }

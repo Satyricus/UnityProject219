@@ -70,27 +70,53 @@ public class CavernGenerator : MonoBehaviour {
 	int[,] map;
 
 	GameObject player;
+	GameObject statScaler;
+
+	Scaler scaler;
 	
 	void Start() {
 		player = GameObject.Find("Player");
+		statScaler = GameObject.Find ("StatScaler");
+
+		scaler = statScaler.GetComponent<Scaler>();
+
+		LoadMap();
+	}
+
+	void Update() {
+		if (NumberOfTrashMobs == 0 && BossIsDead()) {
+			LoadMap();
+			scaler.increaseLevel();
+		}
+	}
+
+
+
+	void LoadMap() {
+
 		tiles = new Tile[width,height];
 		GenerateMap();
-
+		
 		cam = GetComponent<CameraFollow> ();
-	
+		
 		RunThroughGraph();
-
+		
 		DrawMap ();
-
+		
 		DecideLargestSpace ();
-
+		
 		SpawnPlayer ();
-
+		
 		SpawnTrashMobs();
-
+		
 		//SpawnInterestingStuff(); 
-
+		
 		//SpawnChests();
+
+	}
+
+	bool BossIsDead() {
+		return false;
 	}
 
 	void CreateTile(int x, int y) {
