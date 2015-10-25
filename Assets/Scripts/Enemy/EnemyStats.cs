@@ -11,6 +11,7 @@ public class EnemyStats : MonoBehaviour {
 	public int damageIncrease;
 
 	Animator anim;
+	public bool debug;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,8 @@ public class EnemyStats : MonoBehaviour {
 
 
 	public void Die() {
+		if(debug)
+			print ("dead");
 		health = 0;
 		anim.SetBool ("isDead", true);
 		anim.SetBool ("isWalking", false);
@@ -48,6 +51,8 @@ public class EnemyStats : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage) {
+		if (debug)
+			print ("Taking dmg. health = " + health);
 		health -= damage;
 	}
 
