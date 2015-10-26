@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{EB9BCD86-EF61-5557-1182-98639FBA87FE}</ProjectGuid>
+	<ProjectGuid>{8B96426C-E952-C468-1A16-40029FEC6360}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Enemy\SimpleAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Misc\ChestGenerator.cs" />
      <Compile Include="Assets\Scripts\Misc\Directions.cs" />
      <Compile Include="Assets\Scripts\Misc\GamePause.cs" />
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
