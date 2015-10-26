@@ -95,7 +95,6 @@ public class CavernGenerator : MonoBehaviour {
 		SpawnPlayer ();
 		
 		SpawnTrashMobs();
-<<<<<<< HEAD
 		
 		//SpawnInterestingStuff(); 
 		
@@ -105,8 +104,7 @@ public class CavernGenerator : MonoBehaviour {
 
 	bool BossIsDead() {
 		return false;
-=======
->>>>>>> c35e263d01dc507fe93fbf804cf8bbd4a7332caf
+
 	}
 
 	void CreateTile(int x, int y) {
