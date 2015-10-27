@@ -1,0 +1,18 @@
+Highest priority: Needed for a functional game.
+At least one more ability for player
+Several enemy prefabs
+boss prefabs
+Transferring Player object between scenes.
+Dungeone tiles being dynamic.
+Fixing Dialog
+
+High priority:
+Inventory
+Leveling
+Saving/Loading
+
+
+Normal priority:
+
+
+DONE:

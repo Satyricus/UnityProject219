@@ -65,7 +65,8 @@
 
 
 	void Talk() {
-		pause.LockCharacters();			
+		pause.LockCharacters();	
+
 		if(current < currentDialog.Length)
 		{
 			Dialog.SetActive(true);
