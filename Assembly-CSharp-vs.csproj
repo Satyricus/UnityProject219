@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\Dungeon\Cavern\MapCreator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Space.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Tile.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\EnterDungeone.cs" />
+     <Compile Include="Assets\Scripts\Dungeon\EnterDungeoneHardMode.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
