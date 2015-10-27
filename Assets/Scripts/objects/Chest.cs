@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using UnityEditor.Events;
+//using UnityEditor.Events;
 
 public class Chest : MonoBehaviour
 {

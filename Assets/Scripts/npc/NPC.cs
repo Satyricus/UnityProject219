@@ -1,7 +1,7 @@
 ﻿    using System.CodeDom;
     using UnityEngine;
     using System.Collections;
-    using UnityEditor;
+    //using UnityEditor;
     using UnityEngine.UI;
 
     public class NPC : MonoBehaviour {

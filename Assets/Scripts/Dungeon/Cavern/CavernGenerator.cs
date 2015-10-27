@@ -24,10 +24,8 @@ public class CavernGenerator : MonoBehaviour {
 	[SerializeField]
 	private GameObject[] trashMobs; // Regular non boss enemies. 
 
-	[Range(1,100)]
-	public int trashMobFillPercent;
 
-	public int NumberOfTrashMobs;
+	private int NumberOfTrashMobs;
 
 	/*[SerializeField]
 	private GameObject[] bossEnemies;*/ // For use later. 
@@ -52,7 +50,19 @@ public class CavernGenerator : MonoBehaviour {
 	private List<Space> spaces = new List<Space>();
 	
 	[Range(0,100)]
-	public int fillPercent;
+	public int fillPercent;  // Used for the random algorithm. 
+
+	[Range(1,100)]
+	public int trashMobFillPercent;
+
+	[Range(0,100)]
+	public int interestingThings;
+
+	[Range(0,10)]
+	public int treasures;
+
+	[SerializeField]
+	private int hardModeStartLevel;
 	
 	int[,] map;
 
@@ -60,7 +70,9 @@ public class CavernGenerator : MonoBehaviour {
 	GameObject statScaler;
 
 	Scaler scaler;
-	
+
+	Boolean hardMode;
+
 	void Start() {
 		player = GameObject.Find("Player");
 		statScaler = GameObject.Find ("StatScaler");
@@ -68,13 +80,31 @@ public class CavernGenerator : MonoBehaviour {
 		scaler = statScaler.GetComponent<Scaler>();
 
 		LoadMap();
+
+		if (Application.loadedLevel == 4) {
+			hardMode = true;
+			for(int i = 0; i < hardModeStartLevel; i++)
+				scaler.increaseLevel();
+		}
+
+		else 
+			hardMode = false;
 	}
 
 	void Update() {
 		if (NumberOfTrashMobs == 0 && BossIsDead()) {
 			LoadMap();
-			scaler.increaseLevel();
+
+			if (hardMode) {
+				scaler.HardMode();
+			}
+
+			else {
+				scaler.increaseLevel();
+			}
 		}
+
+		print (scaler.GetScale());
 	}
 
 
@@ -95,8 +125,7 @@ public class CavernGenerator : MonoBehaviour {
 		SpawnPlayer ();
 		
 		SpawnTrashMobs();
-<<<<<<< HEAD
-		
+
 		//SpawnInterestingStuff(); 
 		
 		//SpawnChests();
@@ -105,8 +134,6 @@ public class CavernGenerator : MonoBehaviour {
 
 	bool BossIsDead() {
 		return false;
-=======
->>>>>>> c35e263d01dc507fe93fbf804cf8bbd4a7332caf
 	}
 
 	void CreateTile(int x, int y) {
@@ -272,7 +299,6 @@ public class CavernGenerator : MonoBehaviour {
 		}
 		// Spawns player in the most southern tile in the space. 
 		spawnTile = largestSpace.GetSouthernTile ();
-
 	}
 
 
@@ -282,6 +308,7 @@ public class CavernGenerator : MonoBehaviour {
 		spawnTile.SetIsBusy();
 	}
 
+	// Generalise, else duplication !
 	void SpawnTrashMobs() {
 		List<Tile> spawnList = largestSpace.GetTiles();
 
@@ -298,10 +325,7 @@ public class CavernGenerator : MonoBehaviour {
 
 				NumberOfTrashMobs++;
 			}
-
-			
-		}
-		
+		}	
 	}
 
 
@@ -323,5 +347,4 @@ public class CavernGenerator : MonoBehaviour {
 			}
 		}
 	}
-	
 }

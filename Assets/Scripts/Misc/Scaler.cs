@@ -5,6 +5,7 @@ public class Scaler : MonoBehaviour {
 
 
 	private int scale;
+	private
 
 	// Use this for initialization
 	void Start () {
@@ -19,4 +20,9 @@ public class Scaler : MonoBehaviour {
 	public void increaseLevel() {
 		scale++;
 	}
+
+	public void HardMode() {
+		scale += 5;
+	}
+
 }
