@@ -318,7 +318,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed9139f839633ab4091d374d048dff41, type: 2}
   m_IsPrefabParent: 0
->>>>>>> c35e263d01dc507fe93fbf804cf8bbd4a7332caf
 --- !u!1 &932229779
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,10 +700,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!4 &1836355259 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 417072, guid: 0023d4897712fcd478341a106e27a15b, type: 2}
-  m_PrefabInternal: {fileID: 1073121043}
 --- !u!1001 &1859050384
 Prefab:
   m_ObjectHideFlags: 0
@@ -742,11 +737,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402194, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11408068, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
-      propertyPath: playerHealth
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3969fc845cb36f543be71a536ba52278, type: 2}
