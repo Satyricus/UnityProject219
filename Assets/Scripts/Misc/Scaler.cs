@@ -5,7 +5,6 @@ public class Scaler : MonoBehaviour {
 
 
 	private int scale;
-	private
 
 	// Use this for initialization
 	void Start () {
