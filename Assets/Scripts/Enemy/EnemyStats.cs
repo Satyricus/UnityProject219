@@ -26,8 +26,15 @@ public class EnemyStats : MonoBehaviour {
 	}
 
 	void Update() {
-		if (health <= 0)
+		if (health <= 0) {
 			Die ();
+		}
+	}
+	/**
+	 * Return the health of the mob
+	 */
+	public int getHealth(){
+		return this.health;
 	}
 
 

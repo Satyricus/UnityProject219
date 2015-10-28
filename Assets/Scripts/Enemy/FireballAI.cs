@@ -7,23 +7,19 @@ public class FireballAI : MonoBehaviour {
 	private BoxCollider2D collider;
 	private Rigidbody2D FireballRB;
 	private Animator anim;
-	
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
-	private GameObject mob;
 	private GameObject Player;
-	private Rigidbody2D mobRB;
-
+	private Vector2 pos;
 	Health pHealth;
 	
 	// Use this for initialization
 	void Start () {
 		collider = GetComponent<BoxCollider2D>(); 
-		mob = GameObject.Find ("Flower");
 		Player = GameObject.Find ("Player");
-		mobRB = mob.GetComponent<Rigidbody2D> ();
 		FireballRB = GetComponent<Rigidbody2D> ();
 		pHealth = Player.GetComponent<Health> ();
 		destroyDistance = 5.0F;
+		pos = transform.position;
 	}
 	
 	
@@ -34,9 +30,12 @@ public class FireballAI : MonoBehaviour {
 		if (ExceedMaxDistance ())
 			Destroy (gameObject);
 	}
-	
+	/**
+	 * return true if fireball has exceeded maximum distance
+	 * return else if not
+	 */
 	private bool ExceedMaxDistance() {
-		float currentDistance = Vector3.Distance (mobRB.position, FireballRB.position);
+		float currentDistance = Vector2.Distance (pos, FireballRB.position);
 		if (currentDistance >= destroyDistance) {
 			return true;
 		}

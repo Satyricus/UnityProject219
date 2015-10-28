@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{8B96426C-E952-C468-1A16-40029FEC6360}</ProjectGuid>
+	<ProjectGuid>{EB9BCD86-EF61-5557-1182-98639FBA87FE}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\IceShield.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\CavernGenerator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\MapCreator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Space.cs" />
@@ -71,6 +70,7 @@
      <Compile Include="Assets\Scripts\Misc\Scaler.cs" />
      <Compile Include="Assets\Scripts\Player\FireBall.cs" />
      <Compile Include="Assets\Scripts\Player\Health.cs" />
+     <Compile Include="Assets\Scripts\Player\IceShield.cs" />
      <Compile Include="Assets\Scripts\Player\IceShieldAnimation.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory.cs" />
      <Compile Include="Assets\Scripts\Player\Levels.cs" />
@@ -106,6 +106,7 @@
      <None Include="Assets\Tiled2Unity\Imported\Simple map.tiled2unity.xml" />
      <None Include="Assets\Tiled2Unity\License.txt" />
      <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
+     <None Include="Assets\Progress.txt" />
      <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
