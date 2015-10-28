@@ -4,12 +4,9 @@ using System.Collections;
 public class IceShield : MonoBehaviour {
 
 	private GameObject player;
-	private Rigidbody2D rbody;
 	GameObject iceShield;
 	IceShieldAnimation iceScript;		// Fetch the script of IceShield.
 	static Rigidbody2D iceShieldAnimation;
-
-	private bool shieldOn = false;
 
 	private float shieldStart = -100;	// Initial start value, so player can use spell instantly.
 	public float shieldCoolDown = 15;	// 15 seconds
@@ -21,7 +18,6 @@ public class IceShield : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
-		rbody = GetComponent<Rigidbody2D> ();
 	}
 
 	void FixedUpdate () {
@@ -35,7 +31,6 @@ public class IceShield : MonoBehaviour {
 			iceShieldAnimation = Instantiate(prefab, player.transform.position, Quaternion.identity) as Rigidbody2D;
 			shieldDuration = prefab.GetComponent<IceShieldAnimation>().getDuration();
 			shieldStart = Time.time;
-			shieldOn = true;
 		}
 	}	
 }

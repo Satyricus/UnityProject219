@@ -99,7 +99,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 4c999437d26c612418ddbd8fd7b31418, type: 2}
+    m_Motion: {fileID: 7400000, guid: 17067d7c74475e14babaf98084e8cc47, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -311,7 +311,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: isDead
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

@@ -27,7 +27,8 @@ public class RangeAttack : MonoBehaviour {
 			SpawnAttack ();
 		}
 	}
-	
+	/**
+	 * Spawn a fireball from player in the direction the player is facing */
 	void SpawnAttack() {
 		Rigidbody2D fireball = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
 		fireball.AddForce(PMovement.GetDirection() * force);

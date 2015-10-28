@@ -4,7 +4,6 @@ using System.Collections;
 public class FireballAI : MonoBehaviour {
 
 	public int attackDamage;
-	private BoxCollider2D collider;
 	private Rigidbody2D FireballRB;
 	private Animator anim;
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
@@ -14,16 +13,13 @@ public class FireballAI : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		collider = GetComponent<BoxCollider2D>(); 
 		Player = GameObject.Find ("Player");
 		FireballRB = GetComponent<Rigidbody2D> ();
 		pHealth = Player.GetComponent<Health> ();
 		destroyDistance = 5.0F;
 		pos = transform.position;
 	}
-	
-	
-	
+
 	// Update is called once per frame
 	void Update () {
 		

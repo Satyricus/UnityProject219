@@ -34,10 +34,7 @@ public class MoveToPlayer : MonoBehaviour {
 		
 		// TODO: if (playerHealth <= 0)
 		target = player.transform;
-
 		
-		// Temp, for debugging.
-		//Debug.DrawLine (transform.position, target.position, Color.yellow);
 
 		if(debug)
 			Debug.DrawLine (transform.position, target.position, Color.yellow);
@@ -62,9 +59,6 @@ public class MoveToPlayer : MonoBehaviour {
 		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
 			// if mob is dead.
 			if(eStats.getHealth() <= 0) {
-				//print ("here2");
-				//anim.SetBool("isDead", true);
-				//anim.SetBool ("isWalking", false);
 				return;
 			}
 			if(debug)
@@ -79,9 +73,6 @@ public class MoveToPlayer : MonoBehaviour {
 		} else if (rangeToTarget > aggroRadius) {	// Player is out of range, return to spawn location.
 			// if mob is dead.
 			if(eStats.getHealth() <= 0) {
-				//print ("here!");
-				//anim.SetBool("isDead", true);
-				//anim.SetBool ("isWalking", false);
 				return;
 			}
 			if(debug)

@@ -27,7 +27,8 @@ public class RangeAttackAI : MonoBehaviour {
 			}
 		}
 	}	
-	
+	/**
+	 * Spawn a fireball from enemy in players direction */
 	void SpawnAttack() {
 		Vector2 targetDirection = Player.transform.position - transform.position;
 		Rigidbody2D fireball = Instantiate(prefab, transform.position, Quaternion.identity) as Rigidbody2D;
