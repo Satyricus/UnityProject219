@@ -24,15 +24,14 @@ public class MapDrawer : MonoBehaviour {
 	private GameObject ground;
 	private GameObject wall;
 
-	MapCreator mc; // MC!! This one passes on the needed values such as hight, width etc. 
+	MapGenerator mg; //  This one passes on the needed values such as hight, width etc. 
 
-	void Start() {
-
-		mc = GetComponent<MapCreator>();
-		map = mc.GetMap();
-		width = mc.GetWidth();
-		height = mc.GetHeight();
-	}
+	private void MapDrawerSetProperties() {
+		mg = GetComponent<MapGenerator>();
+		map = mg.GetMap();
+		width = mg.GetWidth();
+		height = mg.GetHeight();
+		}
 
 	// Randomises the tiles which we draw each time. 
 	private void setWallAndFloorTiles() {
@@ -45,6 +44,7 @@ public class MapDrawer : MonoBehaviour {
 	 * Our tile sprites are 32-bit so 32 pixels far. 
 	 */
 	public void DrawMap() {
+		MapDrawerSetProperties();
 		setWallAndFloorTiles();
 		for (int x = 0; x < width; x ++) {
 			for (int y = 0; y < height; y ++) {
@@ -52,7 +52,7 @@ public class MapDrawer : MonoBehaviour {
 				GameObject tile =(map[x,y] == 0)? ground : wall;
 				Vector3 position = new Vector3(x*0.32f, y*0.32f,0);
 				
-				// Instansiates a gameObject. Need to find a way to hide it in the hirearchy as child to another game object. 
+				// Instansiates a gameObject.  TODO find a way to hide it in the hirearchy as child to another game object. 
 				Instantiate(tile,position, Quaternion.identity);
 				
 			}

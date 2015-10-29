@@ -103,8 +103,6 @@ public class CavernGenerator : MonoBehaviour {
 				scaler.increaseLevel();
 			}
 		}
-
-		print (scaler.GetScale());
 	}
 
 

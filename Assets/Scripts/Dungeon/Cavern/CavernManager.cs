@@ -6,26 +6,131 @@ using System.Collections;
  */
 public class CavernManager : MonoBehaviour {
 
-	private MapCreator mc;
-
+	private MapGenerator mg;
 	private SpaceDFS dfs;
+	private MapDrawer drawer;
+	private SpawnPlayer playerSpawner;
+	private SpawnObjects spawner;
 
-	MapDrawer drawer;
+	GameObject player;
+
+	[Range(1,150)]
+	public int trashMobsFillPercent;
+
+	
+	[Range(1,10)]
+	public int chestFillPercent;
+
+	
+	[Range(1,100)]
+	public int prefabsFillpercent;
+
+	[SerializeField]
+	private GameObject[] trashMobs;
+	[SerializeField]
+	private GameObject[] chests;
+	[SerializeField]
+	private GameObject[] prefabs; // Stuff.
+
+	GameObject statScaler;
+	Scaler scaler;
+
+	private bool hardMode;
+
+	[SerializeField]
+	private int hardModeStartLevel;
+
 
 	// Use this for initialization
 	void Start () {
+		ManagerSetProperties();
 
-		mc = GetComponent<MapCreator>();
-		dfs = GetComponent<SpaceDFS>();
+		LoadMap ();
+
+		SpawnObjects();
+
+
+	}
+
+	void Update() {
+		/*if(ObjectiveComplete()) {
+			if (hardMode)
+				scaler.HardMode();
+
+			else
+				scaler.increaseLevel();
+
+			LoadMap ();
+			SpawnObjects();
+			
+
+		}*/
+	}
+
+	/*// TODO Implement: creates objectives for clearing the current dungoen. 
+	private bool ObjectiveComplete() {
+		return false;
+	}*/
+
+
+	// Simply gets the needed references. 
+	private void ManagerSetProperties() {
+		player = GameObject.Find ("Player");
+		mg = GetComponent<MapGenerator>();
 		drawer = GetComponent<MapDrawer>();
+		playerSpawner = GetComponent<SpawnPlayer>();
+		dfs = GetComponent<SpaceDFS>();
 
-		LoadMap();
-	
+		spawner = GetComponent<SpawnObjects>();
+
+		statScaler = GameObject.Find("StatScaler");
+		scaler = statScaler.GetComponent<Scaler>();
 	}
 
+
+
+	/*
+	 * Loads and runs through map in order to find the needed information to construct and decide the optimal space.
+	 */
 	private void LoadMap() {
-		mc.GenerateMap();
+		mg.GenerateMap();
 		drawer.DrawMap();
+
+		dfs.RunThroughGraph();
+		dfs.DecideLargestSpace();
 	}
+
+	/*
+	 * Spawns player, trashmobs, Bosses, Treasure Chests, and prefabs. 
+	 */
+	private void SpawnObjects() {
+		Space largestSpace = dfs.GetLargestSpace();
+		playerSpawner.PlayerSpawn(player); // Spawns player.
+
+		// Parameters int fillPercent, Space largestSpace, GameObject[] things, GameObject player.
+
+
+		// Spawn trashmobs
+		spawner.SpawnThings( trashMobsFillPercent, largestSpace, trashMobs, player);
+
+		// Spawn chests
+		spawner.SpawnThings( chestFillPercent, largestSpace, chests, player);
+
+		// Spawn prefabs
+		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player);
+
+	}
+
+	/*
+	private void SetHardMode() {
+		if (Application.loadedLevel == 4) {
+			hardMode = true;
+			for(int i = 0; i < hardModeStartLevel; i++)
+				scaler.increaseLevel();
+		}
+		
+		else 
+			hardMode = false;
+	}*/
 
 }

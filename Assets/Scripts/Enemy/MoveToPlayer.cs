@@ -18,7 +18,7 @@ public class MoveToPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag("Player");
+		player = GameObject.Find("Player");
 		anim = GetComponent<Animator> ();
 		spawnLocation = transform.position;
 		eStats = GetComponent<EnemyStats>();

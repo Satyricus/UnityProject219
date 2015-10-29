@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &123750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 441488}
+  - 114: {fileID: 11446568}
+  m_Layer: 0
+  m_Name: CavernGen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &441488
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.23056269, y: 57.2379036, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11446568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 123750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bc50eabd9cbd64a9aba6a58361ecb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground: {fileID: 114530, guid: d893a4bb6198c324b99dcb93d84536a9, type: 2}
+  wall: {fileID: 159734, guid: 63b324c907f73e34a966ec882a8d2513, type: 2}
+  trashMobs:
+  - {fileID: 134468, guid: 0023d4897712fcd478341a106e27a15b, type: 2}
+  - {fileID: 194908, guid: 95e6bc7a934dab544b68b7c9425d73e5, type: 2}
+  width: 60
+  height: 80
+  Randomiser: hussam
+  fillPercent: 44
+  trashMobFillPercent: 30
+  interestingThings: 0
+  treasures: 0
+  hardModeStartLevel: 5
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 123750}
+  m_IsPrefabParent: 1

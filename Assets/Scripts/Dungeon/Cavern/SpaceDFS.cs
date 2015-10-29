@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
 public class SpaceDFS : MonoBehaviour {
 
-	MapCreator mc;
+	private MapGenerator mg;
 
-	Tile[,] tiles;
-	int width;
-	int height;
+	private Tile[,] tiles;
+	private Tile spawnTile; // The tile the player spawns in. 
+	private int width;
+	private int height;
 
 	private List<Space> spaces = new List<Space>();
+	private Space largestSpace;
 
 
-	void Start() {
-		mc = GetComponent<MapCreator>();
-
-		width = mc.GetWidth();
-		height = mc.GetHeight();
-
-		tiles = mc.GetTiles();
+	private void SpaceDFSSetProperties() {
+		mg = GetComponent<MapGenerator>();
+		
+		width = mg.GetWidth();
+		height = mg.GetHeight();
+		
+		tiles = mg.GetTiles();
 	}
 
 	/**
@@ -30,7 +33,7 @@ public class SpaceDFS : MonoBehaviour {
 	* Add to the spaces, run the DFS through dFS.
 	*/
 	public void RunThroughGraph() {
-		
+		SpaceDFSSetProperties();		
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				if (!tiles[x,y].IsDiscovered() && !tiles[x,y].IsWall() ) {
@@ -63,7 +66,7 @@ public class SpaceDFS : MonoBehaviour {
 	* up = [x,y+1]
 	* down = [x,y-1]
 	*/
-	public void DFS(Tile startNode, Space tmp) {
+	private void DFS(Tile startNode, Space tmp) {
 		
 		if (startNode.IsAdjacentToWall())
 			tmp.addOuterTile(startNode);
@@ -96,5 +99,30 @@ public class SpaceDFS : MonoBehaviour {
 			DFS(this.tiles[x, y-1], tmp);
 		}
 	} 
+
+	/**
+	 * Will decide the largest space in map and choose spawning point for player (most southern point in the largest space).
+	 */
+	public void DecideLargestSpace() {
+		
+		foreach (Space space in spaces) {
+			if (largestSpace == null)
+				largestSpace = space;
+			
+			if (largestSpace.NumberOfTiles() < space.NumberOfTiles())
+				largestSpace = space;
+		}
+		// Spawns player in the most southern tile in the space. 
+		spawnTile = largestSpace.GetSouthernTile ();
+	}
+
+	public Tile GetSpawnTile() {
+		return this.spawnTile;
+
+	}
+
+	public Space GetLargestSpace() {
+		return this.largestSpace;
+	}
 
 }
