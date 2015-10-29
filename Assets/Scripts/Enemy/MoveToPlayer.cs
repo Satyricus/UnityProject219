@@ -14,12 +14,14 @@ public class MoveToPlayer : MonoBehaviour {
 	public float aggroRadius;
 	public bool debug; // Set to true for debugging with print statements
 	public float attackRange;
+	private EnemyStats eStats;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 		anim = GetComponent<Animator> ();
 		spawnLocation = transform.position;
+		eStats = GetComponent<EnemyStats>();
 		anim.SetBool ("isWalking", false);
 	}
 
@@ -32,10 +34,7 @@ public class MoveToPlayer : MonoBehaviour {
 		
 		// TODO: if (playerHealth <= 0)
 		target = player.transform;
-
 		
-		// Temp, for debugging.
-		//Debug.DrawLine (transform.position, target.position, Color.yellow);
 
 		if(debug)
 			Debug.DrawLine (transform.position, target.position, Color.yellow);
@@ -58,6 +57,10 @@ public class MoveToPlayer : MonoBehaviour {
 			//Attack ();	
 			
 		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
+			// if mob is dead.
+			if(eStats.getHealth() <= 0) {
+				return;
+			}
 			if(debug)
 				print ("Move towards player.");
 			Vector3 targetDirection = target.position - transform.position;
@@ -68,6 +71,10 @@ public class MoveToPlayer : MonoBehaviour {
 			anim.SetFloat("valueY", targetDirection.y);
 			
 		} else if (rangeToTarget > aggroRadius) {	// Player is out of range, return to spawn location.
+			// if mob is dead.
+			if(eStats.getHealth() <= 0) {
+				return;
+			}
 			if(debug)
 				print ("Player out of range, return to spawn location. ");
 			Vector3 targetDirection = spawnLocation - transform.position;

@@ -26,12 +26,20 @@ public class EnemyStats : MonoBehaviour {
 	}
 
 	void Update() {
-		if (health <= 0)
+		if (health <= 0) {
 			Die ();
+		}
+	}
+	/**
+	 * Return the health of the mob
+	 */
+	public int getHealth(){
+		return this.health;
 	}
 
 
-
+	/**
+	 * Kills the mob */
 	public void Die() {
 		if(debug)
 			print ("dead");
@@ -40,16 +48,19 @@ public class EnemyStats : MonoBehaviour {
 		anim.SetBool ("isWalking", false);
 	}
 
-	// Called on last frame as an event. 
+	/** Called on last frame as an event. Removes the gameobject*/
 	void Terminate() {
 		Destroy (gameObject);
 	}
 
-
+	/** Return attackdamage of the enemy */
 	public int GetAttackDamage() {
 		return this.attackDamage;
 	}
 
+	/**
+	 * Take/remove damage/health from the enemy
+	 * param damage: How much damage to take */
 	public void TakeDamage(int damage) {
 		if (debug)
 			print ("Taking dmg. health = " + health);

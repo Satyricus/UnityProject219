@@ -46,31 +46,28 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\IceShield.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\CavernGenerator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\MapCreator.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Space.cs" />
      <Compile Include="Assets\Scripts\Dungeon\Cavern\Tile.cs" />
      <Compile Include="Assets\Scripts\Dungeon\EnterDungeone.cs" />
      <Compile Include="Assets\Scripts\Dungeon\EnterDungeoneHardMode.cs" />
-     <Compile Include="Assets\Scripts\Enemy\AttackLeft.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ExplosionAttackAI.cs" />
      <Compile Include="Assets\Scripts\Enemy\FireballAI.cs" />
      <Compile Include="Assets\Scripts\Enemy\MoveToPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy\RangeAttackAI.cs" />
-     <Compile Include="Assets\Scripts\Enemy\SimpleAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\Misc\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Misc\ChestGenerator.cs" />
-     <Compile Include="Assets\Scripts\Misc\Directions.cs" />
      <Compile Include="Assets\Scripts\Misc\GamePause.cs" />
      <Compile Include="Assets\Scripts\Misc\GuiManager.cs" />
      <Compile Include="Assets\Scripts\Misc\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\Misc\RangedAttack.cs" />
      <Compile Include="Assets\Scripts\Misc\Scaler.cs" />
      <Compile Include="Assets\Scripts\Player\FireBall.cs" />
      <Compile Include="Assets\Scripts\Player\Health.cs" />
+     <Compile Include="Assets\Scripts\Player\IceShield.cs" />
      <Compile Include="Assets\Scripts\Player\IceShieldAnimation.cs" />
      <Compile Include="Assets\Scripts\Player\Inventory.cs" />
      <Compile Include="Assets\Scripts\Player\Levels.cs" />
@@ -84,29 +81,17 @@
      <Compile Include="Assets\Scripts\npc\NPC.cs" />
      <Compile Include="Assets\Scripts\objects\Chest.cs" />
      <Compile Include="Assets\Scripts\objects\Item.cs" />
-     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
-     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
-     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
      <None Include="Assets\Sprites\Environment\Animals\credits.txt" />
      <None Include="Assets\Sprites\Environment\Buildings\credits.txt" />
-     <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
-     <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
-     <None Include="Assets\Tiled2Unity\Tiled2Unity.export.txt" />
      <None Include="Assets\Sprites\Environment\Dungeons\LPC_cavern_ruins\credits.txt" />
      <None Include="Assets\Sprites\Environment\Dungeons\credits.txt" />
      <None Include="Assets\Structure and information\Order in layer.txt" />
      <None Include="Assets\Licenses\Credits.txt" />
      <None Include="Assets\Sprites\Environment\Plants\credits.txt" />
-     <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
-     <None Include="Assets\Tiled2Unity\Imported\untitled.tiled2unity.xml" />
-     <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
      <None Include="Assets\Sprites\Environment\Stores boats and other objects\credits.txt" />
      <None Include="Assets\Sprites\Environment\farm\readme.txt" />
      <None Include="Assets\Sprites\Environment\farm\credits.txt" />
-     <None Include="Assets\Tiled2Unity\Imported\Simple map.tiled2unity.xml" />
-     <None Include="Assets\Tiled2Unity\License.txt" />
-     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
-     <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
+     <None Include="Assets\Progress.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

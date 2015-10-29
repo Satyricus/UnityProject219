@@ -9,14 +9,13 @@ public class Health : MonoBehaviour
 {
 
     public int playerHealth;
-	public float shieldReduction;
+	public float shieldReduction;		// Percent damage reduction when shiled is active.
 
-	private bool iceShieldOn = false;	// is ice shield active.
+	private bool iceShieldOn = false;	// Is ice shield active.
 
     void start()
     {
         playerHealth = 100;
-        print((playerHealth));
     }
 	
 	// Update is called once per frame
@@ -26,8 +25,8 @@ public class Health : MonoBehaviour
 	        gameOver();
 	}
 
-    // Check whether the player is dead or not. 
-    Boolean isDead()
+    /** Check whether the player is dead or not.  */
+    bool isDead()
     {
         if (playerHealth <= 0)
         {
@@ -38,6 +37,7 @@ public class Health : MonoBehaviour
         return false;
     }
 
+	/** Called by enemies to deal damage to our player. */
 	public void TakeDamage(int damage) {
 		int incDmg = damage;
 		if (iceShieldOn) {			// Take 25% damage when ice shield is on.
@@ -48,12 +48,13 @@ public class Health : MonoBehaviour
 		}
 	}
 
-    // Used once player is dead, can call a gameover scene. 
+    /** Used once player is dead, can call a gameover scene. */
     void gameOver()
     {
         Application.LoadLevel(1);
     }
 
+	/** The shield prefab uses this to inform the player that the iceshield is active. */
 	public void setShieldOn(bool isShieldOn) {
 		iceShieldOn = isShieldOn;
 	}

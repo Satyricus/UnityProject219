@@ -29,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -478, y: -185.30954, z: 0}
+  m_LocalPosition: {x: -2.39530563, y: 1.92937613, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .319999993, y: .319999993}
+  m_Size: {x: .230000004, y: .319999993}
 --- !u!95 &9549096
 Animator:
   serializedVersion: 3
@@ -105,7 +105,7 @@ MonoBehaviour:
   attackDamage: 40
   health: 10
   damageIncrease: 0
-  debug: 1
+  debug: 0
 --- !u!114 &11483814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +120,7 @@ MonoBehaviour:
   speed: 1
   aggroRadius: 3.5
   debug: 0
-  attackRange: .400000006
+  attackRange: .230000004
 --- !u!212 &21282706
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -153,7 +153,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: attackRange
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187890}
