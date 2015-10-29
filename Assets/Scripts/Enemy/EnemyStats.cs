@@ -38,8 +38,7 @@ public class EnemyStats : MonoBehaviour {
 	}
 
 
-	/**
-	 * Kills the mob */
+	/** Kills the mob */
 	public void Die() {
 		if(debug)
 			print ("dead");
