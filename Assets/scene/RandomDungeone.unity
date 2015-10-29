@@ -273,54 +273,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &1222524386
+--- !u!1 &1872233436
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1222524388}
-  - 114: {fileID: 1222524387}
+  - 4: {fileID: 1872233441}
+  - 114: {fileID: 1872233440}
+  - 114: {fileID: 1872233439}
+  - 114: {fileID: 1872233438}
+  - 114: {fileID: 1872233437}
   m_Layer: 0
-  m_Name: CavernGen
+  m_Name: CavernManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1222524387
+--- !u!114 &1872233437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1222524386}
+  m_GameObject: {fileID: 1872233436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43bc50eabd9cbd64a9aba6a58361ecb5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b52e2e7c46ab9b4fb8e660da72a0ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ground: {fileID: 114530, guid: d893a4bb6198c324b99dcb93d84536a9, type: 2}
-  wall: {fileID: 159734, guid: 63b324c907f73e34a966ec882a8d2513, type: 2}
-  trashMobs:
-  - {fileID: 134468, guid: 0023d4897712fcd478341a106e27a15b, type: 2}
-  - {fileID: 194908, guid: 95e6bc7a934dab544b68b7c9425d73e5, type: 2}
-  width: 60
-  height: 80
-  Randomiser: hussam
-  fillPercent: 44
-  trashMobFillPercent: 30
-  interestingThings: 0
-  treasures: 0
-  hardModeStartLevel: 5
---- !u!4 &1222524388
+--- !u!114 &1872233438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872233436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e72bcf86aedc8448be600c56528a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1872233439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872233436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab82123c8604a043a6c32839a4d1de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorTiles:
+  - {fileID: 114530, guid: d893a4bb6198c324b99dcb93d84536a9, type: 2}
+  wallTiles:
+  - {fileID: 159734, guid: 63b324c907f73e34a966ec882a8d2513, type: 2}
+--- !u!114 &1872233440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1872233436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fda734b53263d04b96f5dc0e2115392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 50
+  height: 51
+  Randomiser: 54464
+  fillPercent: 46
+--- !u!4 &1872233441
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1222524386}
+  m_GameObject: {fileID: 1872233436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.23056269, y: 57.2379036, z: 0}
+  m_LocalPosition: {x: -33.2555237, y: 8.73380947, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
