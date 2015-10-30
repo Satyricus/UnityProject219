@@ -76,7 +76,7 @@ class SimpleEnemyAI : MonoBehaviour
 
 		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
 
-			print ("Move towards player.");
+			//print ("Move towards player.");
 			Vector3 targetDirection = target.position - transform.position;
 			transform.position += targetDirection.normalized * speed * Time.deltaTime;
 			// Update animator.
