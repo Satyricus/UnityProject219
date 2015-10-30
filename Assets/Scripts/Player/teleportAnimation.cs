@@ -4,12 +4,13 @@ using System.Collections;
 public class teleportAnimation : MonoBehaviour {
 
 	// time animation with appear.
-	private float tlpAnimStart = Time.time;
-	public float tlpAnimDuration = 1f; // 1 second
+	private float tlpAnimStart;
+	public float tlpAnimDuration;
 
 	// Use this for initialization
 	void Start () {
-	
+		tlpAnimStart = Time.time;
+		tlpAnimDuration = 0.5f;
 	}
 	
 	// Update is called once per frame
