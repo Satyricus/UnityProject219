@@ -19,9 +19,8 @@ public class EnemyStats : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		level = statScaler.GetComponent<Scaler> ();
 		damageIncrease = level.GetScale ();
-
 		attackDamage += damageIncrease;
-		health += damageIncrease;
+		//health += damageIncrease;
 
 	}
 
