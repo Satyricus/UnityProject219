@@ -40,7 +40,7 @@ public class GuiManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    healthText.text = "health: " + health.playerHealth.ToString();
+	    healthText.text = "health: " + health.getCurrentHealth();
 
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			if (!pause.GetPausStatus()) {

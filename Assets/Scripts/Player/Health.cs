@@ -7,15 +7,18 @@ using System.Collections;
 */
 public class Health : MonoBehaviour
 {
-
-    public int playerHealth;
 	public float shieldReduction;		// Percent damage reduction when shiled is active.
 
+	private int maxHealth;
+	private int currentHealth;
+	private PlayerStats playerStats;
 	private bool iceShieldOn = false;	// Is ice shield active.
 
-    void start()
+    void Start()
     {
-        playerHealth = 100;
+		playerStats = GetComponent<PlayerStats>();
+		maxHealth = playerStats.MaxHealth;
+		currentHealth = maxHealth;
     }
 	
 	// Update is called once per frame
@@ -28,23 +31,26 @@ public class Health : MonoBehaviour
     /** Check whether the player is dead or not.  */
     bool isDead()
     {
-        if (playerHealth <= 0)
+		if (currentHealth <= 0)
         {
-            playerHealth = 0;
+			currentHealth = 0;
             return true;
         }
 
         return false;
     }
 
-	/** Called by enemies to deal damage to our player. */
+	/// <summary>
+	/// Called by enemies to deal damage to our player. 
+	/// </summary>
+	/// <param name="damage"> Amount of damage the player will take.</param>
 	public void TakeDamage(int damage) {
 		int incDmg = damage;
 		if (iceShieldOn) {			// Take 25% damage when ice shield is on.
 			incDmg = (int) Mathf.Round ((float)(damage * shieldReduction));
-			playerHealth -= incDmg;
+			currentHealth -= incDmg;
 		} else {
-			playerHealth -= incDmg;
+			currentHealth -= incDmg;
 		}
 	}
 
@@ -54,8 +60,26 @@ public class Health : MonoBehaviour
         Application.LoadLevel(1);
     }
 
+	/** This function is called when the player gets healed. */
+	public void Heal(int amount) {
+		currentHealth += amount;
+		if (currentHealth > maxHealth) {
+			currentHealth = maxHealth;
+		}
+	}
+
 	/** The shield prefab uses this to inform the player that the iceshield is active. */
 	public void setShieldOn(bool isShieldOn) {
 		iceShieldOn = isShieldOn;
+	}
+
+	public int getCurrentHealth() {
+		return currentHealth;
+	}
+
+	/** Primarily used when leveling up. Otherwise go through PlayerStats script. */
+	public void ChangeMaxHealth(int newValue) {
+		maxHealth = newValue;
+		currentHealth = maxHealth;
 	}
 }

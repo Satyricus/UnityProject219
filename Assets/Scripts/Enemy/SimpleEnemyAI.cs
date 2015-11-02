@@ -108,7 +108,7 @@ class SimpleEnemyAI : MonoBehaviour
     // Decreases the players health.
 	void Attack()
 	{
-	    health.playerHealth -= attackDamage;
+	   // health.currentHealh -= attackDamage;
 	}
 	
 }

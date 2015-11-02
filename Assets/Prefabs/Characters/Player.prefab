@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 402194}
   - 212: {fileID: 21283428}
   - 95: {fileID: 9595822}
-  - 114: {fileID: 11494358}
   - 50: {fileID: 5064388}
   - 61: {fileID: 6147998}
+  - 114: {fileID: 11494358}
+  - 114: {fileID: 11425584}
   - 114: {fileID: 11408068}
   - 114: {fileID: 11476216}
   - 114: {fileID: 11481248}
@@ -93,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14289fba25e54c04c8e1df886552c01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 100
+  shieldReduction: 0
 --- !u!114 &11418268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,6 +109,20 @@ MonoBehaviour:
   shieldCoolDown: 15
   inputKey: 3
   prefab: {fileID: 5052436, guid: 43930c42af2337146821dea078c274da, type: 2}
+--- !u!114 &11425584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8c19f3bee49dd44b2314f802c0ba68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  haste: 0
+  attackDamage: 0
+  maxHealth: 120
 --- !u!114 &11476216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,6 +206,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: attackKey
       value: f
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
