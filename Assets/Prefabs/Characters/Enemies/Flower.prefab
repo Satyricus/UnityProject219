@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5967b9a817efd4aae1e9ce90192bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 150
+  force: 50
   firingRange: 3.5
   prefab: {fileID: 5033250, guid: a1a20e23bbe53c24c8ee4e4960a14023, type: 2}
   fireBallCooldown: .800000012

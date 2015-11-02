@@ -21,15 +21,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &151292
+--- !u!1 &163258
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 467034}
-  - 114: {fileID: 11484390}
+  - 4: {fileID: 405796}
+  - 114: {fileID: 11418126}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -37,6 +37,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &405796
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422702}
+  m_RootOrder: 0
 --- !u!4 &422702
 Transform:
   m_ObjectHideFlags: 1
@@ -47,20 +59,8 @@ Transform:
   m_LocalPosition: {x: 1.35115457, y: .0810798109, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 467034}
+  - {fileID: 405796}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!4 &467034
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151292}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 422702}
   m_RootOrder: 0
 --- !u!50 &5005268
 Rigidbody2D:
@@ -137,15 +137,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 5
-  health: 40
+  health: 100
   damageIncrease: 0
   debug: 0
---- !u!114 &11484390
+--- !u!114 &11418126
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151292}
+  m_GameObject: {fileID: 163258}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ab9145dc9069684e9c3986a77e3ff72, type: 3}
@@ -191,6 +191,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: debug
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
