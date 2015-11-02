@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
 	/// </summary>
 	/// <param name="damage"> Amount of damage the player will take.</param>
 	public void TakeDamage(int damage) {
-		int incDmg = damage;
+		int incDmg = damage;	// For calculating shield reduction.
 		if (iceShieldOn) {			// Take 25% damage when ice shield is on.
 			incDmg = (int) Mathf.Round ((float)(damage * shieldReduction));
 			currentHealth -= incDmg;

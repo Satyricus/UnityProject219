@@ -22,6 +22,8 @@ public class PlayerStats : MonoBehaviour {
 	[SerializeField]
 	private int maxHealth;		// The players maximum health.
 
+	public bool debug;				// Use to debug.
+
 	// Use this for initialization
 	void Start () {
 		playerHealth = GetComponent<Health> ();
@@ -48,13 +50,18 @@ public class PlayerStats : MonoBehaviour {
 	void LevelUp() {
 		level += 1;
 		IncreaseStats ();
+		currentExperience = 0;	// TODO: save excess experience.
 		CalcNeededExperience (level);
 		PlayLevelUpAnimation ();
+		if (debug) {
+			print ("Leveled! Needed Exp: " + neededExperience + " attackDmg: " + attackDamage + " Health: " + maxHealth + " Haste: " + haste);
+		}
 	}
 
 	/** Function called to play the animation when the player reaches a new level. */
 	void PlayLevelUpAnimation() {
 		// TODO: Implement this method.
+		print ("YOU LEVELED UP CUPCAKE!!!");
 	}
 
 	/** A function used to calculate how much experience is needed this level to level up. */
@@ -68,7 +75,7 @@ public class PlayerStats : MonoBehaviour {
 	}
 
 	/** A function used by gameobjects to increase the player's experience when the player does something which grants experience. */
-	void IncreaseCurrentExperience(int incAmount) {
+	public void IncreaseCurrentExperience(int incAmount) {
 		currentExperience += incAmount;
 	}
 

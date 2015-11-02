@@ -3,24 +3,27 @@ using System.Collections;
 
 public class EnemyStats : MonoBehaviour {
 
+	Animator anim;
+	GameObject statScaler;
+	GameObject player;
+	Scaler level;
+
 	public int attackDamage;
 	public int health;
-
-	GameObject statScaler;
-	Scaler level;
-	public int damageIncrease;
-
-	Animator anim;
 	public bool debug;
+	public int damageIncrease;
+	public int yieldExp;	// How much experience this enemy yields.
 
 	// Use this for initialization
 	void Start () {
 		statScaler = GameObject.Find ("StatScaler");
+		player = GameObject.Find("Player");
 		anim = GetComponent<Animator> ();
 		level = statScaler.GetComponent<Scaler> ();
 		damageIncrease = level.GetScale ();
 		attackDamage += damageIncrease;
 		//health += damageIncrease;
+		yieldExp = 100;	// TODO: This needs to be a dynamic number linked to scaler.
 
 	}
 
@@ -48,6 +51,7 @@ public class EnemyStats : MonoBehaviour {
 
 	/** Called on last frame as an event. Removes the gameobject*/
 	void Terminate() {
+		player.GetComponent<PlayerStats>().IncreaseCurrentExperience(yieldExp);
 		Destroy (gameObject);
 	}
 
