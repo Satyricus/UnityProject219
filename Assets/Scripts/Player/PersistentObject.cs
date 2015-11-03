@@ -20,17 +20,21 @@ public class PersistentObject : MonoBehaviour
     void Awake()
     {
         // In case there is no player.
-        GameObject playa = GameObject.Find("player");
-        if (playa == null)
+        GameObject playerParentObject = GameObject.Find("MovableCharacters");
+
+        if (playerParentObject.transform.childCount == 0)
         {
+            GameObject playa = GameObject.Find("player");
+
             GameObject Player  = (GameObject) Instantiate(player, new Vector3(x, y, 0), Quaternion.identity);
-            Player.name = "Player";
-            GameObject playerParentObject = GameObject.Find("MovableCharacters");
+            
             Player.transform.SetParent(playerParentObject.transform);
 
             DontDestroyOnLoad(playerParentObject);
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(Player);
+
+            Player.name = "Player";
         }
     }
 

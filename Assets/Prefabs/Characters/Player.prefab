@@ -18,6 +18,7 @@ GameObject:
   - 114: {fileID: 11476216}
   - 114: {fileID: 11481248}
   - 114: {fileID: 11418268}
+  - 114: {fileID: 11425624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -123,6 +124,19 @@ MonoBehaviour:
   haste: 0
   attackDamage: 0
   maxHealth: 120
+  debug: 0
+--- !u!114 &11425624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1627a3a44c299d43b68246973d30a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InputKey: h
 --- !u!114 &11476216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,6 +224,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxHealth
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InputKey
+      value: h
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

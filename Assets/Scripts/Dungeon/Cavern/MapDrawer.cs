@@ -55,7 +55,7 @@ public class MapDrawer : MonoBehaviour {
 				GameObject tile =(map[x,y] == 0)? ground : wall;
 				Vector3 position = new Vector3(x*0.32f, y*0.32f,0);
 				
-				// Instansiates a gameObject.  TODO find a way to hide it in the hirearchy as child to another game object. 
+				// Instansiates a gameObject. 
 				GameObject mapTile = (GameObject) Instantiate(tile,position, Quaternion.identity);
 
                 mapTile.transform.SetParent(tileHolder.transform);
