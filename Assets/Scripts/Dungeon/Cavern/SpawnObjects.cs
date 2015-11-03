@@ -26,7 +26,7 @@ public class SpawnObjects : MonoBehaviour {
 	 * This spawns everything besides player. It spawns chests, trashmobs, bosses etc. 
 	 * GameObject[] things is the array of gameobjects containing the objects that will spawn.
 	 */
-	public void SpawnThings(int fillPercent, Space largestSpace, GameObject[] things, GameObject player) {
+	public void SpawnThings(int fillPercent, Space largestSpace, GameObject[] things, GameObject player, GameObject parent) {
 		List<Tile> spawnList = largestSpace.GetTiles();
 		
 		for(int i = 0; i < fillPercent; i++) {
@@ -38,8 +38,9 @@ public class SpawnObjects : MonoBehaviour {
 				
 				int spawnThing = UnityEngine.Random.Range(0, things.Length);
 				GameObject thing = things[spawnThing];
-				Instantiate(thing, new Vector3(tile.GetX()*0.32f, tile.GetY()*0.32f, 0), Quaternion.identity);
+				GameObject instance = (GameObject) Instantiate(thing, new Vector3(tile.GetX()*0.32f, tile.GetY()*0.32f, 0), Quaternion.identity);
 
+                instance.transform.SetParent(parent.transform);
 			}
 		}	
 	}

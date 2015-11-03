@@ -40,10 +40,16 @@ public class CavernManager : MonoBehaviour {
 	[SerializeField]
 	private int hardModeStartLevel;
 
+    GameObject TrashMobHolder;
+    GameObject ThingsHolder;
 
-	// Use this for initialization
-	void Start () {
-		ManagerSetProperties();
+
+    // Use this for initialization
+    void Start ()
+    {
+        TrashMobHolder = GameObject.Find("TrashMobHolder");
+        ThingsHolder = GameObject.Find("ThingsHolder");
+        ManagerSetProperties();
 
 		LoadMap ();
 
@@ -107,21 +113,22 @@ public class CavernManager : MonoBehaviour {
 		Space largestSpace = dfs.GetLargestSpace();
 		playerSpawner.PlayerSpawn(player); // Spawns player.
 
-		// Parameters int fillPercent, Space largestSpace, GameObject[] things, GameObject player.
+        // Holder Objects.
 
+        // Parameters int fillPercent, Space largestSpace, GameObject[] things, GameObject player.
 
-		// Spawn trashmobs
-		spawner.SpawnThings( trashMobsFillPercent, largestSpace, trashMobs, player);
+        // Spawn trashmobs
+        spawner.SpawnThings( trashMobsFillPercent, largestSpace, trashMobs, player, TrashMobHolder);
 
 		// Spawn chests
-		spawner.SpawnThings( chestFillPercent, largestSpace, chests, player);
+		spawner.SpawnThings( chestFillPercent, largestSpace, chests, player, ThingsHolder);
 
 		// Spawn prefabs
-		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player);
+		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player, ThingsHolder);
 
 	}
 
-	/*
+	
 	private void SetHardMode() {
 		if (Application.loadedLevel == 4) {
 			hardMode = true;
@@ -131,6 +138,6 @@ public class CavernManager : MonoBehaviour {
 		
 		else 
 			hardMode = false;
-	}*/
+	}
 
 }

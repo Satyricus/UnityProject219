@@ -36,7 +36,7 @@
 		GameGui = GameObject.Find ("GameGui");
 		Dialog = GameObject.Find ("Dialog");
 		UItext = Dialog.GetComponentInChildren<Text> ();
-		Player = GameObject.FindGameObjectWithTag ("Player");
+		Player = GameObject.Find ("Player");
 
 		Dialog.SetActive (false);
 		currentDialog = dialogOne;

@@ -26,7 +26,10 @@ public class MapDrawer : MonoBehaviour {
 
 	MapGenerator mg; //  This one passes on the needed values such as hight, width etc. 
 
+    GameObject tileHolder;
+
 	private void MapDrawerSetProperties() {
+        tileHolder = GameObject.Find("TileHolder");
 		mg = GetComponent<MapGenerator>();
 		map = mg.GetMap();
 		width = mg.GetWidth();
@@ -53,7 +56,9 @@ public class MapDrawer : MonoBehaviour {
 				Vector3 position = new Vector3(x*0.32f, y*0.32f,0);
 				
 				// Instansiates a gameObject.  TODO find a way to hide it in the hirearchy as child to another game object. 
-				Instantiate(tile,position, Quaternion.identity);
+				GameObject mapTile = (GameObject) Instantiate(tile,position, Quaternion.identity);
+
+                mapTile.transform.SetParent(tileHolder.transform);
 				
 			}
 		}
