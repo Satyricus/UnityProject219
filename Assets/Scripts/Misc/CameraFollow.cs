@@ -18,6 +18,9 @@ public class CameraFollow : MonoBehaviour {
 		
 		cam = GetComponent<Camera> ();
 
+        GameObject player = GameObject.Find("Player");
+        target = player.transform;
+
 	}
 	
 	// Update is called once per frame
@@ -25,7 +28,11 @@ public class CameraFollow : MonoBehaviour {
 
 		cam.orthographicSize = (Screen.height / 100f) / 2f; // Adjust screen by resolution
 
-		if (target) {
+
+        //GameObject player = GameObject.Find("Player");
+        //target = player.transform;
+
+        if (target) {
 			transform.position = Vector3.Lerp(transform.position, target.position, speed) + new Vector3(0, 0, -10);	// Linear interpelate, add -10 so camera stays put on z axis.
 		}
 	}
