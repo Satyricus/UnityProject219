@@ -88,6 +88,27 @@ public class PlayerStats : MonoBehaviour {
 		attackDamage += 1;
 	}
 
+    public int GetLevel()
+    {
+        return this.level;
+    }
+
+    // May not be the best way to do things, but now we don't really have to have a health reference in order to get access to current health. 
+    public int GetCurrentHealth()
+    {
+        return playerHealth.getCurrentHealth();
+    }
+
+    public int GetCurrentXP()
+    {
+        return currentExperience;
+    }
+
+    public int GetNeededXP()
+    {
+        return neededExperience;
+    }
+
 	/** Get and set player's haste. */
 	public float Haste {
 		get {return haste; }
@@ -105,4 +126,7 @@ public class PlayerStats : MonoBehaviour {
 		get {return maxHealth; }
 		set {maxHealth = value; }
 	}
+
+
+
 }
