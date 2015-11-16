@@ -57,12 +57,12 @@ public class StatsGuiPanel : MonoBehaviour
     private void SetText()
     {
         levelText.text = "Level: " + stats.GetLevel();
-        healthText.text = "Healt: " + stats.GetCurrentHealth() + " / " + stats.MaxHealth;
+        healthText.text = "Health: " + stats.GetCurrentHealth() + " / " + stats.MaxHealth;
         attackDamageText.text = "Attack Damage: " + stats.AttackDamage;
         HasteText.text = "Haste: " + stats.Haste;
 
         xpText.text = "Current experience: " + stats.GetCurrentXP();
-        neededXPText.text = "Needed experience " + stats.GetNeededXP();
+        neededXPText.text = "Needed experience: " + stats.GetNeededXP();
 
     }
 

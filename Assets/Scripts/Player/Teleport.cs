@@ -64,4 +64,9 @@ public class Teleport : MonoBehaviour {
 			tlpAnimation2 = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
 		}
 	}
+
+    public bool GetTeleportCooldownStatus()
+    {
+        return (Time.time < tlpStart + tlpSpellCoolDown);
+    }
 }

@@ -34,4 +34,10 @@ public class RangeAttack : MonoBehaviour {
 		fireball.AddForce(PMovement.GetDirection() * force);
 	}
 
+    // True if fireball is currently on cooldown. 
+    public bool GetFireBallCooldownStatus()
+    {
+        return (Time.time < fireBallStart + fireBallCooldown);
+    }
+
 }

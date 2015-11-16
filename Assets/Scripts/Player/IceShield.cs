@@ -12,18 +12,24 @@ public class IceShield : MonoBehaviour {
 	public float shieldCoolDown = 15;	// 15 seconds
 	private float shieldDuration;	// 7 seconds
 
+    private bool shieldOnCooldown; // true if the ability is on cooldown. 
+
 	public string inputKey = "3";
 	public Rigidbody2D prefab;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
-	}
+
+        shieldOnCooldown = false;
+    }
 
 	void FixedUpdate () {
 		if (iceShieldAnimation != null) {
 			iceShieldAnimation.position = player.GetComponent<Rigidbody2D> ().position;
 		}
+
+
 	}
 
 	void Update () {
@@ -32,5 +38,11 @@ public class IceShield : MonoBehaviour {
 			shieldDuration = prefab.GetComponent<IceShieldAnimation>().getDuration();
 			shieldStart = Time.time;
 		}
-	}	
+
+    }
+    // True if iceshield is currently on cooldown.
+    public bool GetShieldOnCooldownStatus()
+    {
+        return (Time.time < shieldStart + shieldCoolDown);
+    }
 }
