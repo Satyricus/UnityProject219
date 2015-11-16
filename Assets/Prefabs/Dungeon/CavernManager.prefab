@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11418820}
   - 114: {fileID: 11414062}
   - 114: {fileID: 11485656}
+  - 114: {fileID: 11416470}
   m_Layer: 0
   m_Name: CavernManager
   m_TagString: Player
@@ -46,6 +47,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 30
+--- !u!114 &11416470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec434d8803877114fb9526142a8f1003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11417054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,13 +121,13 @@ MonoBehaviour:
   chestFillPercent: 0
   prefabsFillpercent: 0
   trashMobs:
-  - {fileID: 190304, guid: cd7496c2b475a7144b2c6287e20d5412, type: 2}
+  - {fileID: 104382, guid: 7e0195740348d60478396aff7ab09e0b, type: 2}
   - {fileID: 187890, guid: f27459436b9e36146926c56940fa7f46, type: 2}
   - {fileID: 134468, guid: 0023d4897712fcd478341a106e27a15b, type: 2}
   - {fileID: 194908, guid: 95e6bc7a934dab544b68b7c9425d73e5, type: 2}
   chests: []
   prefabs: []
-  hardModeStartLevel: 3
+  hardModeStartLevel: 5
 --- !u!114 &11498966
 MonoBehaviour:
   m_ObjectHideFlags: 1
