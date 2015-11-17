@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour {
 	
 	private int[,] map;
 	
-	void Start() {
+	void Awake() {
 		map = new int[width,height];
 		tiles = new Tile[width,height];
 	}
@@ -43,7 +43,7 @@ public class MapGenerator : MonoBehaviour {
 	
 	private void CreateMap() {
 		Randomiser = UnityEngine.Random.Range (-10000000,10000000).ToString();
-		
+
 		System.Random pseudoRandom = new System.Random(Randomiser.GetHashCode());
 		
 		for (int x = 0; x < width; x ++) {

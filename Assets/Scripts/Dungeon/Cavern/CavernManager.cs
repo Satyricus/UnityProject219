@@ -22,7 +22,7 @@ public class CavernManager : MonoBehaviour {
 	public int chestFillPercent;
 
 	
-	[Range(1,100)]
+	[Range(0,100)]
 	public int prefabsFillpercent;
 
 	[SerializeField]
