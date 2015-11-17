@@ -10,6 +10,7 @@ public class HitAndRunAttack : MonoBehaviour {
 	Animator anim;
 	Vector3 spawnLocation;
 	EnemyStats eStats;
+	SpriteRenderer spriteRender;
 	
 	private float threshold = 0.5f;	// Used as a episolon/delta to calculate margin for error.
 	private float rangeToTarget;
@@ -25,6 +26,11 @@ public class HitAndRunAttack : MonoBehaviour {
 	private float attackStart = 0;
 	public float attackCD = 1.5f; // 1.5 seconds.
 	private bool hasAttacked = false;
+	private bool isInvisible = false; 
+	private float invisStart = 0;
+	private float invisStop = 0;
+	private float invisCD = 2.0f; 
+	private float invisTime = 1.0f;
 
 	private int attackDamage;
 
@@ -32,6 +38,7 @@ public class HitAndRunAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
+		spriteRender = GetComponent<SpriteRenderer> (); 
 		anim = GetComponent<Animator> ();
 		spawnLocation = transform.position;
 		eStats = GetComponent<EnemyStats>();
@@ -58,7 +65,14 @@ public class HitAndRunAttack : MonoBehaviour {
 		threshold = Vector3.Distance (transform.position, spawnLocation);		// Are we close to spawn location.
 		if (debug)
 			print ("rangetoTarget = " + rangeToTarget);
-
+		if (this.name.Equals ("Ghost")) {
+			if ((Time.time > invisStop + invisCD) && !isInvisible) {
+				GhostEnableInvisible ();
+			} 
+			if ((Time.time > invisStart + invisTime) && isInvisible) {
+				GhostDisableInvisible ();
+			}
+		}
 		if (!hasAttacked) {	// Bat can move towards player to attack.
 			if (threshold <= 0.05f && rangeToTarget > aggroRadius) {	// Stand on spawn location.
 				if (debug)
@@ -134,4 +148,16 @@ public class HitAndRunAttack : MonoBehaviour {
 	int RandomGenerator() {
 		return Random.Range (-1, 2);
 	}
+	void GhostEnableInvisible(){
+		invisStart = Time.time;
+		isInvisible = true;
+		spriteRender.enabled = false;
+	}
+	void GhostDisableInvisible(){
+		invisStop = Time.time;
+		isInvisible = false;
+		spriteRender.enabled = true;
+	}
+
+
 }
