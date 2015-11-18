@@ -8,13 +8,11 @@ public class FireBall : MonoBehaviour {
 	private Animator anim;
 
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
-	private GameObject Player;
 	private Rigidbody2D PlayerRB;
 
 	// Use this for initialization
 	void Start () {
-		Player = GameObject.Find ("Player");
-		PlayerRB = Player.GetComponent<Rigidbody2D> ();
+		PlayerRB = GetComponent<Rigidbody2D> ();
 		FireballRB = GetComponent<Rigidbody2D> ();
 		destroyDistance = 5.0F;
 	}
