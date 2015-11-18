@@ -5,7 +5,7 @@ public class PlayerAOEattack : MonoBehaviour {
 	public string attackKey;
 	public float radius;
 	public int attackDamage;
-	private float AOEstart = 0f;
+	private float AOEstart = -50f;
 	public float coolDown = 60f;
 	public Rigidbody2D prefab;
 	private Rigidbody2D nuke;
@@ -29,8 +29,6 @@ public class PlayerAOEattack : MonoBehaviour {
 			nuke = Instantiate(prefab,new Vector2(transform.position.x+1,transform.position.y-1),Quaternion.identity) as Rigidbody2D;
 			Collider2D [] enemies = Physics2D.OverlapCircleAll(transform.position,radius);	
 			foreach (Collider2D enem in enemies) {
-				print ("here2");
-				print (enem.name);
 				if (enem.CompareTag ("Enemy")) {
 					EnemyStats eStats = enem.GetComponent<EnemyStats> ();
 					eStats.TakeDamage (attackDamage);
