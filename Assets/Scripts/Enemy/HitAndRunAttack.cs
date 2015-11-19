@@ -65,7 +65,7 @@ public class HitAndRunAttack : MonoBehaviour {
 		threshold = Vector3.Distance (transform.position, spawnLocation);		// Are we close to spawn location.
 		if (debug)
 			print ("rangetoTarget = " + rangeToTarget);
-		if (this.name.Equals ("Ghost")) {
+		if (this.name.Contains ("Ghost")) {
 			if ((Time.time > invisStop + invisCD) && !isInvisible) {
 				GhostEnableInvisible ();
 			} 

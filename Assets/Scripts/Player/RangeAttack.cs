@@ -11,12 +11,10 @@ public class RangeAttack : MonoBehaviour {
 	private float fireBallStart = 0f;
 	public float fireBallCooldown = 0.5f;	// 0.5 seconds
 
-	private GameObject Player;
 	private PlayerMovement PMovement;
 
 	void Start() {
-		Player = GameObject.Find("Player");
-		PMovement = Player.GetComponent<PlayerMovement>();
+		PMovement = GetComponent<PlayerMovement>();
 
 	}
 
@@ -30,7 +28,7 @@ public class RangeAttack : MonoBehaviour {
 	/**
 	 * Spawn a fireball from player in the direction the player is facing */
 	void SpawnAttack() {
-		Rigidbody2D fireball = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
+		Rigidbody2D fireball = Instantiate(prefab, transform.position, Quaternion.identity) as Rigidbody2D;
 		fireball.AddForce(PMovement.GetDirection() * force);
 	}
 

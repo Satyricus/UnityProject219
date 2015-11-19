@@ -19,6 +19,7 @@ GameObject:
   - 114: {fileID: 11481248}
   - 114: {fileID: 11418268}
   - 114: {fileID: 11425624}
+  - 114: {fileID: 11450602}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -477.622009, y: -183.729996, z: 0}
+  m_LocalPosition: {x: -5.62491369, y: 6.26760769, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,6 +138,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputKey: h
+--- !u!114 &11450602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee04b819a9d053344b24ef0bde648af4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackKey: 4
+  radius: 2
+  attackDamage: 50
+  coolDown: 10
+  prefab: {fileID: 5057736, guid: 1b353fb258ea3b647a387d2b237f58f8, type: 2}
 --- !u!114 &11476216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +245,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: InputKey
       value: h
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: coolDown
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -72,9 +72,15 @@ public class Health : MonoBehaviour
 	public void setShieldOn(bool isShieldOn) {
 		iceShieldOn = isShieldOn;
 	}
-
+	/**
+	 * Return the current health of the player*/
 	public int getCurrentHealth() {
 		return currentHealth;
+	}
+	/**
+	 * Return the max health of the player*/
+	public int getMaxHealth(){
+		return maxHealth;
 	}
 
 	/** Primarily used when leveling up. Otherwise go through PlayerStats script. */
