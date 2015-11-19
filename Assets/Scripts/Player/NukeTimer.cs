@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NukeTimer : MonoBehaviour {
 	float start;
-	float alive = 4.0f;
+	float alive = 3.8f;
 	// Use this for initialization
 	void Start () {
 		start = Time.time;

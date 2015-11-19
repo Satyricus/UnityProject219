@@ -20,7 +20,7 @@ public class RangeAttack : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (attackKey) && Time.time > fireBallStart + fireBallCooldown) {
+		if ((Input.GetKeyDown (attackKey) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && Time.time > fireBallStart + fireBallCooldown) {
 			fireBallStart = Time.time;
 			SpawnAttack ();
 		}

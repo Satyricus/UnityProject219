@@ -27,7 +27,7 @@ public class Teleport : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (inputKey) && Time.time > tlpStart + tlpSpellCoolDown) {
+		if ((Input.GetKeyDown (inputKey) || Input.GetKeyDown(KeyCode.Joystick1Button2)) && Time.time > tlpStart + tlpSpellCoolDown) {
 			tlpStart = Time.time;
 			TeleportPlayer ();
 		}

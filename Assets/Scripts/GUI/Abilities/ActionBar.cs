@@ -13,11 +13,17 @@ public class ActionBar : MonoBehaviour
     [SerializeField]
     private GameObject teleport;
 
+    [SerializeField]
+    private GameObject fireNuke;
+
     GameObject player;
 
     IceShield shield;
     RangeAttack fire;
     Teleport port;
+
+    PlayerAOEattack nuke;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -25,6 +31,8 @@ public class ActionBar : MonoBehaviour
         shield = player.GetComponent<IceShield>();
         fire = player.GetComponent<RangeAttack>();
         port = player.GetComponent<Teleport>();
+        nuke = player.GetComponent<PlayerAOEattack>();
+
     }
     
 	
@@ -48,6 +56,12 @@ public class ActionBar : MonoBehaviour
 
         if (!port.GetTeleportCooldownStatus())
             ShowAbility(teleport);
+
+        if (nuke.isNukeOnCooldown())
+            HideAbility(fireNuke);
+
+        if (!nuke.isNukeOnCooldown())
+            ShowAbility(fireNuke);
     }
 
     private void HideAbility(GameObject ability)

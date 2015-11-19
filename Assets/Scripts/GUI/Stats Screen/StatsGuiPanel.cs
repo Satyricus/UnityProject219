@@ -61,8 +61,8 @@ public class StatsGuiPanel : MonoBehaviour
         attackDamageText.text = "Attack Damage: " + stats.AttackDamage;
         HasteText.text = "Haste: " + stats.Haste;
 
-        xpText.text = "Current experience: " + stats.GetCurrentXP();
-        neededXPText.text = "Needed experience: " + stats.GetNeededXP();
+        xpText.text = "Current xp: " + stats.GetCurrentXP();
+        neededXPText.text = "Needed xp: " + stats.GetNeededXP();
 
     }
 

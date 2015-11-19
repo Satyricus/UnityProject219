@@ -33,7 +33,7 @@ public class IceShield : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKeyDown (inputKey) && Time.time > shieldStart + shieldCoolDown) {
+		if ((Input.GetKeyDown (inputKey) || Input.GetKeyDown(KeyCode.Joystick1Button1)) && Time.time > shieldStart + shieldCoolDown) {
 			iceShieldAnimation = Instantiate(prefab, player.transform.position, Quaternion.identity) as Rigidbody2D;
 			shieldDuration = prefab.GetComponent<IceShieldAnimation>().getDuration();
 			shieldStart = Time.time;
