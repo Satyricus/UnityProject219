@@ -44,5 +44,15 @@ public class SpawnObjects : MonoBehaviour {
 			}
 		}	
 	}
+
+    public void SpawnBoss(GameObject[] things, GameObject parent)
+    {
+        int spawnThing = UnityEngine.Random.Range(0, things.Length);
+
+        GameObject thing = things[spawnThing];
+        GameObject instance = (GameObject)Instantiate(thing, new Vector3(-1000, -1000, 0), Quaternion.identity);
+
+        instance.transform.SetParent(parent.transform);
+    }
 }
 

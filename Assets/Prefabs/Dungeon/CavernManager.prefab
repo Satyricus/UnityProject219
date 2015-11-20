@@ -117,16 +117,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b52e2e7c46ab9b4fb8e660da72a0ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashMobsFillPercent: 75
+  trashMobsFillPercent: 20
   chestFillPercent: 0
   prefabsFillpercent: 0
   trashMobs:
   - {fileID: 104382, guid: 7e0195740348d60478396aff7ab09e0b, type: 2}
-  - {fileID: 187890, guid: f27459436b9e36146926c56940fa7f46, type: 2}
   - {fileID: 134468, guid: 0023d4897712fcd478341a106e27a15b, type: 2}
   - {fileID: 194908, guid: 95e6bc7a934dab544b68b7c9425d73e5, type: 2}
+  - {fileID: 125394, guid: 845bcae98c1fb3344bffe769228eeebc, type: 2}
+  - {fileID: 187890, guid: f27459436b9e36146926c56940fa7f46, type: 2}
   chests: []
   prefabs: []
+  bosses: []
   hardModeStartLevel: 5
 --- !u!114 &11498966
 MonoBehaviour:
@@ -139,11 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94864471abdd3f943834f8142ee47f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 60
-  height: 80
+  width: 30
+  height: 30
   smoothIterations: 5
   Randomiser: 734983274
-  fillPercent: 40
+  fillPercent: 42
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

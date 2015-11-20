@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class Scaler : MonoBehaviour {
 
 
 	private int scale;
+
+    public bool debug;
 
 	// Use this for initialization
 	void Start () {
@@ -18,10 +21,15 @@ public class Scaler : MonoBehaviour {
 
 	public void increaseLevel() {
 		scale++;
+        if (debug)
+            print(scale);
 	}
 
 	public void HardMode() {
 		scale += 5;
+
+	    if (debug)
+	        print(scale);
 	}
 
 }

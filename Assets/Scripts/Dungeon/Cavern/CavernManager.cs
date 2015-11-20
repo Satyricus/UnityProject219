@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 /**
@@ -30,9 +31,12 @@ public class CavernManager : MonoBehaviour {
 	[SerializeField]
 	private GameObject[] chests;
 	[SerializeField]
-	private GameObject[] prefabs; // Stuff.
+	private GameObject[] prefabs; // Decoration or whatever else you want spawned.
 
-	GameObject statScaler;
+    [SerializeField]
+    private GameObject[] bosses;
+
+    GameObject statScaler;
 	Scaler scaler;
 
 	private bool hardMode;
@@ -42,6 +46,12 @@ public class CavernManager : MonoBehaviour {
 
     GameObject TrashMobHolder;
     GameObject ThingsHolder;
+    GameObject BossHolder;
+
+    // Use this to make sure the game knows when you're allowed to kill objects. 
+    private bool bossKillable; // Starts as false.
+
+
 
 
     // Use this for initialization
@@ -49,6 +59,7 @@ public class CavernManager : MonoBehaviour {
     {
         TrashMobHolder = GameObject.Find("TrashMobHolder");
         ThingsHolder = GameObject.Find("ThingsHolder");
+        BossHolder =  GameObject.Find("BossHolder");
         ManagerSetProperties();
 
 		LoadMap ();
@@ -56,10 +67,12 @@ public class CavernManager : MonoBehaviour {
 		SpawnObjects();
 
 
-	}
+    }
 
 	void Update() {
-		/*if(ObjectiveComplete()) {
+
+
+		if(ObjectiveComplete()) {
 			if (hardMode)
 				scaler.HardMode();
 
@@ -70,17 +83,50 @@ public class CavernManager : MonoBehaviour {
 			SpawnObjects();
 			
 
-		}*/
+		}
 	}
 
-	/*// TODO Implement: creates objectives for clearing the current dungoen. 
-	private bool ObjectiveComplete() {
-		return false;
-	}*/
 
 
-	// Simply gets the needed references. 
-	private void ManagerSetProperties() {
+    // True if trashmobs and the boss is dead. 
+	private bool ObjectiveComplete()
+	{
+	    return (TrashMobsAreDead() && BossIsDead());
+	}
+
+    public bool TrashMobsAreDead()
+    {
+        if (bossKillable)
+            return true;
+
+        if (TrashMobHolder.transform.childCount == 0)
+        {
+            Transform[] ts = BossHolder.GetComponentsInChildren<Transform>();
+
+            foreach (Transform boss in ts)
+            {
+                Tile spawn = dfs.GetLargestSpace().GetTiles()[10];
+
+                Vector3 position = new Vector3(spawn.GetX(), spawn.GetY(),0);
+                boss.transform.position = position;
+            }
+            bossKillable = true;
+        }
+
+        return false;
+    }
+
+
+    public bool BossIsDead()
+    {
+        return (BossHolder.transform.childCount == 0);
+    }
+
+
+
+
+    // Simply gets the needed references. 
+    private void ManagerSetProperties() {
 		player = GameObject.Find ("Player");
 		mg = GetComponent<MapGenerator>();
 		drawer = GetComponent<MapDrawer>();
@@ -110,7 +156,9 @@ public class CavernManager : MonoBehaviour {
 	 * Spawns player, trashmobs, Bosses, Treasure Chests, and prefabs. 
 	 */
 	private void SpawnObjects() {
-		Space largestSpace = dfs.GetLargestSpace();
+        bossKillable = false;
+
+        Space largestSpace = dfs.GetLargestSpace();
 		playerSpawner.PlayerSpawn(player); // Spawns player.
 
         // Holder Objects.
@@ -126,12 +174,15 @@ public class CavernManager : MonoBehaviour {
 		// Spawn prefabs
 		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player, ThingsHolder);
 
-	}
+        spawner.SpawnBoss(bosses, BossHolder);
 
-	
-	private void SetHardMode() {
+    }
+
+
+    private void SetHardMode() {
 		if (Application.loadedLevel == 4) {
 			hardMode = true;
+
 			for(int i = 0; i < hardModeStartLevel; i++)
 				scaler.increaseLevel();
 		}
