@@ -5,8 +5,6 @@ public class FireBall : MonoBehaviour {
 
 	public int attackDamage;
 	private Rigidbody2D FireballRB;
-	private Animator anim;
-
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
 	private Rigidbody2D PlayerRB;
 
@@ -29,7 +27,7 @@ public class FireBall : MonoBehaviour {
 	 * Return true if the fireball has exceeded maximum distance
 	 * return false otherwise*/
 	private bool ExceedMaxDistance() {
-		float currentDistance = Vector3.Distance (PlayerRB.position, FireballRB.position);
+		float currentDistance = Vector2.Distance (PlayerRB.position, FireballRB.position);
 		if (currentDistance >= destroyDistance) {
 			return true;
 	}

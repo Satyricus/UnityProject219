@@ -5,7 +5,6 @@ public class FireballAI : MonoBehaviour {
 
 	public int attackDamage;
 	private Rigidbody2D FireballRB;
-	private Animator anim;
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
 	private GameObject Player;
 	private Vector2 pos;
