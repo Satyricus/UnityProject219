@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour {
 		pause = GetComponentInParent<GamePause> ();
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-		direction = new Vector2();
+		anim.SetBool ("isWalking", false); // Player start at idle
+		direction = new Vector2(0,1); // Players starting direction
 	}
 	
 	// Update is called once per frame
@@ -48,7 +49,7 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetBool("isWalking", false);
 		}
 
-		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime * speed);	// Move player's rigidbody
+		rbody.MovePosition (rbody.position + movement_vector.normalized * Time.deltaTime * speed);	// Move player's rigidbody
 	}
 
 
