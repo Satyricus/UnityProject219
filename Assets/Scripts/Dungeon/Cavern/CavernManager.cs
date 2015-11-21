@@ -47,6 +47,7 @@ public class CavernManager : MonoBehaviour {
     GameObject TrashMobHolder;
     GameObject ThingsHolder;
     GameObject BossHolder;
+    GameObject TileHolder;
 
     // Use this to make sure the game knows when you're allowed to kill objects. 
     private bool bossKillable; // Starts as false.
@@ -59,6 +60,8 @@ public class CavernManager : MonoBehaviour {
     {
         TrashMobHolder = GameObject.Find("TrashMobHolder");
         ThingsHolder = GameObject.Find("ThingsHolder");
+        TileHolder = GameObject.Find("TileHolder");
+
         BossHolder =  GameObject.Find("BossHolder");
         ManagerSetProperties();
 
@@ -73,18 +76,36 @@ public class CavernManager : MonoBehaviour {
 
 
 		if(ObjectiveComplete()) {
+            DestroyMap(); 
+
+
 			if (hardMode)
 				scaler.HardMode();
 
 			else
 				scaler.increaseLevel();
 
-			LoadMap ();
+            LoadMap ();
 			SpawnObjects();
-			
+
+
+
+
 
 		}
 	}
+
+    private void DestroyMap()
+    {
+        if (TileHolder.transform.childCount > 0)
+        {
+            Transform[] ts = TileHolder.GetComponentsInChildren<Transform>();
+            foreach (Transform t in ts)
+            {
+                GameObject.Destroy(t.gameObject);
+            }
+        }
+    }
 
 
 
