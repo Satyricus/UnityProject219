@@ -4,24 +4,30 @@ using System.Collections;
 public class EnemyStats : MonoBehaviour {
 
 	Animator anim;
-	GameObject statScaler;
+	Scaler statScaler;
 	GameObject player;
-	Scaler level;
 
-	public int attackDamage;
+	private int level;
+	private int attackDamage;
+
+	public int damageScaler;
+	public int startDamage;	// How much damage this mob does at level 1
 	public int health;
 	public bool debug;
-	public int damageIncrease;
 	public int yieldExp;	// How much experience this enemy yields.
 
 	// Use this for initialization
 	void Start () {
-		statScaler = GameObject.Find ("StatScaler");
-		player = GameObject.Find("Player");
+		player = GameObject.Find ("Player");
 		anim = GetComponent<Animator> ();
-		level = statScaler.GetComponent<Scaler> ();
-		damageIncrease = level.GetScale ();
-		attackDamage += damageIncrease;
+		statScaler = GameObject.Find ("StatScaler").GetComponent<Scaler> ();
+		level = statScaler.GetScale ();
+		attackDamage = DamageBasedOnLevel ();
+
+		if (debug) {
+			print (this.name + " does " + attackDamage + " damage.");
+		}
+
 		//health += damageIncrease;
 		yieldExp = 100;	// TODO: This needs to be a dynamic number linked to scaler.
 
@@ -55,6 +61,12 @@ public class EnemyStats : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
+	/** How much damage this enemy should do based on the players level. */
+	private int DamageBasedOnLevel() {
+		print (startDamage + level * damageScaler);
+		return startDamage + level * damageScaler;
+	}
+
 	/** Return attackdamage of the enemy */
 	public int GetAttackDamage() {
 		return this.attackDamage;
@@ -65,7 +77,7 @@ public class EnemyStats : MonoBehaviour {
 	 * param damage: How much damage to take */
 	public void TakeDamage(int damage) {
 		if (debug)
-			print ("Taking dmg. health = " + health);
+			print ("Take damage: " + damage);
 		health -= damage;
 	}
 

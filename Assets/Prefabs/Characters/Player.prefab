@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.62491369, y: 6.26760769, z: 1}
+  m_LocalPosition: {x: -1.19000006, y: .00999999978, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142768}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14289fba25e54c04c8e1df886552c01d, type: 3}
   m_Name: 
@@ -122,10 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8c19f3bee49dd44b2314f802c0ba68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shieldReduction: .5
   haste: 0
-  attackDamage: 0
-  maxHealth: 5000
-  debug: 0
+  attackDamage: 10
+  maxHealth: 100
+  debug: 1
 --- !u!114 &11425624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1627a3a44c299d43b68246973d30a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputKey: h
+  InputKey: 68
 --- !u!114 &11450602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  hearthStoneKey: h
 --- !u!212 &21283428
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -240,7 +242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 5000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InputKey
@@ -256,7 +258,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: attackDamage
-      value: 60
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: hearthStoneKey
+      value: h
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shieldReduction
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

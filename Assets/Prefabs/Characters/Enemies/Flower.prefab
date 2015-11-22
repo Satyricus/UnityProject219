@@ -146,10 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a30a3ee0980d249812a21c113662ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 5
-  health: 60
-  damageIncrease: 0
+  damageScaler: 4
+  startDamage: 6
+  health: 17
   debug: 0
+  yieldExp: 100
 --- !u!114 &11443814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +222,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: force
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damageScaler
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: yieldExp
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

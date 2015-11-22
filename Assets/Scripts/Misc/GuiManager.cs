@@ -11,8 +11,7 @@ using UnityEngine.UI;
 public class GuiManager : MonoBehaviour
 {
 
-    private GameObject Player;
-    private Health health;
+    private GameObject player;
     private Text healthText;
 
 
@@ -22,11 +21,9 @@ public class GuiManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-        Player = GameObject.Find("Player");
-	    health = Player.GetComponentInChildren<Health>();
+        player = GameObject.Find("Player");
         healthText = GetComponentInChildren<Text>();
 	    healthText.text = ""; 
-
 		MovableChars = GameObject.Find ("MovableCharacters");
 		pause = MovableChars.GetComponent<GamePause> ();
 	}
@@ -34,7 +31,6 @@ public class GuiManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    healthText.text = "health: " + health.getCurrentHealth();
-
+		healthText.text = "health: " + player.GetComponent<PlayerStats> ().GetCurrentHealth ();
 	}
 }

@@ -2,25 +2,27 @@
 using System.Collections;
 
 public class ExplosionAttackAI : MonoBehaviour {
-	
+
+	public bool debug;
+
 	GameObject player;
-	Health pHealth;
 	EnemyStats eStats;
 	int attackDamage;
 	
 	void Start() {
 
 		eStats = GetComponent<EnemyStats> ();
-		attackDamage = eStats.GetAttackDamage ();
 		player = GameObject.Find ("Player");
-		pHealth = player.GetComponent<Health> ();
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.CompareTag("Player")) {
-			//print ("Collision");
 			Attack();
-			pHealth.TakeDamage (attackDamage);
+			if (debug) {
+				print (this.name + " tried to do " + attackDamage + " to player.");
+			}
+			attackDamage = eStats.GetAttackDamage ();
+			player.GetComponent<PlayerStats>().TakeDamage (attackDamage);
 
 		}
 	}

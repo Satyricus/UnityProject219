@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	private GamePause pause;
 
+	[SerializeField] private String hearthStoneKey;
+
 	private Vector2 direction; // Will be used to get the direction the player is facing for range attacks or other purposes. 
 
 	// Use this for initialization
@@ -33,6 +35,9 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		//if (pause.GetPausStatus ())
 			//return;
+
+		if (Input.GetKeyDown(hearthStoneKey))
+			Application.LoadLevel(2);
 
 		Vector2 movement_vector = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));	// getAxisRaw = bool
 

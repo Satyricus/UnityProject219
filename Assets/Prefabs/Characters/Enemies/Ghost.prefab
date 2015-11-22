@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a30a3ee0980d249812a21c113662ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
-  health: 50
+  damageScaler: 3
+  startDamage: 8
+  health: 14
   debug: 0
-  damageIncrease: 0
-  yieldExp: 0
+  yieldExp: 100
 --- !u!114 &11456342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,7 +184,23 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startDamage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damageScaler
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: yieldExp
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125394}

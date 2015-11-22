@@ -3,31 +3,30 @@ using System.Collections;
 
 public class FireBall : MonoBehaviour {
 
-	public int attackDamage;
-	private Rigidbody2D FireballRB;
+	private int attackDamage;
+	private Rigidbody2D fireballRB;
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
-	private Rigidbody2D PlayerRB;
+	private GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		PlayerRB = GetComponent<Rigidbody2D> ();
-		FireballRB = GetComponent<Rigidbody2D> ();
+		player = GameObject.Find("Player");
+		fireballRB = GetComponent<Rigidbody2D> ();
 		destroyDistance = 5.0F;
+		attackDamage = player.GetComponent<PlayerStats>().AttackDamage;
 	}
 
-
-	
 	// Update is called once per frame
 	void Update () {
-
 		if (ExceedMaxDistance ())
 			Destroy (gameObject);
 	}
+
 	/**
 	 * Return true if the fireball has exceeded maximum distance
 	 * return false otherwise*/
 	private bool ExceedMaxDistance() {
-		float currentDistance = Vector2.Distance (PlayerRB.position, FireballRB.position);
+		float currentDistance = Vector2.Distance (player.GetComponent<Rigidbody2D>().position, fireballRB.position);
 		if (currentDistance >= destroyDistance) {
 			return true;
 	}
@@ -45,9 +44,8 @@ public class FireBall : MonoBehaviour {
 	/**
 	 * Do damage on enemy on impact*/
 	private void DoDamage(Collider2D coll) {
-		var enemyStats = coll.GetComponent<EnemyStats>();
+		EnemyStats enemyStats = coll.GetComponent<EnemyStats>();
 		enemyStats.TakeDamage(attackDamage);
-
 		GameObject.Destroy(gameObject);
 	}
 }

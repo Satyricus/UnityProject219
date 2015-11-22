@@ -3,7 +3,13 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
 
-	Health playerHealth;
+	//Health playerHealth;
+	Scaler statScaler;
+
+	public float shieldReduction;		// Percent damage reduction when shiled is active.
+
+	private int currentHealth;
+	private bool iceShieldOn = false;	// Is ice shield active.
 
 	private int level;	// Current level of the player.
 	private int maxLevel;	// Max level the player can get to.
@@ -26,10 +32,13 @@ public class PlayerStats : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		playerHealth = GetComponent<Health> ();
+		//playerHealth = GetComponent<Health> ();
+		statScaler = GameObject.Find ("StatScaler").GetComponent<Scaler>();
+		currentHealth = maxHealth;
 
 		level = 1;
 		currentExperience = 0;
+		attackDamage = 10;
 
 		expForFirstLevel = 1000;
 		expForLastLevel = 1000000;
@@ -41,16 +50,31 @@ public class PlayerStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (isDead())
+			gameOver();
 		if (currentExperience >= neededExperience) {
 			LevelUp();
 		}
+	}
+
+	/** Check whether the player is dead or not.  */
+	bool isDead()
+	{
+		if (currentHealth <= 0)
+		{
+			currentHealth = 0;
+			return true;
+		}
+		
+		return false;
 	}
 	
 	/** A function called to increase the level of the player by 1. */
 	void LevelUp() {
 		level += 1;
 		IncreaseStats ();
-		currentExperience = 0;	// TODO: save excess experience.
+		statScaler.increaseLevel ();	// Increase the level on statscaler.
+		currentExperience = neededExperience - currentExperience;	// Excess exp.
 		CalcNeededExperience (level);
 		PlayLevelUpAnimation ();
 		if (debug) {
@@ -82,23 +106,57 @@ public class PlayerStats : MonoBehaviour {
 	/** Called when the player gains a level to increase the player's stats. */
 	void IncreaseStats() {
 		// TODO: These are not the final increase values.
-		maxHealth += 20;
-		playerHealth.ChangeMaxHealth (maxHealth);
+		maxHealth += 10;
+		//playerHealth.ChangeMaxHealth (maxHealth);
 		haste += 0.1f;
-		attackDamage += 1;
+		attackDamage += 5;
 	}
 
+	/// <summary>
+	/// Called by enemies to deal damage to our player. 
+	/// </summary>
+	/// <param name="damage"> Amount of damage the player will take.</param>
+	public void TakeDamage(int damage) {
+		int incDmg = damage;	// For calculating shield reduction.
+		if (iceShieldOn) {			// Take 25% damage when ice shield is on.
+			incDmg = (int) Mathf.Round ((float)(damage * shieldReduction));
+			currentHealth -= incDmg;
+		} else {
+			currentHealth -= incDmg;
+			print (currentHealth);
+		}
+	}
+	/** Used once player is dead, can call a gameover scene. */
+	void gameOver()
+	{
+		Application.LoadLevel(1);
+	}
+
+	/** This function is called when the player gets healed. */
+	public void Heal(int amount) {
+		currentHealth += amount;
+		if (currentHealth > maxHealth) {
+			currentHealth = maxHealth;
+		}
+	}
+
+	/** The shield prefab uses this to inform the player that the iceshield is active. */
+	public void setShieldOn(bool isShieldOn) {
+		iceShieldOn = isShieldOn;
+	}
+
+	// TODO: is this used? possible that all getLevel calls are done through statScaler.
     public int GetLevel()
     {
         return this.level;
     }
-
+	/*
     // May not be the best way to do things, but now we don't really have to have a health reference in order to get access to current health. 
     public int GetCurrentHealth()
     {
         return playerHealth.getCurrentHealth();
     }
-
+*/
     public int GetCurrentXP()
     {
         return currentExperience;
@@ -108,6 +166,14 @@ public class PlayerStats : MonoBehaviour {
     {
         return neededExperience;
     }
+
+	public void SetIceShield(bool on) {
+		iceShieldOn = on;
+	}
+
+	public int GetCurrentHealth() {
+		return currentHealth;
+	}
 
 	/** Get and set player's haste. */
 	public float Haste {
@@ -126,7 +192,4 @@ public class PlayerStats : MonoBehaviour {
 		get {return maxHealth; }
 		set {maxHealth = value; }
 	}
-
-
-
 }

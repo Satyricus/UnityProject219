@@ -3,25 +3,22 @@ using System.Collections;
 
 public class FireballAI : MonoBehaviour {
 
-	public int attackDamage;
-	private Rigidbody2D FireballRB;
+	private int attackDamage;
+	private Rigidbody2D fireballRB;
 	private double destroyDistance; // Max distance between fireball and player, if exceeded the fireball will be destroyed. 
-	private GameObject Player;
+	private GameObject player;
 	private Vector2 pos;
-	Health pHealth;
 	
 	// Use this for initialization
 	void Start () {
-		Player = GameObject.Find ("Player");
-		FireballRB = GetComponent<Rigidbody2D> ();
-		pHealth = Player.GetComponent<Health> ();
+		player = GameObject.Find ("Player");
+		fireballRB = GetComponent<Rigidbody2D> ();
 		destroyDistance = 5.0F;
 		pos = transform.position;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
 		if (ExceedMaxDistance ())
 			Destroy (gameObject);
 	}
@@ -30,7 +27,7 @@ public class FireballAI : MonoBehaviour {
 	 * return else if not
 	 */
 	private bool ExceedMaxDistance() {
-		float currentDistance = Vector2.Distance (pos, FireballRB.position);
+		float currentDistance = Vector2.Distance (pos, fireballRB.position);
 		if (currentDistance >= destroyDistance) {
 			return true;
 		}
@@ -39,11 +36,15 @@ public class FireballAI : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.CompareTag ("Player")) {
-			pHealth.TakeDamage(attackDamage);
+			player.GetComponent<PlayerStats>().TakeDamage(attackDamage);
 			GameObject.Destroy(gameObject);
 		}
 		if (coll.CompareTag ("Environment")) {
 			GameObject.Destroy(gameObject);
 		}
+	}
+
+	public void SetAttackDamage(int damage) {
+		attackDamage = damage;
 	}
 }

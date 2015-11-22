@@ -43,7 +43,6 @@ public class HitAndRunAttack : MonoBehaviour {
 		spawnLocation = transform.position;
 		eStats = GetComponent<EnemyStats>();
 		anim.SetBool ("isWalking", false);
-		attackDamage = eStats.GetAttackDamage ();
 	}
 	
 	
@@ -129,8 +128,13 @@ public class HitAndRunAttack : MonoBehaviour {
 	void Attack() {
 		attackStart = Time.time;
 		hasAttacked = true;
-		player.GetComponent<Health>().TakeDamage(attackDamage);
+		attackDamage = eStats.GetAttackDamage ();
+		player.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+		if (debug) {
+			print (this.name + " tried to do " + attackDamage + " to player.");
+		}
 		scratch = Instantiate(scratchAnim, player.transform.position, Quaternion.identity) as Rigidbody2D;	// Instatiate the attack animiation.
+		scratch.transform.parent = transform;
 	}
 
 	/** Sets the coordinate for where the enemy should run to after it has attacked. */
