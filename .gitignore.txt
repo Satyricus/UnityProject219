@@ -1,0 +1,115 @@
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+.vs/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln*
+*.user
+*.unityproj
+*.booproj
+*.pidb.meta
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+
+$PROJDIR
+
+
+obj
+ Temp
+.suo
+.user
+
+
+
+$PROJDIR/Library
+
+
+cache
+ metadata
+ ScriptAssemblies
+ assetDatabase3
+ assetservercachev3
+ AssetServerCacheV3
+ AssetVersioning.db
+ expandedItems
+ FailedAssetImports.txt
+ guidmapper
+ ScriptMapper
+ unity default resources
+ unity editor resources
+
+
+
+And now for Unity 3.0, we use these ignores:
+
+
+$PROJDIR
+
+
+obj
+ Temp
+.suo
+.user
+.pidb
+.userprefs
+
+
+
+$PROJDIR/Library
+
+
+cache
+ metadata
+ previews
+ ScriptAssemblies
+ assetDatabase3
+ AssetImportState
+ assetservercachev3
+ AssetServerCacheV3
+ AssetVersioning.db
+ AudioManager.asset
+ BuildPlayer.prefs
+ BuildSettings.asset
+ DynamicsManager.asset
+ EditorSettings.asset
+ EditorUserBuildSettings.asset
+ expandedItems
+ FailedAssetImports.txt
+ guidmapper
+ InspectorExpandedItems.asset
+ MonoManager.asset
+ NetworkManager.asset
+ ScriptMapper
+ unity default resources
+ unity editor resources
