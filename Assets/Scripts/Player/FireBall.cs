@@ -37,9 +37,9 @@ public class FireBall : MonoBehaviour {
 		if (coll.CompareTag ("Enemy")) {
 			DoDamage (coll);
 		}
-		if (coll.CompareTag ("Environment")) {
-			GameObject.Destroy(gameObject);
-		}
+		else if (coll.CompareTag ("Environment")) {
+			GameObject.Destroy (gameObject);
+		} 
 	}
 	/**
 	 * Do damage on enemy on impact*/

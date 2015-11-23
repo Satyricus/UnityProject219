@@ -63,7 +63,6 @@ public class EnemyStats : MonoBehaviour {
 
 	/** How much damage this enemy should do based on the players level. */
 	private int DamageBasedOnLevel() {
-		print (startDamage + level * damageScaler);
 		return startDamage + level * damageScaler;
 	}
 

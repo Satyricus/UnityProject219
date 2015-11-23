@@ -123,7 +123,6 @@ public class PlayerStats : MonoBehaviour {
 			currentHealth -= incDmg;
 		} else {
 			currentHealth -= incDmg;
-			print (currentHealth);
 		}
 	}
 	/** Used once player is dead, can call a gameover scene. */
