@@ -1,20 +1,60 @@
-Highest priority: Needed for a functional game.
-At least one more ability for player
-boss prefabs
-Transferring Player object between scenes.
-Fixing Dialog
 
-High priority:
-Inventory
-Leveling
-Saving/Loading
-May need more enemy prefabs. 
+Polish/bugfixes:
 
-Normal priority:
+Hussam:
+Dungeon
+Gui
+Scalar don't destroy on scene transition. 
+
+Jon: 
+Teleportation Bug
+Scalar
+
+Alex 
 
 
-DONE:
-Refactoring Cavern Generator. 
-Dungeone tiles being dynamic.
-Several enemy prefabs
+
+
+Must be finished. 
+
+Hussam:
+Player Healthbar 
+Npcs 
+
+
+Jon:
+Fill in world with cool stuff preferably pirate theme. 
+Expand playerstats such that we can add new functionaltity (potions/powerups)
+
+Alex:
+Bosses
+Potions
+Chests 
+Well of regeneration
+
+Slutt rapport:
+Hver av oss må skrive:
+	Hva har vi lært?
+	Hvordan ville vi ha gjort ting anderledes.
+	Konklusjon. 
+
+Presentasjon:
+PPT. 
+Licenses.
+
+
+
+
+
+Stretch goals:
+
+Inventory.
+
+Splash screen for leveling up. 
+
+Tutorial keyboard screen. 
+
+Fog of war. 
+
+Power ups.
 
