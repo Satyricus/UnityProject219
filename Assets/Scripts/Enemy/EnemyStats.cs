@@ -10,11 +10,12 @@ public class EnemyStats : MonoBehaviour {
 	private int level;
 	private int attackDamage;
 
-	public int damageScaler;
+	public int damageScaler;	// Scale damage by this amount.
 	public int startDamage;	// How much damage this mob does at level 1
 	public int health;
 	public bool debug;
 	public int yieldExp;	// How much experience this enemy yields.
+	public int healthIncrease;	// How much health this mob gets per level.
 
 	// Use this for initialization
 	void Start () {
@@ -22,14 +23,13 @@ public class EnemyStats : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		statScaler = GameObject.Find ("StatScaler").GetComponent<Scaler> ();
 		level = statScaler.GetScale ();
-		attackDamage = DamageBasedOnLevel ();
-
-		if (debug) {
-			print (this.name + " does " + attackDamage + " damage.");
-		}
-
-		//health += damageIncrease;
-		yieldExp = 100;	// TODO: This needs to be a dynamic number linked to scaler.
+		attackDamage = startDamage + level * damageScaler;
+		health = health + (level-1) * healthIncrease;
+		yieldExp = 100 + (level-1) * 5;
+		if (debug)
+			print (this.name + " gets a scaler of " + statScaler.GetScale ());
+		if (debug)
+			print (this.name + " does " + attackDamage + " damage and has " + health + " health and gives " + yieldExp + " experience");
 
 	}
 
@@ -59,11 +59,6 @@ public class EnemyStats : MonoBehaviour {
 	void Terminate() {
 		player.GetComponent<PlayerStats>().IncreaseCurrentExperience(yieldExp);
 		Destroy (gameObject);
-	}
-
-	/** How much damage this enemy should do based on the players level. */
-	private int DamageBasedOnLevel() {
-		return startDamage + level * damageScaler;
 	}
 
 	/** Return attackdamage of the enemy */

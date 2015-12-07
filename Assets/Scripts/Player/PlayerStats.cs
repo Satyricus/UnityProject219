@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour {
 
 	private int currentHealth;
 	private bool iceShieldOn = false;	// Is ice shield active.
+	private bool isDead = false;
 
 	private int level;	// Current level of the player.
 	private int maxLevel;	// Max level the player can get to.
@@ -50,31 +51,19 @@ public class PlayerStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isDead())
+		if (isDead)
 			gameOver();
 		if (currentExperience >= neededExperience) {
 			LevelUp();
 		}
 	}
 
-	/** Check whether the player is dead or not.  */
-	bool isDead()
-	{
-		if (currentHealth <= 0)
-		{
-			currentHealth = 0;
-			return true;
-		}
-		
-		return false;
-	}
-	
 	/** A function called to increase the level of the player by 1. */
 	void LevelUp() {
 		level += 1;
 		IncreaseStats ();
 		statScaler.increaseLevel ();	// Increase the level on statscaler.
-		currentExperience = neededExperience - currentExperience;	// Excess exp.
+		currentExperience = currentExperience - neededExperience;	// Excess exp.
 		CalcNeededExperience (level);
 		PlayLevelUpAnimation ();
 		if (debug) {
@@ -106,10 +95,10 @@ public class PlayerStats : MonoBehaviour {
 	/** Called when the player gains a level to increase the player's stats. */
 	void IncreaseStats() {
 		// TODO: These are not the final increase values.
-		maxHealth += 10;
+		maxHealth += 10 * level;
 		//playerHealth.ChangeMaxHealth (maxHealth);
 		haste += 0.1f;
-		attackDamage += 5;
+		attackDamage += 5 * level;
 	}
 
 	/// <summary>
@@ -121,8 +110,16 @@ public class PlayerStats : MonoBehaviour {
 		if (iceShieldOn) {			// Take 25% damage when ice shield is on.
 			incDmg = (int) Mathf.Round ((float)(damage * shieldReduction));
 			currentHealth -= incDmg;
+			if (currentHealth <= 0) {
+				currentHealth = 0;
+				isDead = true;
+			}
 		} else {
 			currentHealth -= incDmg;
+			if (currentHealth <= 0) {
+				currentHealth = 0;
+				isDead = true;
+			}
 		}
 	}
 	/** Used once player is dead, can call a gameover scene. */
