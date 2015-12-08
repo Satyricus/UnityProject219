@@ -141,6 +141,7 @@ MonoBehaviour:
   health: 5
   debug: 0
   yieldExp: 100
+  healthIncrease: 3
 --- !u!114 &11418126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +221,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: healthIncrease
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
