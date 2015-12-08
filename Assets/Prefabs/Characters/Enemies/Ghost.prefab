@@ -124,6 +124,7 @@ MonoBehaviour:
   health: 14
   debug: 0
   yieldExp: 100
+  healthIncrease: 7
 --- !u!114 &11456342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +209,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_GravityScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: healthIncrease
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
