@@ -131,6 +131,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &121910
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 464054}
+  m_Layer: 0
+  m_Name: ActionBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &133178
 GameObject:
   m_ObjectHideFlags: 1
@@ -179,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &142184
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,12 +522,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -185.300003, y: -192, z: 0}
+  m_LocalPosition: {x: 588.343079, y: 122.263763, z: 0}
   m_LocalScale: {x: .537500083, y: .462520838, z: 1}
   m_Children:
   - {fileID: 22433466}
-  m_Father: {fileID: 22407870}
-  m_RootOrder: 4
+  m_Father: {fileID: 464054}
+  m_RootOrder: 1
 --- !u!4 &430414
 Transform:
   m_ObjectHideFlags: 1
@@ -520,12 +535,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 330.845764, y: 144.099365, z: 0}
+  m_LocalPosition: {x: 1104.48877, y: 458.363129, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22421118}
-  m_Father: {fileID: 22407870}
-  m_RootOrder: 3
+  m_Father: {fileID: 464054}
+  m_RootOrder: 0
 --- !u!4 &432524
 Transform:
   m_ObjectHideFlags: 1
@@ -539,7 +554,7 @@ Transform:
   - {fileID: 22459850}
   - {fileID: 22403308}
   m_Father: {fileID: 22407870}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!4 &433128
 Transform:
   m_ObjectHideFlags: 1
@@ -552,6 +567,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 412370}
   m_RootOrder: 2
+--- !u!4 &464054
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -773.643066, y: -314.263763, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 430414}
+  - {fileID: 422610}
+  - {fileID: 477494}
+  - {fileID: 496066}
+  m_Father: {fileID: 22407870}
+  m_RootOrder: 0
 --- !u!4 &474000
 Transform:
   m_ObjectHideFlags: 1
@@ -571,12 +602,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.887695, y: -143.68045, z: 0}
+  m_LocalPosition: {x: 977.530762, y: 170.583313, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22468356}
-  m_Father: {fileID: 22407870}
-  m_RootOrder: 5
+  m_Father: {fileID: 464054}
+  m_RootOrder: 2
 --- !u!4 &496066
 Transform:
   m_ObjectHideFlags: 1
@@ -584,12 +615,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -530.585876, y: -153.205887, z: 0}
+  m_LocalPosition: {x: 243.05719, y: 161.057877, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22439194}
-  m_Father: {fileID: 22407870}
-  m_RootOrder: 6
+  m_Father: {fileID: 464054}
+  m_RootOrder: 3
 --- !u!114 &11404820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1504,13 +1535,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 464054}
   - {fileID: 22464434}
-  - {fileID: 432524}
   - {fileID: 22444412}
-  - {fileID: 430414}
-  - {fileID: 422610}
-  - {fileID: 477494}
-  - {fileID: 496066}
+  - {fileID: 432524}
   m_Father: {fileID: 412370}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -1534,7 +1562,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 212}
+  m_AnchoredPosition: {x: 0, y: 259}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22421118
@@ -1721,7 +1749,7 @@ RectTransform:
   m_LocalScale: {x: .773935616, y: .948070884, z: .773935497}
   m_Children: []
   m_Father: {fileID: 22407870}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -276, y: 182}
