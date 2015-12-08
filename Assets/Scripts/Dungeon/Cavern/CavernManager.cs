@@ -22,6 +22,8 @@ public class CavernManager : MonoBehaviour {
 	[Range(1,10)]
 	public int chestFillPercent;
 
+	public bool debug;
+
 	
 	[Range(0,100)]
 	public int prefabsFillpercent;
@@ -79,18 +81,16 @@ public class CavernManager : MonoBehaviour {
             DestroyMap(); 
 
 
-			if (hardMode)
+		/*	if (hardMode){
 				scaler.HardMode();
-
-			else
+			}
+			else {
 				scaler.increaseLevel();
+			}*/
 
             LoadMap ();
+
 			SpawnObjects();
-
-
-
-
 
 		}
 	}
@@ -99,12 +99,15 @@ public class CavernManager : MonoBehaviour {
     {
         if (TileHolder.transform.childCount > 0)
         {
-            Transform[] ts = TileHolder.GetComponentsInChildren<Transform>();
-            foreach (Transform t in ts)
-            {
-                GameObject.Destroy(t.gameObject);
-            }
-        }
+			Transform TileTransform = TileHolder.transform;
+
+			foreach(Transform child in TileTransform) {
+				Destroy (child.gameObject);
+			}
+		
+		}
+
+
     }
 
 
@@ -112,29 +115,12 @@ public class CavernManager : MonoBehaviour {
     // True if trashmobs and the boss is dead. 
 	private bool ObjectiveComplete()
 	{
-	    return (TrashMobsAreDead() && BossIsDead());
+	    return (TrashMobsAreDead());
 	}
 
     public bool TrashMobsAreDead()
     {
-        if (bossKillable)
-            return true;
-
-        if (TrashMobHolder.transform.childCount == 0)
-        {
-            Transform[] ts = BossHolder.GetComponentsInChildren<Transform>();
-
-            foreach (Transform boss in ts)
-            {
-                Tile spawn = dfs.GetLargestSpace().GetTiles()[10];
-
-                Vector3 position = new Vector3(spawn.GetX(), spawn.GetY(),0);
-                boss.transform.position = position;
-            }
-            bossKillable = true;
-        }
-
-        return false;
+		return (TrashMobHolder.transform.childCount == 0);
     }
 
 
@@ -166,6 +152,10 @@ public class CavernManager : MonoBehaviour {
 	 * Loads and runs through map in order to find the needed information to construct and decide the optimal space.
 	 */
 	private void LoadMap() {
+		if (debug) {
+			print ("Loading map!");
+		}
+
 		mg.GenerateMap();
 		drawer.DrawMap();
 
@@ -195,7 +185,7 @@ public class CavernManager : MonoBehaviour {
 		// Spawn prefabs
 		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player, ThingsHolder);
 
-        spawner.SpawnBoss(bosses, BossHolder);
+        //spawner.SpawnBoss(bosses, BossHolder);
 
     }
 

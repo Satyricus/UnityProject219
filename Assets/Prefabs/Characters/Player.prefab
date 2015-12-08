@@ -125,7 +125,7 @@ MonoBehaviour:
   shieldReduction: .5
   haste: 0
   attackDamage: 10
-  maxHealth: 100
+  maxHealth: 10000
   debug: 1
 --- !u!114 &11425624
 MonoBehaviour:
@@ -153,7 +153,7 @@ MonoBehaviour:
   attackKey: 4
   radius: 2.4000001
   attackDamage: 60
-  coolDown: 10
+  coolDown: 1
   prefab: {fileID: 5057736, guid: 1b353fb258ea3b647a387d2b237f58f8, type: 2}
 --- !u!114 &11476216
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4510117129ff343bcb49ec86301cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 10
   hearthStoneKey: h
 --- !u!212 &21283428
 SpriteRenderer:
@@ -242,7 +242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 100
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InputKey
@@ -250,7 +250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: coolDown
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: radius
@@ -275,6 +275,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
