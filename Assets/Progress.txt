@@ -56,5 +56,5 @@ Tutorial keyboard screen.
 
 Fog of war. 
 
-Power ups.
+Power ups.[Done by Alex]
 
