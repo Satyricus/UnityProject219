@@ -33,6 +33,12 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		// Detecting and removing Fog of war
+		Collider2D [] fogs = Physics2D.OverlapCircleAll(transform.position,2.5f);
+		foreach (Collider2D fog in fogs) {
+			if (fog.gameObject.CompareTag ("FOW"))
+				Destroy (fog.gameObject);
+		}
 		//if (pause.GetPausStatus ())
 			//return;
 

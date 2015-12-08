@@ -7,6 +7,8 @@ TagManager:
   - SmallObjects
   - Environment
   - Enemy
+  - Ground
+  - FOW
   layers:
   - Default
   - TransparentFX
