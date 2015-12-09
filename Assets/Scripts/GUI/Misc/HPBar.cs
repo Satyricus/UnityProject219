@@ -38,6 +38,5 @@ public class HPBar : MonoBehaviour {
 		float fill = (float) currentHP/maxHP;
 
 		Bar.fillAmount = fill;
-		print (fill);
 	}
 }
