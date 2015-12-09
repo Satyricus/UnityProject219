@@ -35,9 +35,8 @@ public class HPBar : MonoBehaviour {
 	private void UpdateHPBar() {
 		int maxHP = PStats.getMaxHealth();
 		int currentHP = PStats.GetCurrentHealth();
-		float fill =  currentHP/maxHP;
+		float fill = (float) currentHP/maxHP;
 
 		Bar.fillAmount = fill;
-		print (fill);
 	}
 }
