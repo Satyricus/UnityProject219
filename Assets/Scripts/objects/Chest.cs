@@ -29,7 +29,7 @@ public class Chest : MonoBehaviour
         if (isOpen)   // If chest has been opened.
             return;
         // If player in range and interact button is pushed.
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(interactButton))
+		if (other.gameObject.CompareTag("Player") && (Input.GetKeyDown(interactButton) || Input.GetKeyDown (KeyCode.Joystick1Button9)))
         {
             Open();
         }

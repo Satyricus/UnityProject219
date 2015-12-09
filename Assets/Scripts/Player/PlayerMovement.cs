@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetBool("isWalking", false);
 		}
 
-		rbody.MovePosition (rbody.position + movement_vector.normalized * Time.deltaTime * speed);	// Move player's rigidbody
+		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime * speed);	// Move player's rigidbody
 	}
 
 
