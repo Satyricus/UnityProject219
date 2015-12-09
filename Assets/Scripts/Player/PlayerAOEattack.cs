@@ -16,7 +16,7 @@ public class PlayerAOEattack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.DrawLine(transform.position,new Vector2(transform.position.x + radius, transform.position.y));
+		//Debug.DrawLine(transform.position,new Vector2(transform.position.x + radius, transform.position.y));
 		if ((Input.GetKeyDown(attackKey) || Input.GetKeyDown(KeyCode.Joystick1Button3)) && Time.time > AOEstart + coolDown) {
 			AOEstart = Time.time;
 			nuke = Instantiate(prefab,new Vector2(transform.position.x+1,transform.position.y),Quaternion.identity) as Rigidbody2D;

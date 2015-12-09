@@ -37,30 +37,62 @@ public class Teleport : MonoBehaviour {
 	void TeleportPlayer() {
 		if (PMovement.GetDirection ().x >= 1) {	// Teleport right
 			// New position.
-			Vector3 newPos = new Vector3(rbody.position.x + tlpDistance, rbody.position.y, 0);
+			Vector2 newPos = new Vector2(rbody.position.x + tlpDistance, rbody.position.y);
+			// Player position plus some delta to avoid players own 2d box collider.
+			Vector2 playerPos = new Vector2(Player.transform.position.x+0.2f, Player.transform.position.y);
+			// Raycast detects collisions between two points.
+			RaycastHit2D hitDetec = Physics2D.Linecast (playerPos, newPos);
 			// Spawn teleport animation on current player location.
 			tlpAnimation = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
+
 			// New player transform position.
-			Player.transform.position = Vector3.MoveTowards(rbody.position, newPos, step);
+			if (hitDetec.collider == null) {	// No collision, teleport max distance.
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			} else {	// Collision, teleport to collision point.
+				newPos = new Vector2 (hitDetec.point.x-0.2f, hitDetec.point.y);
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			}
+
 			// Spawn teleport animation on new player location.
 			tlpAnimation2 = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
 		}
 		else if (PMovement.GetDirection ().x < 0) {	// Teleport Left
-			Vector3 newPos = new Vector3(rbody.position.x - tlpDistance, rbody.position.y, 0);
+			Vector2 newPos = new Vector2(rbody.position.x - tlpDistance, rbody.position.y);
+			Vector2 playerPos = new Vector2(Player.transform.position.x-0.2f, Player.transform.position.y);
+			RaycastHit2D hitDetec = Physics2D.Linecast (playerPos, newPos);
 			tlpAnimation = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
-			Player.transform.position = Vector3.MoveTowards(rbody.position, newPos, step);
+			if (hitDetec.collider == null) {
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			} else {	// Collision, teleport to collision point.
+				newPos = new Vector2 (hitDetec.point.x+0.2f, hitDetec.point.y);
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			}
 			tlpAnimation2 = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
 		}
 		else if (PMovement.GetDirection ().y >= 1) {	// Teleport Up
-			Vector3 newPos = new Vector3(rbody.position.x, rbody.position.y + tlpDistance, 0);
+			Vector2 newPos = new Vector2(rbody.position.x, rbody.position.y + tlpDistance);
+			Vector2 playerPos = new Vector2(Player.transform.position.x, Player.transform.position.y+0.2f);
+			RaycastHit2D hitDetec = Physics2D.Linecast (playerPos, newPos);
 			tlpAnimation = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
-			Player.transform.position = Vector3.MoveTowards(rbody.position, newPos, step);
+			if (hitDetec.collider == null) {
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			} else {	// Collision, teleport to collision point.
+				newPos = new Vector2 (hitDetec.point.x, hitDetec.point.y-0.2f);
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			}
 			tlpAnimation2 = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
 		}
 		else if (PMovement.GetDirection ().y < 0) {	// Teleport Down
-			Vector3 newPos = new Vector3(rbody.position.x, rbody.position.y - tlpDistance, 0);
+			Vector2 newPos = new Vector2(rbody.position.x, rbody.position.y - tlpDistance);
+			Vector2 playerPos = new Vector2(Player.transform.position.x, Player.transform.position.y-0.2f);
+			RaycastHit2D hitDetec = Physics2D.Linecast (playerPos, newPos);
 			tlpAnimation = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
-			Player.transform.position = Vector3.MoveTowards(rbody.position, newPos, step);
+			if (hitDetec.collider == null) {
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			} else {	// Collision, teleport to collision point.
+				newPos = new Vector2 (hitDetec.point.x, hitDetec.point.y+0.2f);
+				Player.transform.position = Vector2.MoveTowards(rbody.position, newPos, step);
+			}
 			tlpAnimation2 = Instantiate(prefab, Player.transform.position, Quaternion.identity) as Rigidbody2D;
 		}
 	}
