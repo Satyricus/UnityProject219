@@ -125,7 +125,7 @@ MonoBehaviour:
   shieldReduction: .5
   haste: 0
   attackDamage: 10
-  maxHealth: 10000
+  maxHealth: 100
   debug: 1
 --- !u!114 &11425624
 MonoBehaviour:
@@ -242,7 +242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: maxHealth
-      value: 10000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InputKey

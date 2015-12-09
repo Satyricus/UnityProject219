@@ -188,4 +188,8 @@ public class PlayerStats : MonoBehaviour {
 		get {return maxHealth; }
 		set {maxHealth = value; }
 	}
+
+	public int getMaxHealth() {
+		return this.maxHealth;
+	}
 }

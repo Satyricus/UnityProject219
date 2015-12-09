@@ -556,7 +556,7 @@ Transform:
   - {fileID: 22459850}
   - {fileID: 22403308}
   m_Father: {fileID: 22407870}
-  m_RootOrder: 0
+  m_RootOrder: 3
 --- !u!4 &433128
 Transform:
   m_ObjectHideFlags: 1
@@ -584,7 +584,7 @@ Transform:
   - {fileID: 430414}
   - {fileID: 422610}
   m_Father: {fileID: 22407870}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!4 &474000
 Transform:
   m_ObjectHideFlags: 1
@@ -1495,7 +1495,7 @@ Canvas:
   m_GameObject: {fileID: 195170}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1565,10 +1565,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 432524}
-  - {fileID: 22444412}
   - {fileID: 464054}
+  - {fileID: 22444412}
   - {fileID: 22464434}
+  - {fileID: 432524}
   m_Father: {fileID: 412370}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -1779,7 +1779,7 @@ RectTransform:
   m_LocalScale: {x: .773935616, y: .948070884, z: .773935497}
   m_Children: []
   m_Father: {fileID: 22407870}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -276, y: 182}

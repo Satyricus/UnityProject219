@@ -25,6 +25,7 @@ public class ScalarPersistence : MonoBehaviour {
 	void Update()
 	{
 		if (Application.loadedLevel == 1 || Application.loadedLevel == 0)
-			Destroy(GameObject.Find(GameObject.Find("StatScaler")));
+			Destroy(GameObject.Find("StatScaler"));
+			//Destroy (gameObject); TODO Test
 	}
 }
