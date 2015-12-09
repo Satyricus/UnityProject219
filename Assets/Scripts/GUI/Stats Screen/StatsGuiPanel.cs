@@ -47,7 +47,7 @@ public class StatsGuiPanel : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        if (Input.GetKeyDown(inputKey))
+		if (Input.GetKeyDown(inputKey) || Input.GetKeyDown(KeyCode.Joystick1Button6))
             ActivateDeactivatePanel();
 
 	    SetText();
