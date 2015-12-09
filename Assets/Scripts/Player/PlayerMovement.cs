@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	[Range (0,10)] // Makes the speed variable in the inspector a scrollbar from 0 to 10. 
 	public int speed = 1;
-
 	private Rigidbody2D rbody;	// Player rigidbody
 	private Animator anim;		// Player amimator
 
@@ -66,5 +65,11 @@ public class PlayerMovement : MonoBehaviour {
 
 	public Vector2 GetDirection() {
 		return direction;
+	}
+	/**
+	 * Using haste
+	 @param speed: haste movement speed*/
+	public void setMovementSpeed(int speed){
+		this.speed = speed;
 	}
 }
