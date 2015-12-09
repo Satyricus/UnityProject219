@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKeyDown(hearthStoneKey))
 			Application.LoadLevel(2);
 
-		Vector2 movement_vector = new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));	// getAxisRaw = bool
+		Vector2 movement_vector = Vector2.ClampMagnitude(new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),1);	// getAxisRaw = bool
 
 
 		if (!movement_vector.Equals(new Vector2(0,0)))
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 		} else {
 			anim.SetBool("isWalking", false);
 		}
-
+		//movement_vector = Vector2.ClampMagnitude (movement_vector, 1.1f);
 		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime * speed);	// Move player's rigidbody
 	}
 

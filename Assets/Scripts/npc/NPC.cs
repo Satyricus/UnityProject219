@@ -99,7 +99,7 @@
 	}
 
     void OnTriggerStay2D(Collider2D coll) {
-		if (Input.GetKeyDown((inputKey))) {
+		if (Input.GetKeyDown((inputKey))|| Input.GetKeyDown (KeyCode.Joystick1Button9)) {
 			ChangeLookingDirection();
 			Talk ();
 	}
