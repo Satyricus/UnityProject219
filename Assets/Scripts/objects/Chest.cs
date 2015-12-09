@@ -7,6 +7,7 @@ public class Chest : MonoBehaviour
 {
 
 //    private GameObject player; // Will be used ones we transfer something from chest to player. 
+	public GameObject prefab;
     private BoxCollider2D playerCollider;
     private bool isOpen;
     public  string interactButton;
@@ -16,7 +17,6 @@ public class Chest : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-//        player = GameObject.FindWithTag("Player");
 	    isOpen = false;
 	    renderer = GetComponent<SpriteRenderer>();
 	    renderer.sprite = unopened;
@@ -40,8 +40,9 @@ public class Chest : MonoBehaviour
     */
     void Open()
     {
-        print("it's open");
+		GameObject h = Instantiate(prefab,transform.position,Quaternion.identity) as GameObject;
         isOpen = true;
         renderer.sprite = opened;
     }
+
 }
