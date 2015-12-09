@@ -16,22 +16,33 @@ public class ActionBar : MonoBehaviour
     [SerializeField]
     private GameObject fireNuke;
 
+	[SerializeField]
+	private GameObject haste; // The ability Haste. Not the stat. 
+
+
+
+	PlayerStats pStats; // Player stats. 
+
     GameObject player;
 
     IceShield shield;
     RangeAttack fire;
     Teleport port;
+	Haste speed;
 
     PlayerAOEattack nuke;
 
     void Start()
     {
         player = GameObject.Find("Player");
+		pStats = player.GetComponent<PlayerStats>();
         iceShield.SetActive(true);
         shield = player.GetComponent<IceShield>();
         fire = player.GetComponent<RangeAttack>();
         port = player.GetComponent<Teleport>();
         nuke = player.GetComponent<PlayerAOEattack>();
+		speed = player.GetComponent<Haste>();
+
 
     }
     
@@ -62,6 +73,14 @@ public class ActionBar : MonoBehaviour
 
         if (!nuke.isNukeOnCooldown())
             ShowAbility(fireNuke);
+
+
+		if (speed.GetHasteCooldownStatus())
+			HideAbility(haste);
+		
+		if (!speed.GetHasteCooldownStatus())
+			ShowAbility(haste);
+
     }
 
     private void HideAbility(GameObject ability)

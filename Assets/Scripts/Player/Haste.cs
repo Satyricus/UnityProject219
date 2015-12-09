@@ -28,7 +28,9 @@ public class Haste : MonoBehaviour {
 	private void useHaste(){
 		pMovement.setMovementSpeed (defaultSpeed+1);
 	}
-	public bool GetFireBallCooldownStatus()
+
+
+	public bool GetHasteCooldownStatus()
 	{
 		return (Time.time < hasteStart + hasteCooldown);
 	}
