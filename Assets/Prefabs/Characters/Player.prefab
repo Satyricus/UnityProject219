@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d208c4f5d4b5f74fab3e2d1da698d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useKey: 5
+  useKey: 6
 --- !u!114 &11418268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838b79197b1f6134ebdb098c8b1cf55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useKey: 6
+  useKey: 5
   hasteCooldown: 3.5
   hasteUseTime: 2
 --- !u!114 &11476216
