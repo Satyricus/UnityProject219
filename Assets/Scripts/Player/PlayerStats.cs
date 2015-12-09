@@ -31,6 +31,8 @@ public class PlayerStats : MonoBehaviour {
 
 	public bool debug;				// Use to debug.
 
+	private int healthPotions;
+
 	// Use this for initialization
 	void Start () {
 		//playerHealth = GetComponent<Health> ();
@@ -45,6 +47,7 @@ public class PlayerStats : MonoBehaviour {
 		expForLastLevel = 1000000;
 		neededExperience = expForFirstLevel;
 		maxLevel = 40;
+		healthPotions = 0;
 		
 		CalcNeededExperience (1);
 	}
@@ -191,5 +194,21 @@ public class PlayerStats : MonoBehaviour {
 
 	public int getMaxHealth() {
 		return this.maxHealth;
+	}
+	/**
+	 * Return the number of healthpotions aviable*/
+	public int getHealthPotions(){
+		return this.healthPotions;
+	}
+	/**
+	 * pick up a healthpotion*/
+	public void pickUpHealthPotions(){
+		this.healthPotions++;
+	}
+	/**
+	 * Using a healthpotion. The amount of healing increases as the player level up*/
+	public void useHealthPotion(){
+		Heal (10 + 2*GetLevel());
+		healthPotions--;
 	}
 }
