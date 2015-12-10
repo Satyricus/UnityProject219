@@ -46,20 +46,17 @@ public class PlayerMovement : MonoBehaviour {
 
 		Vector2 movement_vector = Vector2.ClampMagnitude(new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),1);	// getAxisRaw = bool
 
-
 		if (!movement_vector.Equals(new Vector2(0,0)))
 			direction = movement_vector;
-
 
 		if (movement_vector != Vector2.zero) {	// Player is moving
 			anim.SetBool ("isWalking", true);
 			anim.SetFloat("inputX", movement_vector.x);
 			anim.SetFloat("inputY", movement_vector.y);
+			rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime * speed);	// Move player's rigidbody
 		} else {
 			anim.SetBool("isWalking", false);
 		}
-		//movement_vector = Vector2.ClampMagnitude (movement_vector, 1.1f);
-		rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime * speed);	// Move player's rigidbody
 	}
 
 
