@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	private GamePause pause;
 
+	private Transform playerTransform;
+
+	[SerializeField] private int hearthStoneY;
+	[SerializeField] private int hearthStoneX;
 	[SerializeField] private String hearthStoneKey;
 
 	private Vector2 direction; // Will be used to get the direction the player is facing for range attacks or other purposes. 
@@ -27,6 +31,8 @@ public class PlayerMovement : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		anim.SetBool ("isWalking", false); // Player start at idle
 		direction = new Vector2(0,1); // Players starting direction
+
+		playerTransform = GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
@@ -41,8 +47,10 @@ public class PlayerMovement : MonoBehaviour {
 		//if (pause.GetPausStatus ())
 			//return;
 
-		if (Input.GetKeyDown(hearthStoneKey))
+		if (Input.GetKeyDown(hearthStoneKey)){
 			Application.LoadLevel(2);
+			PositionPlayer();
+		}
 
 		Vector2 movement_vector = Vector2.ClampMagnitude(new Vector2 (Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")),1);	// getAxisRaw = bool
 
@@ -63,6 +71,8 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 
+	
+
 	public Vector2 GetDirection() {
 		return direction;
 	}
@@ -72,4 +82,9 @@ public class PlayerMovement : MonoBehaviour {
 	public void setMovementSpeed(int speed){
 		this.speed = speed;
 	}
+
+	private void PositionPlayer() {
+		playerTransform.position = new Vector3(hearthStoneX, hearthStoneY, 1);
+	}
+
 }
