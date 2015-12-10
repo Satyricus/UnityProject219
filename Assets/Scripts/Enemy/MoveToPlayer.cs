@@ -23,6 +23,8 @@ public class MoveToPlayer : MonoBehaviour {
 		spawnLocation = transform.position;
 		eStats = GetComponent<EnemyStats>();
 		anim.SetBool ("isWalking", false);
+		if (gameObject.name.StartsWith("Golem"))
+			anim.SetBool ("isAttacking", false);
 	}
 
 
@@ -48,12 +50,17 @@ public class MoveToPlayer : MonoBehaviour {
 				print ("Far away, will not attack.");
 			transform.position = transform.position;
 			anim.SetBool ("isWalking", false);
+			if(gameObject.name.Contains("Golem"))
+				anim.SetBool("isAttacking",false);
 
 		} else if (rangeToTarget <= attackRange) {	// Close to target, stop moving and attack.
 			if(debug)
 				print ("Target is close, doesn't need to move.");
+			if(gameObject.name.Contains("Golem"))
+				anim.SetBool("isAttacking",true);
 			transform.position = transform.position;
 			anim.SetBool ("isWalking", false);
+
 			//Attack ();	
 			
 		} else if (rangeToTarget < aggroRadius) {	// If player is in (aggro) range, move towards player.
@@ -69,6 +76,8 @@ public class MoveToPlayer : MonoBehaviour {
 			anim.SetBool ("isWalking", true);
 			anim.SetFloat("valueX", targetDirection.x);
 			anim.SetFloat("valueY", targetDirection.y);
+			if(gameObject.name.Contains("Golem"))
+				anim.SetBool("isAttacking",false);
 			
 		} else if (rangeToTarget > aggroRadius) {	// Player is out of range, return to spawn location.
 			// if mob is dead.
@@ -83,6 +92,8 @@ public class MoveToPlayer : MonoBehaviour {
 			anim.SetBool ("isWalking", true); // Might not need.
 			anim.SetFloat("valueX", targetDirection.x);
 			anim.SetFloat("valueY", targetDirection.y);
+			if(gameObject.name.Contains("Golem"))
+				anim.SetBool("isAttacking",false);
 			
 		}
 	}
