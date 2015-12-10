@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour {
 
 	public bool debug;				// Use to debug.
 
+	[SerializeField]
 	private int healthPotions;
 
 	// Use this for initialization

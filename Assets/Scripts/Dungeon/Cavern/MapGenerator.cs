@@ -27,22 +27,25 @@ public class MapGenerator : MonoBehaviour {
 	
 	private int[,] map;
 	
-	void Awake() {
+	public void Awake() {
 		map = new int[width,height];
 		tiles = new Tile[width,height];
 	}
 
 	public void GenerateMap() {
+
 		CreateMap();
 		
 		for (int i = 0; i < smoothIterations; i ++) {
 			SmoothMap();
 		}
+		CreateCompleteTiles();
 	}
 	
 	
 	private void CreateMap() {
-		Randomiser = UnityEngine.Random.Range (-10000000,10000000).ToString();
+
+		Randomiser = UnityEngine.Random.Range (-1,10000).ToString();
 
 		System.Random pseudoRandom = new System.Random(Randomiser.GetHashCode());
 		
@@ -56,6 +59,7 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 		}
+
 	}
 	
 	private void SmoothMap() {
@@ -66,8 +70,16 @@ public class MapGenerator : MonoBehaviour {
 				if (neighbourWallTiles > 4)
 					map[x,y] = 1;
 				else if (neighbourWallTiles < 4)
-					map[x,y] = 0;
-				
+					map[x,y] = 0;				
+			}
+		}
+	}
+
+	private void CreateCompleteTiles() {
+		tiles = null;
+		tiles = new Tile[width,height];
+		for (int x = 0; x < width; x ++) {
+			for (int y = 0; y < height; y ++) {
 				CreateTile(x,y);
 			}
 		}

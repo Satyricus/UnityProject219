@@ -14,7 +14,9 @@ public class SpawnPlayer : MonoBehaviour {
 		dfs = GetComponent<SpaceDFS>();
 
 		Tile spawnTile = dfs.GetSpawnTile();
-		//print ( spawnTile.GetX() +  spawnTile.GetY() );
+		print ("x, y");
+		print ( spawnTile.GetX() );
+		print (spawnTile.GetY());
 		Vector3 position = new Vector3 (spawnTile.GetX() * 0.32f , spawnTile.GetY() * 0.32f , 0);
 		player.transform.position = position;
 		spawnTile.SetIsBusy();

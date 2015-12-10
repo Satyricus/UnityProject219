@@ -12,11 +12,14 @@ public class SpaceDFS : MonoBehaviour {
 	private int width;
 	private int height;
 
-	private List<Space> spaces = new List<Space>();
+	private List<Space> spaces;
 	private Space largestSpace;
 
 
 	private void SpaceDFSSetProperties() {
+
+		spaces = new List<Space>();
+		largestSpace = new Space();
 		mg = GetComponent<MapGenerator>();
 		
 		width = mg.GetWidth();

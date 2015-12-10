@@ -55,22 +55,32 @@ public class CavernManager : MonoBehaviour {
     private bool bossKillable; // Starts as false.
 
 
+	private void initiate() {
+	
+		ManagerSetProperties();
 
+	}
 
     // Use this for initialization
     void Start ()
     {
-        TrashMobHolder = GameObject.Find("TrashMobHolder");
-        ThingsHolder = GameObject.Find("ThingsHolder");
-        TileHolder = GameObject.Find("TileHolder");
 
-        BossHolder =  GameObject.Find("BossHolder");
-        ManagerSetProperties();
+		TrashMobHolder = GameObject.Find("TrashMobHolder");
+		ThingsHolder = GameObject.Find("ThingsHolder");
+		TileHolder = GameObject.Find("TileHolder");
+		
+		BossHolder =  GameObject.Find("BossHolder");
+
+		player = GameObject.Find ("Player");
+		statScaler = GameObject.Find("StatScaler");
+
+
+
+		initiate();
 
 		LoadMap ();
-
+		
 		SpawnObjects();
-
 
     }
 
@@ -87,6 +97,10 @@ public class CavernManager : MonoBehaviour {
 			else {
 				scaler.increaseLevel();
 			}*/
+
+
+
+			initiate ();
 
             LoadMap ();
 
@@ -105,7 +119,7 @@ public class CavernManager : MonoBehaviour {
 				Destroy (child.gameObject);
 			}
 		
-		}
+		} 
 
 
     }
@@ -134,7 +148,6 @@ public class CavernManager : MonoBehaviour {
 
     // Simply gets the needed references. 
     private void ManagerSetProperties() {
-		player = GameObject.Find ("Player");
 		mg = GetComponent<MapGenerator>();
 		drawer = GetComponent<MapDrawer>();
 		playerSpawner = GetComponent<SpawnPlayer>();
@@ -142,7 +155,6 @@ public class CavernManager : MonoBehaviour {
 
 		spawner = GetComponent<SpawnObjects>();
 
-		statScaler = GameObject.Find("StatScaler");
 		scaler = statScaler.GetComponent<Scaler>();
 	}
 
@@ -156,11 +168,13 @@ public class CavernManager : MonoBehaviour {
 			print ("Loading map!");
 		}
 
+		mg.Awake();
 		mg.GenerateMap();
 		drawer.DrawMap();
-
+		
 		dfs.RunThroughGraph();
 		dfs.DecideLargestSpace();
+
 	}
 
 	/*
@@ -183,6 +197,8 @@ public class CavernManager : MonoBehaviour {
 		spawner.SpawnThings( chestFillPercent, largestSpace, chests, player, ThingsHolder);
 
 		// Spawn prefabs
+
+		largestSpace.GetSouthernTile();
 		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player, ThingsHolder);
 
         //spawner.SpawnBoss(bosses, BossHolder);
