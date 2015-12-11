@@ -1,14 +1,10 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-//using UnityEditor.Events;
 
 public class Chest : MonoBehaviour
 {
-
-//    private GameObject player; // Will be used ones we transfer something from chest to player. 
 	public GameObject prefab;
-    private BoxCollider2D playerCollider;
     private bool isOpen;
     public  string interactButton;
     public Sprite unopened;
@@ -21,28 +17,17 @@ public class Chest : MonoBehaviour
 	    renderer = GetComponent<SpriteRenderer>();
 	    renderer.sprite = unopened;
 	}
-
-    
+	
     // Triggers the 
-    void OnTriggerStay2D(Collider2D other)
-    {
+    void OnTriggerStay2D(Collider2D other){
         if (isOpen)   // If chest has been opened.
             return;
         // If player in range and interact button is pushed.
-		if (other.gameObject.CompareTag("Player") && (Input.GetKeyDown(interactButton) || Input.GetKeyDown (KeyCode.Joystick1Button9)))
+		else if (other.gameObject.CompareTag("Player") && (Input.GetKeyDown(interactButton) || Input.GetKeyDown (KeyCode.Joystick1Button9)))
         {
-            Open();
+			GameObject h = Instantiate(prefab,transform.position,Quaternion.identity) as GameObject; // Spawn a healthpotion
+			isOpen = true;
+			renderer.sprite = opened;
         }
     }
-
-    /*
-        Execute when chest is opened by player.
-    */
-    void Open()
-    {
-		GameObject h = Instantiate(prefab,transform.position/*new Vector2(transform.position.x,transform.position.y-0.03f)*/,Quaternion.identity) as GameObject;
-        isOpen = true;
-        renderer.sprite = opened;
-    }
-
 }

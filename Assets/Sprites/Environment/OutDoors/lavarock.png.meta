@@ -1,9 +1,30 @@
 fileFormatVersion: 2
 guid: b36316f4380d3634ca77f5b29de1a9f1
-timeCreated: 1441208612
+timeCreated: 1449839315
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: lavarock_0
+    21300002: lavarock_1
+    21300004: lavarock_2
+    21300006: lavarock_3
+    21300008: lavarock_4
+    21300010: lavarock_5
+    21300012: lavarock_6
+    21300014: lavarock_7
+    21300016: lavarock_8
+    21300018: lavarock_9
+    21300020: lavarock_10
+    21300022: lavarock_11
+    21300024: lavarock_12
+    21300026: lavarock_13
+    21300028: lavarock_14
+    21300030: lavarock_15
+    21300032: lavarock_16
+    21300034: lavarock_17
+    21300036: lavarock_18
+    21300038: lavarock_19
+    21300040: lavarock_20
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +51,15 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  allowsAlphaSplitting: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +70,217 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: lavarock_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 187
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 180
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 128
+        width: 74
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 176
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 163
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 142
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 136
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_7
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 34
+        width: 92
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 119
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_9
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 118
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 119
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 118
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 104
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 99
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 86
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 67
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 54
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_17
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 33
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 33
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: lavarock_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 63
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
