@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.35115457, y: .0810798109, z: 0}
+  m_LocalPosition: {x: -.579999983, y: 5.36000013, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 405796}
@@ -73,7 +73,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -90,7 +90,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .319999993, y: .319999993}
+  m_Size: {x: .300000012, y: .300000012}
 --- !u!95 &9580308
 Animator:
   serializedVersion: 3
@@ -122,7 +122,7 @@ MonoBehaviour:
   speed: 2
   aggroRadius: 5
   debug: 0
-  attackRange: .5
+  attackRange: .50999999
   scratchAnim: {fileID: 5014478, guid: 0c77fbf53e453204cac97aa1c6f862ed, type: 2}
   attackCD: 1.5
 --- !u!114 &11410198
