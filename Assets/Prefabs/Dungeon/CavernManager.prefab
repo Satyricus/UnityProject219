@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashMobsFillPercent: 31
-  chestFillPercent: 0
+  chestFillPercent: 6
+  debug: 0
   prefabsFillpercent: 0
   trashMobs:
   - {fileID: 104382, guid: 7e0195740348d60478396aff7ab09e0b, type: 2}
@@ -120,10 +121,10 @@ MonoBehaviour:
   - {fileID: 194908, guid: 95e6bc7a934dab544b68b7c9425d73e5, type: 2}
   - {fileID: 125394, guid: 845bcae98c1fb3344bffe769228eeebc, type: 2}
   - {fileID: 187890, guid: f27459436b9e36146926c56940fa7f46, type: 2}
-  chests: []
+  chests:
+  - {fileID: 144046, guid: 8e7102bde07edae47bfca38d1b63003c, type: 2}
   prefabs: []
-  bosses:
-  - {fileID: 187890, guid: f27459436b9e36146926c56940fa7f46, type: 2}
+  bosses: []
   hardModeStartLevel: 5
 --- !u!114 &11498966
 MonoBehaviour:
