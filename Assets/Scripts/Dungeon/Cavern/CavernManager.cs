@@ -22,6 +22,10 @@ public class CavernManager : MonoBehaviour {
 	[Range(1,10)]
 	public int chestFillPercent;
 
+	
+	[Range(1,5)]
+	public int bossFillpercent;
+
 	public bool debug;
 
 	
@@ -121,6 +125,16 @@ public class CavernManager : MonoBehaviour {
 		
 		} 
 
+		if (ThingsHolder.transform.childCount > 0)
+		{
+			Transform ThingTransform = ThingsHolder.transform;
+			
+			foreach(Transform child in ThingTransform) {
+				Destroy (child.gameObject);
+			}
+			
+		} 
+
 
     }
 
@@ -175,6 +189,14 @@ public class CavernManager : MonoBehaviour {
 		dfs.RunThroughGraph();
 		dfs.DecideLargestSpace();
 
+		
+		for (int i = 0; i < chestFillPercent*2; i++) {
+			GameObject pot = (GameObject) GameObject.Find("HealthPotionPickUp(Clone)");
+			if (pot)
+				GameObject.Destroy(pot);
+			
+		}
+
 	}
 
 	/*
@@ -199,9 +221,11 @@ public class CavernManager : MonoBehaviour {
 		// Spawn prefabs
 
 		largestSpace.GetSouthernTile();
+
+
 		spawner.SpawnThings( prefabsFillpercent, largestSpace, prefabs, player, ThingsHolder);
 
-        //spawner.SpawnBoss(bosses, BossHolder);
+        spawner.SpawnThings(bossFillpercent , largestSpace, bosses, player, TrashMobHolder);
 
     }
 

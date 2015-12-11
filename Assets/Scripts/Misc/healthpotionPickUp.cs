@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class healthpotionPickUp : MonoBehaviour {
@@ -11,18 +11,13 @@ public class healthpotionPickUp : MonoBehaviour {
 		time = Time.time;
 		wait = 0.5f;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 	void OnCollisionStay2D(Collision2D coll){
 		if(coll.gameObject.CompareTag("Player")){
-			if(Time.time > time + wait){
 				player.GetComponent<PlayerStats>().pickUpHealthPotions();
 				Destroy(gameObject);
-			}
 		}
 	}
+
 
 }
