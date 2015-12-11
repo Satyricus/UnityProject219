@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &157516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 408770}
+  - 114: {fileID: 11468156}
+  m_Layer: 0
+  m_Name: HealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &181362
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,6 +38,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &408770
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 410366}
+  m_RootOrder: 0
 --- !u!4 &410366
 Transform:
   m_ObjectHideFlags: 1
@@ -29,9 +57,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.59415817, y: -8.44472027, z: 1}
+  m_LocalPosition: {x: -2.37491369, y: 4.61760807, z: -.84375}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 408770}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5052470
@@ -123,6 +152,17 @@ MonoBehaviour:
   aggroRadius: 5
   debug: 0
   attackRange: .5
+--- !u!114 &11468156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab9145dc9069684e9c3986a77e3ff72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21299100
 SpriteRenderer:
   m_ObjectHideFlags: 1
