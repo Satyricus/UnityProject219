@@ -91,7 +91,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .5, y: .5}
+  m_Size: {x: .529999971, y: .550000012}
 --- !u!95 &9543796
 Animator:
   serializedVersion: 3
@@ -151,7 +151,7 @@ MonoBehaviour:
   speed: 1.20000005
   aggroRadius: 5
   debug: 0
-  attackRange: .5
+  attackRange: .529999971
 --- !u!114 &11476888
 MonoBehaviour:
   m_ObjectHideFlags: 1

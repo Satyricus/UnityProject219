@@ -40,7 +40,7 @@ public class Chest : MonoBehaviour
     */
     void Open()
     {
-		GameObject h = Instantiate(prefab,transform.position,Quaternion.identity) as GameObject;
+		GameObject h = Instantiate(prefab,transform.position/*new Vector2(transform.position.x,transform.position.y-0.03f)*/,Quaternion.identity) as GameObject;
         isOpen = true;
         renderer.sprite = opened;
     }

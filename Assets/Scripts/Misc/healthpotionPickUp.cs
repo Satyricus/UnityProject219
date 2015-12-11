@@ -3,20 +3,25 @@ using System.Collections;
 
 public class healthpotionPickUp : MonoBehaviour {
 	GameObject player;
+	float time;
+	float wait;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
+		time = Time.time;
+		wait = 0.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
-	void OnCollisionEnter2D(Collision2D coll){
+	void OnCollisionStay2D(Collision2D coll){
 		if(coll.gameObject.CompareTag("Player")){
-			float time = Time.time;
-			player.GetComponent<PlayerStats>().pickUpHealthPotions();
-			Destroy(gameObject);
+			if(Time.time > time + wait){
+				player.GetComponent<PlayerStats>().pickUpHealthPotions();
+				Destroy(gameObject);
+			}
 		}
 	}
 
