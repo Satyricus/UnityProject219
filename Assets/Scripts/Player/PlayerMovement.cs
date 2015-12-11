@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour {
 		//if (pause.GetPausStatus ())
 			//return;
 
-		if (Input.GetKeyDown(hearthStoneKey)){
+		if (Input.GetKeyDown(hearthStoneKey)|| Input.GetKeyDown (KeyCode.Joystick1Button4)){
 			Application.LoadLevel(2);
 			PositionPlayer();
 		}

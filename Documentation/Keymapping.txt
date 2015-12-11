@@ -1,0 +1,13 @@
+Keymapping:
+
+Action:			Windows		Xbox360-kontroller
+Moving:  	  A/S/D/W or Arrows	Left stick
+Ability1: fireball: 	1			A
+Ability2: Teleport:	2			X
+Ability3: Iceshield:	3			B
+Ability4: Nuke		4			Y
+Ability5: Haste		5		Press left stick
+Ability6: Healthpotion	6			RB
+Use(open chest, talk):	space		Press right stick
+StatsPanel:		C		      Select
+Homecomming stone:	H			LB
