@@ -5,6 +5,8 @@ public class healthpotionPickUp : MonoBehaviour {
 	GameObject player;
 	float time;
 	float wait;
+
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
