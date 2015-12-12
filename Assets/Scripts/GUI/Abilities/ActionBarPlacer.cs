@@ -35,6 +35,8 @@ public class ActionBarPlacer : MonoBehaviour {
 
 	private void PlaceActionBar() {
 		var AbTransform = Actionbar.transform;
-		AbTransform.position = new Vector3((Screen.width/2) - placementX,(Screen.height/2) - placementY,1);
+		var y = Screen.currentResolution.height;
+		var x = Screen.currentResolution.width;
+		AbTransform.position = new Vector3((x/2) - placementX,(y/2) - placementY,1);
 	}
 }
