@@ -15,11 +15,14 @@ public class healthpotionPickUp : MonoBehaviour {
 	}
 
 	void OnCollisionStay2D(Collision2D coll){
+
 		if(coll.gameObject.CompareTag("Player")){
+			if(Time.time > time + wait){
 				player.GetComponent<PlayerStats>().pickUpHealthPotions();
 				Destroy(gameObject);
 		}
 	}
 
 
+}
 }
