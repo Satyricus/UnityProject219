@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbe8c7c0473a40499afbcfb2e787236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldCoolDown: 15
+  shieldCoolDown: 8
   inputKey: 3
   prefab: {fileID: 5052436, guid: 43930c42af2337146821dea078c274da, type: 2}
 --- !u!114 &11425584
@@ -127,6 +127,7 @@ MonoBehaviour:
   attackDamage: 10
   maxHealth: 100
   debug: 1
+  healthPotions: 0
 --- !u!114 &11450602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +142,7 @@ MonoBehaviour:
   attackKey: 4
   radius: 2.4000001
   attackDamage: 60
-  coolDown: 1
+  coolDown: 10
   prefab: {fileID: 5057736, guid: 1b353fb258ea3b647a387d2b237f58f8, type: 2}
 --- !u!114 &11463140
 MonoBehaviour:
@@ -254,7 +255,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: coolDown
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: radius
@@ -307,6 +308,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: hearthStoneX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shieldCoolDown
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
