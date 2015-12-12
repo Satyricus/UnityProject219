@@ -11,3 +11,4 @@ Ability6: Healthpotion	6			RB
 Use(open chest, talk):	space		Press right stick
 StatsPanel:		C		      Select
 Homecomming stone:	H			LB
+Pause:			P		      Start

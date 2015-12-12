@@ -1129,6 +1129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636d29af82b960d4389abe3853a1f0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseKey: p
+  pauseImage: {fileID: 144468, guid: 1c2946a0aebde6d4db7e191ba47f8a88, type: 2}
 --- !u!61 &747365428
 BoxCollider2D:
   m_ObjectHideFlags: 0
