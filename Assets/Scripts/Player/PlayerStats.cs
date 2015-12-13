@@ -78,7 +78,7 @@ public class PlayerStats : MonoBehaviour {
 	/** Function called to play the animation when the player reaches a new level. */
 	void PlayLevelUpAnimation() {
 		// TODO: Implement this method.
-		print ("YOU LEVELED UP CUPCAKE!!!");
+	//	print ("YOU LEVELED UP CUPCAKE!!!");
 	}
 
 	/** A function used to calculate how much experience is needed this level to level up. */
@@ -209,7 +209,8 @@ public class PlayerStats : MonoBehaviour {
 	/**
 	 * Using a healthpotion. The amount of healing increases as the player level up*/
 	public void useHealthPotion(){
-		Heal (10 + 2*GetLevel());
+		int healAmount = (int) (maxHealth*0.25f);
+		Heal(healAmount);
 		healthPotions--;
 	}
 }

@@ -189,13 +189,7 @@ public class CavernManager : MonoBehaviour {
 		dfs.RunThroughGraph();
 		dfs.DecideLargestSpace();
 
-		
-		for (int i = 0; i < chestFillPercent*2; i++) {
-			GameObject pot = (GameObject) GameObject.Find("HealthPotionPickUp(Clone)");
-			if (pot)
-				GameObject.Destroy(pot);
-			
-		}
+		GameObject.Find ("FOGManager").GetComponent<FOWadd>().loadFOW();
 
 	}
 
@@ -240,6 +234,10 @@ public class CavernManager : MonoBehaviour {
 		
 		else 
 			hardMode = false;
+	}
+
+	public GameObject GetTileHolder() {
+		return this.TileHolder;
 	}
 
 }
