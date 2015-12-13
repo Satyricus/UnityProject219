@@ -24,7 +24,7 @@ public class ActionBarPlacer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ResizeActionBar();
-		PlaceActionBar();
+		//PlaceActionBar();
 	}
 	
 	private void ResizeActionBar() {

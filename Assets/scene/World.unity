@@ -19110,7 +19110,7 @@ Transform:
   m_Children:
   - {fileID: 1892000599}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
 --- !u!114 &420641302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30059,16 +30059,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412370, guid: ca845305c984eaa48ad0c9ee16c954f5, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 22383554, guid: ca845305c984eaa48ad0c9ee16c954f5, type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1286835695}
-    - target: {fileID: 101372, guid: ca845305c984eaa48ad0c9ee16c954f5, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca845305c984eaa48ad0c9ee16c954f5, type: 2}
   m_IsPrefabParent: 0
