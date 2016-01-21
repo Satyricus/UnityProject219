@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "title": "sword",
+    "stats": {
+      "health": 0,
+      "power": 10,
+      "Haste": 20,
+      "recover": 0
+    },
+    "stackable": false,
+      "slug":  "sword"
+  },
+
+  {
+    "id": 1,
+    "title": "gloves",
+    "stats": {
+      "health": 10,
+      "power": 3,
+      "Haste": 10,
+      "recover": 0
+    },
+    "stackable": false,
+    "slug":"gloves"
+  },
+
+   {
+    "id": 2,
+    "title": "bread",
+    "stats": {
+      "Haste": 0,
+      "health": 0,
+      "power": 0,
+      "recover": 10
+    },
+    "stackable": true,
+     "slug": "bread"
+  }
+
+
+]
